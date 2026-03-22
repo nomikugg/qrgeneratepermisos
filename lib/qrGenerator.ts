@@ -14,7 +14,7 @@ export type QRInputRow = Record<string, unknown> & {
 };
 
 export function clean(value: unknown) {
-  return String(value || "").trim();
+  return String(value || "").trim().toUpperCase();
 }
 
 export function generateQRData(row: QRInputRow) {

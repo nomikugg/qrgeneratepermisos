@@ -1,6 +1,6 @@
 import { PDFDocument } from "pdf-lib";
 import QRCode from "qrcode";
-import { generateQRData, type QRInputRow } from "@/lib/qrGenerator";
+import { clean, generateQRData, type QRInputRow } from "@/lib/qrGenerator";
 
 export type QRPlacement = {
   qrFieldName?: string;
@@ -60,13 +60,32 @@ export async function fillTemplatePdfWithRow(
   setTextFieldIfExists(fieldNames, fieldNameByLowercase, form, "numero", String(data.numero));
   setTextFieldIfExists(fieldNames, fieldNameByLowercase, form, "qr_string", data.finalString);
 
+  const knownFieldKeys = new Set([
+    "placa",
+    "modelo",
+    "marca",
+    "anio",
+    "color",
+    "licencia",
+    "conductor",
+    "uuid1",
+    "uuid2",
+    "hash",
+    "numero",
+    "qr_string",
+  ]);
+
   for (const [rawKey, rawValue] of Object.entries(row)) {
+    if (knownFieldKeys.has(String(rawKey).toLowerCase())) {
+      continue;
+    }
+
     setTextFieldIfExists(
       fieldNames,
       fieldNameByLowercase,
       form,
       String(rawKey),
-      String(rawValue ?? "")
+      clean(rawValue)
     );
   }
 

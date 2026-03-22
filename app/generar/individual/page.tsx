@@ -4,13 +4,13 @@ import Link from "next/link";
 import { ChangeEvent, useState } from "react";
 
 const fields: Array<{ key: keyof FormState; label: string; placeholder: string }> = [
-  { key: "placa", label: "Placa", placeholder: "ABC-123" },
-  { key: "modelo", label: "Modelo", placeholder: "Corolla" },
-  { key: "marca", label: "Marca", placeholder: "Toyota" },
-  { key: "anio", label: "Ano", placeholder: "2026" },
-  { key: "color", label: "Color", placeholder: "Blanco" },
-  { key: "licencia", label: "Licencia", placeholder: "L-458932" },
-  { key: "conductor", label: "Conductor", placeholder: "Juan Perez" },
+  { key: "placa", label: "Placa", placeholder: "3456FTH" },
+  { key: "modelo", label: "Modelo", placeholder: "HILUX" },
+  { key: "marca", label: "Marca", placeholder: "TOYOTA" },
+  { key: "anio", label: "AñO", placeholder: "2026" },
+  { key: "color", label: "Color", placeholder: "BLANCO" },
+  { key: "licencia", label: "Licencia", placeholder: "L458932" },
+  { key: "conductor", label: "Conductor", placeholder: "JUAN PEREZ RIOS" },
 ];
 
 type FormState = {
@@ -35,7 +35,7 @@ export default function Page() {
   });
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setForm({ ...form, [e.target.name]: e.target.value.toUpperCase() });
   };
 
   const handleSubmit = async () => {
@@ -87,11 +87,15 @@ export default function Page() {
                 value={form[field.key]}
                 placeholder={field.placeholder}
                 onChange={handleChange}
-                className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 shadow-sm outline-none transition focus:border-teal-500 focus:ring-4 focus:ring-teal-100"
+                className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 uppercase shadow-sm outline-none transition focus:border-teal-500 focus:ring-4 focus:ring-teal-100"
               />
             </label>
           ))}
         </div>
+
+        <p className="mt-3 text-xs text-slate-500">
+          Referencia: HILUX es el modelo y TOYOTA es la marca.
+        </p>
 
         <div className="mt-7 flex flex-wrap items-center gap-3">
           <button
