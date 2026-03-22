@@ -259,7 +259,7 @@ export default function PdfGeneratorPage() {
 
                 <div className="h-3 w-full overflow-hidden rounded-full bg-slate-100">
                   <div
-                    className="h-full rounded-full bg-gradient-to-r from-indigo-500 to-teal-500 transition-all duration-500"
+                    className="h-full rounded-full bg-linear-to-r from-indigo-500 to-teal-500 transition-all duration-500"
                     style={{ width: `${progressPercent}%` }}
                   />
                 </div>
@@ -273,7 +273,7 @@ export default function PdfGeneratorPage() {
             )}
 
             <p className="text-xs text-slate-500">
-              {message || "Consejo: usa campos AcroForm llamados placa, modelo, marca, anio, color y licencia."}
+              {message || "Consejo: usa campos AcroForm llamados placa, modelo, marca, anio, color, licencia y conductor."}
             </p>
           </div>
 

@@ -57,7 +57,7 @@ export default function Page() {
             onChange={(e) => setFile(e.target.files?.[0] ?? null)}
             className="w-full cursor-pointer rounded-lg border border-emerald-200 bg-white px-3 py-2 text-sm text-slate-700 file:mr-3 file:rounded-md file:border-0 file:bg-emerald-600 file:px-3 file:py-2 file:text-sm file:font-semibold file:text-white hover:file:bg-emerald-500"
           />
-          <p className="mt-3 text-xs text-slate-500">Formato sugerido: columnas placa, modelo, marca, ano, color, licencia.</p>
+          <p className="mt-3 text-xs text-slate-500">Formato sugerido: columnas placa, modelo, marca, ano, color, licencia y conductor.</p>
         </label>
 
         <div className="mt-7 flex flex-wrap items-center gap-3">

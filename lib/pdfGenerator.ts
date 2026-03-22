@@ -53,6 +53,7 @@ export async function fillTemplatePdfWithRow(
   setTextFieldIfExists(fieldNames, fieldNameByLowercase, form, "anio", data.anio);
   setTextFieldIfExists(fieldNames, fieldNameByLowercase, form, "color", data.color);
   setTextFieldIfExists(fieldNames, fieldNameByLowercase, form, "licencia", data.licencia);
+  setTextFieldIfExists(fieldNames, fieldNameByLowercase, form, "conductor", data.conductor);
   setTextFieldIfExists(fieldNames, fieldNameByLowercase, form, "uuid1", data.uuid1);
   setTextFieldIfExists(fieldNames, fieldNameByLowercase, form, "uuid2", data.uuid2);
   setTextFieldIfExists(fieldNames, fieldNameByLowercase, form, "hash", data.hash);

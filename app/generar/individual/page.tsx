@@ -10,6 +10,7 @@ const fields: Array<{ key: keyof FormState; label: string; placeholder: string }
   { key: "anio", label: "Ano", placeholder: "2026" },
   { key: "color", label: "Color", placeholder: "Blanco" },
   { key: "licencia", label: "Licencia", placeholder: "L-458932" },
+  { key: "conductor", label: "Conductor", placeholder: "Juan Perez" },
 ];
 
 type FormState = {
@@ -19,6 +20,7 @@ type FormState = {
   anio: string;
   color: string;
   licencia: string;
+  conductor: string;
 };
 
 export default function Page() {
@@ -29,6 +31,7 @@ export default function Page() {
     anio: "",
     color: "",
     licencia: "",
+    conductor: "",
   });
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {

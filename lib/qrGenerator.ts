@@ -10,6 +10,7 @@ export type QRInputRow = Record<string, unknown> & {
   anio?: unknown;
   color?: unknown;
   licencia?: unknown;
+  conductor?: unknown;
 };
 
 export function clean(value: unknown) {
@@ -23,6 +24,7 @@ export function generateQRData(row: QRInputRow) {
   const anio = clean(row.anio);
   const color = clean(row.color);
   const licencia = clean(row.licencia);
+  const conductor = clean(row.conductor);
 
   const uuid1 = uuidv4();
   const uuid2 = uuidv4();
@@ -45,6 +47,7 @@ export function generateQRData(row: QRInputRow) {
     anio,
     color,
     licencia,
+    conductor,
     uuid1,
     uuid2,
     hash,
