@@ -33,13 +33,14 @@ export default function Page() {
     licencia: "",
     conductor: "",
   });
+  const areAllFieldsFilled = Object.values(form).every((value) => value.trim().length > 0);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value.toUpperCase() });
   };
 
   const handleSubmit = async () => {
-    if (!form.placa.trim()) {
+    if (!areAllFieldsFilled) {
       return;
     }
 
@@ -81,12 +82,15 @@ export default function Page() {
         <div className="grid gap-4 sm:grid-cols-2">
           {fields.map((field) => (
             <label key={field.key} className="block">
-              <span className="mb-1 block text-sm font-semibold text-slate-700">{field.label}</span>
+              <span className="mb-1 block text-sm font-semibold text-slate-700">
+                {field.label} <span aria-hidden="true" className="text-rose-600">*</span>
+              </span>
               <input
                 name={field.key}
                 value={form[field.key]}
                 placeholder={field.placeholder}
                 onChange={handleChange}
+                required
                 className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 uppercase shadow-sm outline-none transition focus:border-teal-500 focus:ring-4 focus:ring-teal-100"
               />
             </label>
@@ -101,11 +105,11 @@ export default function Page() {
           <button
             onClick={handleSubmit}
             className="rounded-2xl bg-teal-700 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-teal-700/30 transition hover:-translate-y-0.5 hover:bg-teal-600 disabled:cursor-not-allowed disabled:bg-slate-400"
-            disabled={!form.placa.trim()}
+            disabled={!areAllFieldsFilled}
           >
             Generar y descargar PNG
           </button>
-          <p className="text-xs text-slate-500">Requerido: al menos el campo placa.</p>
+          <p className="text-xs text-slate-500">* Todos los campos son requeridos.</p>
         </div>
       </section>
     </main>
