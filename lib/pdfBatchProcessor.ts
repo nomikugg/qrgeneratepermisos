@@ -3,7 +3,7 @@ import csv from "csv-parser";
 import { Readable } from "stream";
 import { fillTemplatePdfWithRow, type QRPlacement } from "@/lib/pdfGenerator";
 import type { QRInputRow } from "@/lib/qrGenerator";
-import { updatePdfBatchJob } from "@/lib/pdfBatchJobs";
+import { updatePdfBatchJob, saveJobZipFile } from "@/lib/pdfBatchJobs";
 
 async function countCsvRows(csvBuffer: Buffer): Promise<number> {
   return new Promise<number>((resolve, reject) => {
@@ -26,10 +26,10 @@ export async function processPdfBatchJob(
   placement: QRPlacement,
   flatten: boolean
 ): Promise<void> {
-  updatePdfBatchJob(jobId, { status: "running", message: "Contando filas del CSV..." });
+  await updatePdfBatchJob(jobId, { status: "running", message: "Contando filas del CSV..." });
   const totalRows = await countCsvRows(csvBuffer);
 
-  updatePdfBatchJob(jobId, {
+  await updatePdfBatchJob(jobId, {
     totalRows,
     processedRows: 0,
     status: "running",
@@ -80,7 +80,7 @@ export async function processPdfBatchJob(
           archive.append(Buffer.from(result.pdfBytes), { name: finalName });
 
           processedRows += 1;
-          updatePdfBatchJob(jobId, {
+          await updatePdfBatchJob(jobId, {
             processedRows,
             totalRows,
             status: "running",
@@ -105,11 +105,12 @@ export async function processPdfBatchJob(
 
   const zipBytes = await finalizeZipPromise;
 
-  updatePdfBatchJob(jobId, {
+  await saveJobZipFile(jobId, zipBytes);
+
+  await updatePdfBatchJob(jobId, {
     status: "completed",
     message: `Completado: ${totalRows} PDF(s) generados`,
     processedRows: totalRows,
     totalRows,
-    zipBytes,
   });
 }

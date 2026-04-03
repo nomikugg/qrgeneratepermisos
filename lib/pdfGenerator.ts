@@ -4,7 +4,6 @@ import { clean, generateQRData, type QRInputRow } from "@/lib/qrGenerator";
 
 export type QRPlacement = {
   qrFieldName?: string;
-  pageIndex: number;
   x: number;
   y: number;
   width: number;
@@ -114,7 +113,7 @@ export async function fillTemplatePdfWithRow(
 
   if (!qrPlacedInFormField) {
     const pages = pdfDoc.getPages();
-    const page = pages[placement.pageIndex] ?? pages[0];
+    const page = pages[0];
 
     page.drawImage(qrImage, {
       x: placement.x,

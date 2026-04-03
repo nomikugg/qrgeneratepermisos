@@ -8,7 +8,7 @@ export async function GET(req: Request): Promise<Response> {
     return Response.json({ error: "jobId requerido" }, { status: 400 });
   }
 
-  const job = getPdfBatchJob(jobId);
+  const job = await getPdfBatchJob(jobId);
 
   if (!job) {
     return Response.json({ error: "Trabajo no encontrado o expirado" }, { status: 404 });

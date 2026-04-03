@@ -1,34 +1,50 @@
 'use client';
 
 import Link from "next/link";
+import { PDFDocument } from "pdf-lib";
 import { FormEvent, useEffect, useState } from "react";
 
 type JobStatus = "pending" | "running" | "completed" | "failed";
 
 type PlacementState = {
   qrFieldName: string;
-  qrPage: number;
-  qrX: number;
-  qrY: number;
-  qrWidth: number;
-  qrHeight: number;
+  qrX: string;
+  qrY: string;
+  qrWidth: string;
+  qrHeight: string;
   flatten: boolean;
 };
 
 const initialPlacement: PlacementState = {
   qrFieldName: "qr",
-  qrPage: 0,
-  qrX: 420,
-  qrY: 470,
-  qrWidth: 120,
-  qrHeight: 120,
+  qrX: "420",
+  qrY: "470",
+  qrWidth: "120",
+  qrHeight: "120",
   flatten: true,
 };
+
+type PdfPageSize = {
+  width: number;
+  height: number;
+};
+
+function parsePlacementNumber(value: string | number | null | undefined, fallback: number): number {
+  const normalized = typeof value === "string" ? value : value == null ? "" : String(value);
+
+  if (normalized.trim() === "") {
+    return fallback;
+  }
+
+  const parsed = Number(normalized);
+  return Number.isFinite(parsed) ? parsed : fallback;
+}
 
 export default function PdfGeneratorPage() {
   const [templatePdf, setTemplatePdf] = useState<File | null>(null);
   const [csvFile, setCsvFile] = useState<File | null>(null);
   const [placement, setPlacement] = useState<PlacementState>(initialPlacement);
+  const [pdfPageSize, setPdfPageSize] = useState<PdfPageSize | null>(null);
   const [isGenerating, setIsGenerating] = useState(false);
   const [message, setMessage] = useState<string>("");
   const [pdfPreviewUrl, setPdfPreviewUrl] = useState("");
@@ -39,11 +55,25 @@ export default function PdfGeneratorPage() {
   useEffect(() => {
     if (!templatePdf) {
       setPdfPreviewUrl("");
+      setPdfPageSize(null);
       return;
     }
 
     const objectUrl = URL.createObjectURL(templatePdf);
     setPdfPreviewUrl(objectUrl);
+
+    void (async () => {
+      const templateBuffer = await templatePdf.arrayBuffer();
+      const pdfDoc = await PDFDocument.load(templateBuffer);
+      const firstPage = pdfDoc.getPages()[0];
+
+      if (firstPage) {
+        setPdfPageSize({
+          width: firstPage.getWidth(),
+          height: firstPage.getHeight(),
+        });
+      }
+    })();
 
     return () => {
       URL.revokeObjectURL(objectUrl);
@@ -76,7 +106,6 @@ export default function PdfGeneratorPage() {
       formData.append("templatePdf", templatePdf);
       formData.append("csvFile", csvFile);
       formData.append("qrFieldName", placement.qrFieldName);
-      formData.append("qrPage", String(placement.qrPage));
       formData.append("qrX", String(placement.qrX));
       formData.append("qrY", String(placement.qrY));
       formData.append("qrWidth", String(placement.qrWidth));
@@ -153,8 +182,9 @@ export default function PdfGeneratorPage() {
           isCompleted = true;
         }
       }
-    } catch {
-      setMessage("Error generando PDFs. Revisa tu template y el CSV.");
+    } catch (error) {
+      const errorMsg = error instanceof Error ? error.message : "Error generando PDFs.";
+      setMessage(errorMsg);
       setJobStatus("failed");
     } finally {
       setIsGenerating(false);
@@ -221,7 +251,6 @@ export default function PdfGeneratorPage() {
               </label>
 
               <div className="grid grid-cols-2 gap-3">
-                <NumberField label="Pagina" value={placement.qrPage} onChange={(value) => onPlacementChange("qrPage", value)} />
                 <NumberField label="X" value={placement.qrX} onChange={(value) => onPlacementChange("qrX", value)} />
                 <NumberField label="Y" value={placement.qrY} onChange={(value) => onPlacementChange("qrY", value)} />
                 <NumberField label="Ancho" value={placement.qrWidth} onChange={(value) => onPlacementChange("qrWidth", value)} />
@@ -283,13 +312,40 @@ export default function PdfGeneratorPage() {
               <span className="rounded-full bg-slate-100 px-3 py-1 text-[11px] font-semibold text-slate-600">Solo visual</span>
             </div>
             {pdfPreviewUrl ? (
-              <iframe
-                src={pdfPreviewUrl}
-                title="Preview PDF"
-                className="h-140 w-full rounded-xl border border-slate-200 bg-white"
-              />
+              <div
+                className="relative w-full overflow-hidden rounded-xl border border-slate-200 bg-white"
+                style={{ aspectRatio: pdfPageSize ? `${pdfPageSize.width} / ${pdfPageSize.height}` : "612 / 792" }}
+              >
+                <iframe
+                  src={pdfPreviewUrl}
+                  title="Preview PDF"
+                  className="h-full w-full"
+                />
+                <div
+                  className="absolute border-2 border-red-500 bg-red-500/10 pointer-events-none"
+                  style={{
+                    left: `${((parsePlacementNumber(placement.qrX, 420)) / (pdfPageSize?.width ?? 612)) * 100}%`,
+                    top: `${(((pdfPageSize?.height ?? 792) - parsePlacementNumber(placement.qrY, 470) - parsePlacementNumber(placement.qrHeight, 120)) / (pdfPageSize?.height ?? 792)) * 100}%`,
+                    width: `${(parsePlacementNumber(placement.qrWidth, 120) / (pdfPageSize?.width ?? 612)) * 100}%`,
+                    height: `${(parsePlacementNumber(placement.qrHeight, 120) / (pdfPageSize?.height ?? 792)) * 100}%`,
+                  }}
+                  title="Posicion del QR"
+                >
+                  <div className="absolute -top-6 left-0 bg-red-500 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
+                    QR: {placement.qrWidth || "0"}x{placement.qrHeight || "0"}
+                  </div>
+                </div>
+                {pdfPageSize && (
+                  <div className="absolute right-2 top-2 rounded-full bg-slate-900/80 px-3 py-1 text-[11px] font-semibold text-white backdrop-blur">
+                    {Math.round(pdfPageSize.width)} × {Math.round(pdfPageSize.height)} pt
+                  </div>
+                )}
+              </div>
             ) : (
-              <div className="flex h-140 items-center justify-center rounded-xl border border-dashed border-slate-300 bg-slate-50 text-center text-sm text-slate-500">
+              <div
+                className="flex w-full items-center justify-center rounded-xl border border-dashed border-slate-300 bg-slate-50 text-center text-sm text-slate-500"
+                style={{ aspectRatio: "612 / 792" }}
+              >
                 Carga un template PDF para mostrar la vista previa aqui.
               </div>
             )}
@@ -306,16 +362,18 @@ function NumberField({
   onChange,
 }: {
   label: string;
-  value: number;
-  onChange: (value: number) => void;
+  value: string;
+  onChange: (value: string) => void;
 }) {
   return (
     <label className="block">
       <span className="mb-1 block text-xs font-semibold text-slate-600 uppercase">{label}</span>
       <input
-        type="number"
+        type="text"
+        inputMode="numeric"
+        pattern="[0-9]*"
         value={value}
-        onChange={(e) => onChange(Number(e.target.value))}
+        onChange={(e) => onChange(e.target.value.replace(/[^0-9]/g, ""))}
         className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-800 outline-none transition focus:border-indigo-500 focus:bg-white focus:ring-4 focus:ring-indigo-100"
       />
     </label>
