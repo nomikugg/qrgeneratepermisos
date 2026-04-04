@@ -9,77 +9,90 @@ export default function Home() {
       <div className="blob-bg bottom-8 left-1/3 h-56 w-56 bg-sky-300/60 [animation-delay:2s]" />
 
       <section className="fade-rise relative mx-auto flex w-full max-w-6xl flex-col gap-8 rounded-3xl border border-white/60 bg-white/75 p-6 shadow-[0_24px_80px_-36px_rgba(15,118,110,0.45)] backdrop-blur-lg sm:p-9 lg:p-12">
-        <div className="w-fit rounded-2xl border border-cyan-200 bg-white/85 px-4 py-3 shadow-lg shadow-cyan-700/10 backdrop-blur-sm">
+        {/* <div className="w-fit rounded-2xl border border-cyan-200 bg-white/85 px-4 py-3 shadow-lg shadow-cyan-700/10 backdrop-blur-sm">
           <p className="text-[11px] font-semibold tracking-[0.18em] text-cyan-700 uppercase">SISTEMAS - TI</p>
           <p className="mt-1 text-sm font-medium text-slate-700">Automatización, control y auditoría digital</p>
-        </div>
+        </div> */}
 
         <p className="inline-flex w-fit items-center rounded-full border border-teal-300/60 bg-teal-50 px-4 py-1 text-xs font-semibold tracking-[0.18em] text-teal-800 uppercase">
-          Plataforma de permisos vehiculares
+          Sistema para generación de permisos vehiculares, QR personalizables
         </p>
 
-        <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
-          <div>
+        <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+          <div className="space-y-6">
             <h1 className="text-4xl leading-tight font-bold text-slate-900 sm:text-5xl lg:text-6xl">
-              Sistema de Permisos QR
-              <span className="mt-2 block text-teal-700">rapido, trazable y elegante</span>
+              Generador de QR.
+              <span className="mt-2 block text-teal-700">rápido, elegante y personalizable</span>
             </h1>
 
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
-              Genera permisos individuales o lotes completos desde CSV con codigos QR seguros.
-              Acelera operativos, reduce errores manuales y entrega archivos listos para imprimir en segundos.
+              Elige una accion principal para trabajar de inmediato: Generar permisos o crear un QR
+              personalizable en alta calidad.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="/generar"
-                className="rounded-2xl bg-teal-700 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-teal-700/30 transition hover:-translate-y-0.5 hover:bg-teal-600"
-              >
-                Empezar ahora
-              </Link>
-              <Link
-                href="/generar/csv"
-                className="rounded-2xl border border-slate-300 bg-white/80 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-teal-500 hover:text-teal-700"
-              >
-                Cargar CSV
-              </Link>
+            <div className="grid gap-4 sm:grid-cols-2">
               <Link
                 href="/generar/pdf"
-                className="rounded-2xl border border-indigo-300 bg-indigo-50 px-6 py-3 text-sm font-semibold text-indigo-700 transition hover:-translate-y-0.5 hover:border-indigo-500 hover:bg-indigo-100"
+                className="group rounded-2xl border-2 border-teal-500 bg-linear-to-br from-teal-600 via-teal-700 to-cyan-700 p-5 text-white shadow-xl shadow-teal-900/30 transition hover:-translate-y-1"
               >
-                Editor PDF
+                <p className="text-xs font-semibold tracking-[0.14em] uppercase text-teal-100">Accion principal</p>
+                <p className="mt-2 text-2xl leading-tight font-bold">Generar permisos PDF</p>
+                <p className="mt-2 text-sm text-teal-50/90">Carga tu plantilla y genera permisos listos para imprimir.</p>
+                <span className="mt-4 inline-flex items-center text-sm font-semibold text-cyan-100 group-hover:text-white">
+                  Ir al generador PDF
+                </span>
               </Link>
+
               <Link
                 href="/generar/qr"
-                className="rounded-2xl border border-sky-300 bg-sky-50 px-6 py-3 text-sm font-semibold text-sky-700 transition hover:-translate-y-0.5 hover:border-sky-500 hover:bg-sky-100"
+                className="group rounded-2xl border border-sky-300 bg-white/90 p-5 text-sky-900 shadow-lg shadow-sky-900/10 transition hover:-translate-y-1 hover:border-sky-500"
               >
-                Diseñar QR
+                <p className="text-xs font-semibold tracking-[0.14em] uppercase text-sky-700">Nueva herramienta</p>
+                <p className="mt-2 text-2xl leading-tight font-bold">QR personalizable</p>
+                <p className="mt-2 text-sm text-slate-600">Define estilo, borde, logo y descarga en PNG o SVG.</p>
+                <span className="mt-4 inline-flex items-center text-sm font-semibold text-sky-700 group-hover:text-sky-900">
+                  Abrir diseño QR
+                </span>
               </Link>
             </div>
           </div>
 
-          <div className="grid gap-4">
-            <div className="overflow-hidden rounded-2xl border-2 border-sky-200 bg-white/80 shadow-xl shadow-sky-700/15">
-              <Image
-                src="/images/landing-qr-hero.svg"
-                alt="Ilustracion del sistema de permisos QR"
-                width={1200}
-                height={800}
-                priority
-                className="h-auto w-full"
-              />
+          <div className="grid gap-4 self-start lg:pt-1">
+            <div className="grid gap-4 rounded-2xl border-2 border-sky-200 bg-white/80 p-3 shadow-xl shadow-sky-700/15 sm:grid-cols-2">
+              <div className="overflow-hidden rounded-xl border border-sky-100 bg-white">
+                <Image
+                  src="/images/landing-qr-hero.svg"
+                  alt="Ilustracion del sistema de permisos QR"
+                  width={1200}
+                  height={800}
+                  priority
+                  className="h-auto w-full"
+                />
+              </div>
+              <div className="overflow-hidden rounded-xl border border-cyan-100 bg-white">
+                <Image
+                  src="/images/imagen.jpg"
+                  alt="Imagen adicional del sistema"
+                  width={1200}
+                  height={800}
+                  priority
+                  className="h-full w-full object-cover"
+                />
+              </div>
             </div>
 
             <article className="rounded-2xl border-2 border-teal-300 bg-linear-to-br from-teal-100 via-cyan-100 to-sky-200 p-5 shadow-xl shadow-teal-700/20">
-              <p className="text-sm font-semibold text-teal-900">Tiempo de respuesta</p>
-              <p className="mt-1 text-3xl font-bold text-teal-800">&lt; 3s</p>
-              <p className="mt-2 text-sm text-teal-950/80">Para generar y descargar un permiso individual.</p>
-            </article>
-
-            <article className="rounded-2xl border-2 border-indigo-300 bg-linear-to-br from-indigo-100 via-violet-100 to-fuchsia-100 p-5 shadow-xl shadow-indigo-700/20">
-              <p className="text-sm font-semibold text-indigo-900">Proceso por lotes</p>
-              <p className="mt-1 text-3xl font-bold text-indigo-800">CSV a ZIP</p>
-              <p className="mt-2 text-sm text-indigo-950/80">Sube una hoja, descarga todos los QR organizados.</p>
+              <p className="text-sm font-semibold text-teal-900">Ruta sugerida</p>
+              <p className="mt-1 text-3xl font-bold text-teal-800">PDF + QR</p>
+              <p className="mt-2 text-sm text-teal-950/80">
+                Genera permisos PDF y luego usa el diseño QR personalizable para campañas o material impreso.
+              </p>
+              <Link
+                href="/generar"
+                className="mt-4 inline-flex items-center rounded-xl border border-teal-500 bg-white/80 px-4 py-2 text-sm font-semibold text-teal-800 transition hover:-translate-y-0.5 hover:border-teal-700 hover:bg-white"
+              >
+                Más opciones
+              </Link>
             </article>
           </div>
         </div>

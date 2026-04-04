@@ -91,7 +91,7 @@ export default function RootLayout({
           <footer className="border-t border-slate-200/80 bg-white/70 backdrop-blur-xl">
             <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-3 px-5 py-5 text-center sm:flex-row sm:px-8 sm:text-left lg:px-10">
               <p className="text-xs text-slate-600">
-                © {currentYear} Sistema de Permisos QR. Todos los derechos reservados.
+                © {currentYear} Sistema de Permisos QR. Todos los derechos reservados. <span className="font-semibold text-slate-700">by @nomikugg</span>
               </p>
 
               <a
