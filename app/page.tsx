@@ -49,6 +49,12 @@ export default function Home() {
               >
                 Editor PDF
               </Link>
+              <Link
+                href="/generar/qr"
+                className="rounded-2xl border border-sky-300 bg-sky-50 px-6 py-3 text-sm font-semibold text-sky-700 transition hover:-translate-y-0.5 hover:border-sky-500 hover:bg-sky-100"
+              >
+                Diseñar QR
+              </Link>
             </div>
           </div>
 

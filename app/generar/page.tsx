@@ -30,10 +30,10 @@ export default function Page() {
           </Link>
         </div>
 
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
+        <div className="mt-8 grid gap-4 md:grid-cols-4">
           <Link
             href="/generar/individual"
-            className="group rounded-2xl border-2 border-cyan-300 bg-gradient-to-br from-cyan-100 via-sky-100 to-blue-200 p-5 shadow-xl shadow-cyan-700/20 transition hover:-translate-y-1 hover:border-cyan-500"
+            className="group rounded-2xl border-2 border-cyan-300 bg-linear-to-br from-cyan-100 via-sky-100 to-blue-200 p-5 shadow-xl shadow-cyan-700/20 transition hover:-translate-y-1 hover:border-cyan-500"
           >
             <p className="text-xs font-semibold tracking-[0.16em] text-cyan-900 uppercase">Uno por uno</p>
             <h2 className="mt-2 text-xl font-bold text-cyan-950">Generar individual</h2>
@@ -47,7 +47,7 @@ export default function Page() {
 
           <Link
             href="/generar/csv"
-            className="group rounded-2xl border-2 border-fuchsia-300 bg-gradient-to-br from-fuchsia-100 via-violet-100 to-indigo-100 p-5 shadow-xl shadow-fuchsia-700/20 transition hover:-translate-y-1 hover:border-fuchsia-500"
+            className="group rounded-2xl border-2 border-fuchsia-300 bg-linear-to-br from-fuchsia-100 via-violet-100 to-indigo-100 p-5 shadow-xl shadow-fuchsia-700/20 transition hover:-translate-y-1 hover:border-fuchsia-500"
           >
             <p className="text-xs font-semibold tracking-[0.16em] text-fuchsia-900 uppercase">Lote completo</p>
             <h2 className="mt-2 text-xl font-bold text-fuchsia-950">Generar por CSV</h2>
@@ -61,7 +61,7 @@ export default function Page() {
 
           <Link
             href="/generar/pdf"
-            className="group rounded-2xl border-2 border-emerald-300 bg-gradient-to-br from-emerald-100 via-lime-100 to-teal-100 p-5 shadow-xl shadow-emerald-700/20 transition hover:-translate-y-1 hover:border-emerald-500"
+            className="group rounded-2xl border-2 border-emerald-300 bg-linear-to-br from-emerald-100 via-lime-100 to-teal-100 p-5 shadow-xl shadow-emerald-700/20 transition hover:-translate-y-1 hover:border-emerald-500"
           >
             <p className="text-xs font-semibold tracking-[0.16em] text-emerald-900 uppercase">Template PDF</p>
             <h2 className="mt-2 text-xl font-bold text-emerald-950">Generar desde PDF + CSV</h2>
@@ -70,6 +70,20 @@ export default function Page() {
             </p>
             <span className="mt-5 inline-block text-sm font-semibold text-emerald-900 transition group-hover:translate-x-1">
               Abrir editor PDF
+            </span>
+          </Link>
+
+          <Link
+            href="/generar/qr"
+            className="group rounded-2xl border-2 border-sky-300 bg-linear-to-br from-sky-100 via-cyan-100 to-teal-100 p-5 shadow-xl shadow-sky-700/20 transition hover:-translate-y-1 hover:border-sky-500"
+          >
+            <p className="text-xs font-semibold tracking-[0.16em] text-sky-900 uppercase">Diseño libre</p>
+            <h2 className="mt-2 text-xl font-bold text-sky-950">Generador QR personalizado</h2>
+            <p className="mt-2 text-sm text-slate-600">
+              Crea QR por enlace, cambia colores, formas y agrega logo al centro.
+            </p>
+            <span className="mt-5 inline-block text-sm font-semibold text-sky-900 transition group-hover:translate-x-1">
+              Abrir diseñador
             </span>
           </Link>
         </div>
