@@ -14,6 +14,9 @@ create index if not exists idx_permit_records_placa_normalized
 create index if not exists idx_permit_records_created_at
   on public.permit_records (created_at desc);
 
+-- Para modo historial: permitir multiples versiones por placa.
+drop index if exists public.uq_permit_records_placa_normalized;
+
 -- Seguridad: el backend usa service role key, por eso negamos acceso anon.
 alter table public.permit_records enable row level security;
 

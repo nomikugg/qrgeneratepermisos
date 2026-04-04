@@ -3,6 +3,7 @@ import { join } from "path";
 import { clean, type QRInputRow } from "@/lib/qrGenerator";
 
 export type PermitSearchRecord = {
+  id?: number;
   placa: string;
   placaNormalized: string;
   createdAt: number;
@@ -69,9 +70,11 @@ type SupabaseInsertRow = {
   placa_normalized: string;
   job_id: string;
   data: Record<string, string>;
+  created_at: string;
 };
 
 type SupabaseSelectRow = {
+  id: number;
   placa: string;
   placa_normalized: string;
   job_id: string;
@@ -84,7 +87,7 @@ async function insertRowsInSupabase(rows: SupabaseInsertRow[]): Promise<void> {
     return;
   }
 
-  const endpoint = `${SUPABASE_URL}/rest/v1/${SUPABASE_TABLE}`;
+  const endpoint = new URL(`${SUPABASE_URL}/rest/v1/${SUPABASE_TABLE}`);
   const response = await fetch(endpoint, {
     method: "POST",
     headers: {
@@ -103,13 +106,13 @@ async function insertRowsInSupabase(rows: SupabaseInsertRow[]): Promise<void> {
   }
 }
 
-async function searchRowsInSupabase(normalizedQuery: string, limit: number): Promise<PermitSearchRecord[]> {
+async function searchRowsInSupabase(normalizedQuery: string, limit: number, history = false): Promise<PermitSearchRecord[]> {
   if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
     return [];
   }
 
   const endpoint = new URL(`${SUPABASE_URL}/rest/v1/${SUPABASE_TABLE}`);
-  endpoint.searchParams.set("select", "placa,placa_normalized,job_id,data,created_at");
+  endpoint.searchParams.set("select", "id,placa,placa_normalized,job_id,data,created_at");
   endpoint.searchParams.set("placa_normalized", `ilike.*${normalizedQuery}*`);
   endpoint.searchParams.set("order", "created_at.desc");
   endpoint.searchParams.set("limit", String(limit));
@@ -130,19 +133,61 @@ async function searchRowsInSupabase(normalizedQuery: string, limit: number): Pro
 
   const rows = (await response.json()) as SupabaseSelectRow[];
 
-  return rows.map((row) => ({
+  const mapped = rows.map((row) => ({
+    id: row.id,
     placa: row.placa,
     placaNormalized: row.placa_normalized,
     createdAt: Number.isFinite(Date.parse(row.created_at)) ? Date.parse(row.created_at) : Date.now(),
     jobId: row.job_id,
     data: row.data || {},
   }));
+
+  if (history) {
+    return mapped.slice(0, limit);
+  }
+
+  // Keep only the latest row for each plate to avoid showing old versions.
+  const uniqueByPlate = new Map<string, PermitSearchRecord>();
+  for (const record of mapped) {
+    if (!uniqueByPlate.has(record.placaNormalized)) {
+      uniqueByPlate.set(record.placaNormalized, record);
+    }
+  }
+
+  return Array.from(uniqueByPlate.values()).slice(0, limit);
+}
+
+async function updateRowInLocalStore(jobId: string, createdAt: number, data: Record<string, string>): Promise<void> {
+  const placa = clean(data.placa);
+  const placaNormalized = normalizePlate(data.placa);
+
+  writeQueue = writeQueue.then(async () => {
+    const currentStore = await readStore();
+    const updatedRecord: PermitSearchRecord = {
+      placa,
+      placaNormalized,
+      createdAt: Date.now(),
+      jobId,
+      data,
+    };
+
+    currentStore.records.unshift(updatedRecord);
+
+    currentStore.records.sort((a, b) => b.createdAt - a.createdAt);
+
+    await writeStore(currentStore);
+  });
+
+  await writeQueue;
 }
 
 async function appendRowsToLocalStore(recordsToInsert: PermitSearchRecord[]): Promise<void> {
   writeQueue = writeQueue.then(async () => {
     const currentStore = await readStore();
+
     currentStore.records.unshift(...recordsToInsert);
+
+    currentStore.records.sort((a, b) => b.createdAt - a.createdAt);
     await writeStore(currentStore);
   });
 
@@ -185,6 +230,7 @@ export async function appendPermitRows(rows: QRInputRow[], jobId: string): Promi
           placa_normalized: record.placaNormalized,
           job_id: record.jobId,
           data: record.data,
+          created_at: new Date(record.createdAt).toISOString(),
         }))
       );
       return;
@@ -196,24 +242,76 @@ export async function appendPermitRows(rows: QRInputRow[], jobId: string): Promi
   await appendRowsToLocalStore(recordsToInsert);
 }
 
-export async function searchPermitsByPlate(plateQuery: string, limit = 50): Promise<PermitSearchRecord[]> {
+export async function searchPermitsByPlate(
+  plateQuery: string,
+  limit = 50,
+  options?: { history?: boolean }
+): Promise<PermitSearchRecord[]> {
   const normalizedQuery = normalizePlate(plateQuery);
   if (!normalizedQuery) {
     return [];
   }
 
+  const showHistory = options?.history === true;
+
   if (hasSupabaseConfig()) {
     try {
-      return await searchRowsInSupabase(normalizedQuery, limit);
+      return await searchRowsInSupabase(normalizedQuery, limit, showHistory);
     } catch (error) {
       console.error("Supabase search failed, falling back to local JSON store:", error);
     }
   }
 
   const currentStore = await readStore();
-
-  return currentStore.records
+  const filtered = currentStore.records
     .filter((record) => record.placaNormalized.includes(normalizedQuery))
-    .sort((a, b) => b.createdAt - a.createdAt)
-    .slice(0, limit);
+    .sort((a, b) => b.createdAt - a.createdAt);
+
+  if (showHistory) {
+    return filtered.slice(0, limit);
+  }
+
+  const uniqueByPlate = new Map<string, PermitSearchRecord>();
+  for (const record of filtered) {
+    if (!uniqueByPlate.has(record.placaNormalized)) {
+      uniqueByPlate.set(record.placaNormalized, record);
+    }
+  }
+
+  return Array.from(uniqueByPlate.values()).slice(0, limit);
+}
+
+export async function updatePermitRecord(params: {
+  id?: number;
+  jobId: string;
+  createdAt: number;
+  data: Record<string, string>;
+}): Promise<void> {
+  const normalizedData: Record<string, string> = {};
+
+  for (const [key, value] of Object.entries(params.data)) {
+    normalizedData[key] = clean(value);
+  }
+
+  const placa = clean(normalizedData.placa);
+  const placaNormalized = normalizePlate(normalizedData.placa);
+
+  if (hasSupabaseConfig()) {
+    try {
+      await insertRowsInSupabase([
+        {
+          placa,
+          placa_normalized: placaNormalized,
+          job_id: params.jobId,
+          data: normalizedData,
+          created_at: new Date().toISOString(),
+        },
+      ]);
+      return;
+    } catch (error) {
+      console.error("Supabase version insert failed, falling back to local JSON store:", error);
+    }
+  }
+
+  await updateRowInLocalStore(params.jobId, params.createdAt, normalizedData);
 }

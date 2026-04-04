@@ -30,13 +30,13 @@ export default function Home() {
               personalizable en alta calidad.
             </p>
 
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-5 md:grid-cols-2">
               <Link
                 href="/generar/pdf"
-                className="group rounded-2xl border-2 border-teal-500 bg-linear-to-br from-teal-600 via-teal-700 to-cyan-700 p-5 text-white shadow-xl shadow-teal-900/30 transition hover:-translate-y-1"
+                className="group min-h-56 rounded-2xl border-2 border-teal-500 bg-linear-to-br from-teal-600 via-teal-700 to-cyan-700 p-5 text-white shadow-xl shadow-teal-900/30 transition hover:-translate-y-1"
               >
                 <p className="text-xs font-semibold tracking-[0.14em] uppercase text-teal-100">Accion principal</p>
-                <p className="mt-2 text-2xl leading-tight font-bold">Generar permisos PDF</p>
+                <p className="mt-2 text-xl leading-tight font-bold lg:text-2xl">Generar permisos PDF</p>
                 <p className="mt-2 text-sm text-teal-50/90">Carga tu plantilla y genera permisos listos para imprimir.</p>
                 <span className="mt-4 inline-flex items-center text-sm font-semibold text-cyan-100 group-hover:text-white">
                   Ir al generador PDF
@@ -45,10 +45,10 @@ export default function Home() {
 
               <Link
                 href="/generar/qr"
-                className="group rounded-2xl border border-sky-300 bg-white/90 p-5 text-sky-900 shadow-lg shadow-sky-900/10 transition hover:-translate-y-1 hover:border-sky-500"
+                className="group min-h-56 rounded-2xl border border-sky-300 bg-white/90 p-5 text-sky-900 shadow-lg shadow-sky-900/10 transition hover:-translate-y-1 hover:border-sky-500"
               >
                 <p className="text-xs font-semibold tracking-[0.14em] uppercase text-sky-700">Nueva herramienta</p>
-                <p className="mt-2 text-2xl leading-tight font-bold">QR personalizable</p>
+                <p className="mt-2 text-xl leading-tight font-bold lg:text-2xl">QR personalizable</p>
                 <p className="mt-2 text-sm text-slate-600">Define estilo, borde, logo y descarga en PNG o SVG.</p>
                 <span className="mt-4 inline-flex items-center text-sm font-semibold text-sky-700 group-hover:text-sky-900">
                   Abrir diseño QR
@@ -58,6 +58,16 @@ export default function Home() {
           </div>
 
           <div className="grid gap-4 self-start lg:pt-1">
+            <div className="flex justify-start lg:justify-end">
+              <Link
+                href="/buscar"
+                className="group inline-flex items-center gap-2 rounded-full border border-fuchsia-300 bg-white px-5 py-2.5 text-sm font-semibold text-fuchsia-800 shadow-lg shadow-fuchsia-900/10 transition hover:-translate-y-0.5 hover:border-fuchsia-500 hover:bg-fuchsia-50"
+              >
+                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-fuchsia-100 text-[11px] font-bold text-fuchsia-700">QR</span>
+                Buscar por placa
+              </Link>
+            </div>
+
             <div className="grid gap-4 rounded-2xl border-2 border-sky-200 bg-white/80 p-3 shadow-xl shadow-sky-700/15 sm:grid-cols-2">
               <div className="overflow-hidden rounded-xl border border-sky-100 bg-white">
                 <Image
