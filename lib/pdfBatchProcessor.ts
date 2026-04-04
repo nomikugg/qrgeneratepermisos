@@ -2,6 +2,7 @@ import archiver from "archiver";
 import csv from "csv-parser";
 import { Readable } from "stream";
 import { fillTemplatePdfWithRow, type QRPlacement } from "@/lib/pdfGenerator";
+import { appendPermitRows } from "@/lib/permitSearchStore";
 import type { QRInputRow } from "@/lib/qrGenerator";
 import { updatePdfBatchJob, saveJobZipFile } from "@/lib/pdfBatchJobs";
 
@@ -38,6 +39,7 @@ export async function processPdfBatchJob(
   const archive = archiver("zip", { zlib: { level: 9 } });
   const chunks: Buffer[] = [];
   const fileNameCounter = new Map<string, number>();
+  const processedRowsForSearch: QRInputRow[] = [];
 
   archive.on("data", (chunk: Buffer) => chunks.push(chunk));
 
@@ -77,6 +79,7 @@ export async function processPdfBatchJob(
               : result.fileName.replace(/\.pdf$/i, `-${currentCount + 1}.pdf`);
 
           archive.append(Buffer.from(result.pdfBytes), { name: finalName });
+          processedRowsForSearch.push(row);
 
           processedRows += 1;
           await updatePdfBatchJob(jobId, {
@@ -105,6 +108,7 @@ export async function processPdfBatchJob(
   const zipBytes = await finalizeZipPromise;
 
   await saveJobZipFile(jobId, zipBytes);
+  await appendPermitRows(processedRowsForSearch, jobId);
 
   await updatePdfBatchJob(jobId, {
     status: "completed",

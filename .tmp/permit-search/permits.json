@@ -1,0 +1,124 @@
+{
+  "records": [
+    {
+      "placa": "4034XAA",
+      "placaNormalized": "4034XAA",
+      "createdAt": 1775316321164,
+      "jobId": "f3704f73-f9ec-412e-94a5-eb0d908e5d85",
+      "data": {
+        "placa": "4034XAA",
+        "modelo": "4 RUNNER",
+        "marca": "TOYOTA",
+        "anio": "2015",
+        "color": "ROJO MICA METAL",
+        "licencia": "1083860",
+        "conductor": "OSCAR EDUARDO ARMAS ZELAYA"
+      }
+    },
+    {
+      "placa": "4263EAR",
+      "placaNormalized": "4263EAR",
+      "createdAt": 1775316321164,
+      "jobId": "f3704f73-f9ec-412e-94a5-eb0d908e5d85",
+      "data": {
+        "placa": "4263EAR",
+        "modelo": "TUCSON",
+        "marca": "HYUNDAI",
+        "anio": "2016",
+        "color": "GUINDO",
+        "licencia": "5667064",
+        "conductor": "CARLOS ALBERTO DIAZ CRESPO"
+      }
+    },
+    {
+      "placa": "2284XLD",
+      "placaNormalized": "2284XLD",
+      "createdAt": 1775316321164,
+      "jobId": "f3704f73-f9ec-412e-94a5-eb0d908e5d85",
+      "data": {
+        "placa": "2284XLD",
+        "modelo": "GRAND CHEROKEE",
+        "marca": "JEEP",
+        "anio": "2001",
+        "color": "BLANCO",
+        "licencia": "7566264",
+        "conductor": "ABIGAIL ZULEMA BARRERO"
+      }
+    },
+    {
+      "placa": "5571CSB",
+      "placaNormalized": "5571CSB",
+      "createdAt": 1775316321164,
+      "jobId": "f3704f73-f9ec-412e-94a5-eb0d908e5d85",
+      "data": {
+        "placa": "5571CSB",
+        "modelo": "L200",
+        "marca": "MITSUBISHI",
+        "anio": "2020",
+        "color": "AZUL METALICO",
+        "licencia": "5633621",
+        "conductor": "WILSON DURAN ARANCIBIA"
+      }
+    },
+    {
+      "placa": "787CUC (1)",
+      "placaNormalized": "787CUC1",
+      "createdAt": 1775316321164,
+      "jobId": "f3704f73-f9ec-412e-94a5-eb0d908e5d85",
+      "data": {
+        "placa": "787CUC (1)",
+        "modelo": "ACCENT",
+        "marca": "HYUNDAI",
+        "anio": "1996",
+        "color": "VERDE",
+        "licencia": "1087868",
+        "conductor": "JOHNNY WILFREDO TORREZ ESPINOZA"
+      }
+    },
+    {
+      "placa": "6299CPE",
+      "placaNormalized": "6299CPE",
+      "createdAt": 1775316321164,
+      "jobId": "f3704f73-f9ec-412e-94a5-eb0d908e5d85",
+      "data": {
+        "placa": "6299CPE",
+        "modelo": "JS4",
+        "marca": "JAC",
+        "anio": "2024",
+        "color": "ROJO",
+        "licencia": "10313542",
+        "conductor": "MARIO LUIS GONZALES PORCEL"
+      }
+    },
+    {
+      "placa": "2978GNU",
+      "placaNormalized": "2978GNU",
+      "createdAt": 1775316321164,
+      "jobId": "f3704f73-f9ec-412e-94a5-eb0d908e5d85",
+      "data": {
+        "placa": "2978GNU",
+        "modelo": "WRANGLER",
+        "marca": "JEEP",
+        "anio": "2011",
+        "color": "NEGRO",
+        "licencia": "1113650",
+        "conductor": "JENNY BEATRIZ CAMPERO RODRIGUEZ"
+      }
+    },
+    {
+      "placa": "4742KAI",
+      "placaNormalized": "4742KAI",
+      "createdAt": 1775316321164,
+      "jobId": "f3704f73-f9ec-412e-94a5-eb0d908e5d85",
+      "data": {
+        "placa": "4742KAI",
+        "modelo": "IGNIS",
+        "marca": "SUZUKI",
+        "anio": "2018",
+        "color": "ROJO",
+        "licencia": "4093213",
+        "conductor": "XIMENA MARGARITA CUETO AVENDAÑO"
+      }
+    }
+  ]
+}

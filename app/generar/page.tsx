@@ -22,12 +22,20 @@ export default function Page() {
         </p>
 
         <div className="mt-6">
-          <Link
-            href="/generar/pdf"
-            className="inline-flex rounded-xl border border-emerald-300 bg-emerald-50 px-4 py-2 text-sm font-semibold text-emerald-800 transition hover:-translate-y-0.5 hover:border-emerald-500 hover:bg-emerald-100"
-          >
-            Ir al editor PDF
-          </Link>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="/generar/pdf"
+              className="inline-flex rounded-xl border border-emerald-300 bg-emerald-50 px-4 py-2 text-sm font-semibold text-emerald-800 transition hover:-translate-y-0.5 hover:border-emerald-500 hover:bg-emerald-100"
+            >
+              Ir al editor PDF
+            </Link>
+            <Link
+              href="/buscar"
+              className="inline-flex rounded-xl border border-cyan-300 bg-cyan-50 px-4 py-2 text-sm font-semibold text-cyan-800 transition hover:-translate-y-0.5 hover:border-cyan-500 hover:bg-cyan-100"
+            >
+              Buscar permisos por placa
+            </Link>
+          </div>
         </div>
 
         <div className="mt-8 grid gap-4 md:grid-cols-4">
