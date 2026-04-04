@@ -1,4 +1,6 @@
+import { randomUUID } from "crypto";
 import { generatePdfBatchZip } from "@/lib/pdfBatchProcessor";
+import { appendPermitRows } from "@/lib/permitSearchStore";
 import type { QRPlacement } from "@/lib/pdfGenerator";
 
 function parseNumberField(value: FormDataEntryValue | null, fallback: number): number {
@@ -27,7 +29,8 @@ export async function POST(req: Request): Promise<Response> {
     const templatePdfBuffer = Buffer.from(await templatePdf.arrayBuffer());
     const csvBuffer = Buffer.from(await csvFile.arrayBuffer());
 
-    const { zipBytes } = await generatePdfBatchZip(templatePdfBuffer, csvBuffer, placement);
+    const { zipBytes, processedRowsForSearch } = await generatePdfBatchZip(templatePdfBuffer, csvBuffer, placement);
+    await appendPermitRows(processedRowsForSearch, randomUUID());
     const normalizedZipBytes = new Uint8Array(zipBytes.length);
     normalizedZipBytes.set(zipBytes);
     const zipBlob = new Blob([normalizedZipBytes.buffer], { type: "application/zip" });

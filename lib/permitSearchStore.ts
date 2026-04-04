@@ -139,6 +139,16 @@ async function searchRowsInSupabase(normalizedQuery: string, limit: number): Pro
   }));
 }
 
+async function appendRowsToLocalStore(recordsToInsert: PermitSearchRecord[]): Promise<void> {
+  writeQueue = writeQueue.then(async () => {
+    const currentStore = await readStore();
+    currentStore.records.unshift(...recordsToInsert);
+    await writeStore(currentStore);
+  });
+
+  await writeQueue;
+}
+
 export async function appendPermitRows(rows: QRInputRow[], jobId: string): Promise<void> {
   if (rows.length === 0) {
     return;
@@ -168,24 +178,22 @@ export async function appendPermitRows(rows: QRInputRow[], jobId: string): Promi
   }
 
   if (hasSupabaseConfig()) {
-    await insertRowsInSupabase(
-      recordsToInsert.map((record) => ({
-        placa: record.placa,
-        placa_normalized: record.placaNormalized,
-        job_id: record.jobId,
-        data: record.data,
-      }))
-    );
-    return;
+    try {
+      await insertRowsInSupabase(
+        recordsToInsert.map((record) => ({
+          placa: record.placa,
+          placa_normalized: record.placaNormalized,
+          job_id: record.jobId,
+          data: record.data,
+        }))
+      );
+      return;
+    } catch (error) {
+      console.error("Supabase insert failed, falling back to local JSON store:", error);
+    }
   }
 
-  writeQueue = writeQueue.then(async () => {
-    const currentStore = await readStore();
-    currentStore.records.unshift(...recordsToInsert);
-    await writeStore(currentStore);
-  });
-
-  await writeQueue;
+  await appendRowsToLocalStore(recordsToInsert);
 }
 
 export async function searchPermitsByPlate(plateQuery: string, limit = 50): Promise<PermitSearchRecord[]> {
@@ -195,7 +203,11 @@ export async function searchPermitsByPlate(plateQuery: string, limit = 50): Prom
   }
 
   if (hasSupabaseConfig()) {
-    return searchRowsInSupabase(normalizedQuery, limit);
+    try {
+      return await searchRowsInSupabase(normalizedQuery, limit);
+    } catch (error) {
+      console.error("Supabase search failed, falling back to local JSON store:", error);
+    }
   }
 
   const currentStore = await readStore();
