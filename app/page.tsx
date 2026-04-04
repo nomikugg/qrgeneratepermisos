@@ -9,6 +9,11 @@ export default function Home() {
       <div className="blob-bg bottom-8 left-1/3 h-56 w-56 bg-sky-300/60 [animation-delay:2s]" />
 
       <section className="fade-rise relative mx-auto flex w-full max-w-6xl flex-col gap-8 rounded-3xl border border-white/60 bg-white/75 p-6 shadow-[0_24px_80px_-36px_rgba(15,118,110,0.45)] backdrop-blur-lg sm:p-9 lg:p-12">
+        <div className="w-fit rounded-2xl border border-cyan-200 bg-white/85 px-4 py-3 shadow-lg shadow-cyan-700/10 backdrop-blur-sm">
+          <p className="text-[11px] font-semibold tracking-[0.18em] text-cyan-700 uppercase">SISTEMAS - TI</p>
+          <p className="mt-1 text-sm font-medium text-slate-700">Automatización, control y auditoría digital</p>
+        </div>
+
         <p className="inline-flex w-fit items-center rounded-full border border-teal-300/60 bg-teal-50 px-4 py-1 text-xs font-semibold tracking-[0.18em] text-teal-800 uppercase">
           Plataforma de permisos vehiculares
         </p>
@@ -59,13 +64,13 @@ export default function Home() {
               />
             </div>
 
-            <article className="rounded-2xl border-2 border-teal-300 bg-gradient-to-br from-teal-100 via-cyan-100 to-sky-200 p-5 shadow-xl shadow-teal-700/20">
+            <article className="rounded-2xl border-2 border-teal-300 bg-linear-to-br from-teal-100 via-cyan-100 to-sky-200 p-5 shadow-xl shadow-teal-700/20">
               <p className="text-sm font-semibold text-teal-900">Tiempo de respuesta</p>
               <p className="mt-1 text-3xl font-bold text-teal-800">&lt; 3s</p>
               <p className="mt-2 text-sm text-teal-950/80">Para generar y descargar un permiso individual.</p>
             </article>
 
-            <article className="rounded-2xl border-2 border-indigo-300 bg-gradient-to-br from-indigo-100 via-violet-100 to-fuchsia-100 p-5 shadow-xl shadow-indigo-700/20">
+            <article className="rounded-2xl border-2 border-indigo-300 bg-linear-to-br from-indigo-100 via-violet-100 to-fuchsia-100 p-5 shadow-xl shadow-indigo-700/20">
               <p className="text-sm font-semibold text-indigo-900">Proceso por lotes</p>
               <p className="mt-1 text-3xl font-bold text-indigo-800">CSV a ZIP</p>
               <p className="mt-2 text-sm text-indigo-950/80">Sube una hoja, descarga todos los QR organizados.</p>
