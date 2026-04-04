@@ -18,7 +18,18 @@ export type PdfBatchJob = {
 
 const JOB_TTL_MS = 1000 * 60 * 60;
 const jobs = new Map<string, PdfBatchJob>();
-const JOB_DIR = join(process.cwd(), ".tmp", "pdf-batch-jobs");
+
+function resolveJobDir(): string {
+  // Vercel runtime: /var/task is read-only; /tmp is writable (ephemeral).
+  if (process.env.VERCEL) {
+    const tempBase = process.env.TMPDIR || process.env.TEMP || "/tmp";
+    return join(tempBase, "pdf-batch-jobs");
+  }
+
+  return join(process.cwd(), ".tmp", "pdf-batch-jobs");
+}
+
+const JOB_DIR = resolveJobDir();
 
 async function ensureJobDir() {
   try {
