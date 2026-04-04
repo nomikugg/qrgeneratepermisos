@@ -29,15 +29,18 @@ function setTextFieldIfExists(
     return;
   }
 
-  const textField = form.getTextField(matchedName);
-  textField.setText(value);
+  try {
+    const textField = form.getTextField(matchedName);
+    textField.setText(normalizedValue);
+  } catch {
+    // Ignora campos no-texto con el mismo nombre.
+  }
 }
 
 export async function fillTemplatePdfWithRow(
   templatePdfBuffer: Buffer,
   row: QRInputRow,
-  placement: QRPlacement,
-  flatten: boolean
+  placement: QRPlacement
 ): Promise<FilledPdfResult> {
   const data = generateQRData(row);
   const pdfDoc = await PDFDocument.load(templatePdfBuffer);
@@ -45,7 +48,6 @@ export async function fillTemplatePdfWithRow(
   const fieldNames = new Set(form.getFields().map((field) => field.getName()));
   const fieldNameByLowercase = new Map(Array.from(fieldNames).map((name) => [name.toLowerCase(), name]));
 
-  // Fill known fields if present in the AcroForm.
   setTextFieldIfExists(fieldNames, fieldNameByLowercase, form, "placa", data.placa);
   setTextFieldIfExists(fieldNames, fieldNameByLowercase, form, "modelo", data.modelo);
   setTextFieldIfExists(fieldNames, fieldNameByLowercase, form, "marca", data.marca);
@@ -79,53 +81,24 @@ export async function fillTemplatePdfWithRow(
       continue;
     }
 
-    setTextFieldIfExists(
-      fieldNames,
-      fieldNameByLowercase,
-      form,
-      String(rawKey),
-      clean(rawValue)
-    );
+    setTextFieldIfExists(fieldNames, fieldNameByLowercase, form, String(rawKey), clean(rawValue));
   }
 
   const qrPngBuffer = await QRCode.toBuffer(data.finalString, {
-    margin: 1,
-    width: Math.max(64, Math.round(placement.width)),
+    margin: 4,
+    width: Math.max(300, Math.round(placement.width)),
   });
 
   const qrImage = await pdfDoc.embedPng(qrPngBuffer);
-  const resolvedQrFieldName = placement.qrFieldName
-    ? fieldNameByLowercase.get(placement.qrFieldName.toLowerCase())
-    : undefined;
+  const pages = pdfDoc.getPages();
+  const page = pages[0];
 
-  let qrPlacedInFormField = false;
-
-  if (resolvedQrFieldName) {
-    try {
-      // AcroForm QR fields should be created as a button field in the template.
-      const qrButtonField = form.getButton(resolvedQrFieldName);
-      qrButtonField.setImage(qrImage);
-      qrPlacedInFormField = true;
-    } catch {
-      qrPlacedInFormField = false;
-    }
-  }
-
-  if (!qrPlacedInFormField) {
-    const pages = pdfDoc.getPages();
-    const page = pages[0];
-
-    page.drawImage(qrImage, {
-      x: placement.x,
-      y: placement.y,
-      width: placement.width,
-      height: placement.height,
-    });
-  }
-
-  if (flatten) {
-    form.flatten();
-  }
+  page.drawImage(qrImage, {
+    x: placement.x,
+    y: placement.y,
+    width: placement.width,
+    height: placement.height,
+  });
 
   const pdfBytes = await pdfDoc.save();
   const fileName = `${data.placa || "sin-placa"}.pdf`;

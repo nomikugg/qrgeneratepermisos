@@ -23,8 +23,7 @@ export async function processPdfBatchJob(
   jobId: string,
   templatePdfBuffer: Buffer,
   csvBuffer: Buffer,
-  placement: QRPlacement,
-  flatten: boolean
+  placement: QRPlacement
 ): Promise<void> {
   await updatePdfBatchJob(jobId, { status: "running", message: "Contando filas del CSV..." });
   const totalRows = await countCsvRows(csvBuffer);
@@ -68,7 +67,7 @@ export async function processPdfBatchJob(
         activeTasks += 1;
 
         void (async () => {
-          const result = await fillTemplatePdfWithRow(templatePdfBuffer, row, placement, flatten);
+          const result = await fillTemplatePdfWithRow(templatePdfBuffer, row, placement);
           const currentCount = fileNameCounter.get(result.fileName) ?? 0;
           fileNameCounter.set(result.fileName, currentCount + 1);
 

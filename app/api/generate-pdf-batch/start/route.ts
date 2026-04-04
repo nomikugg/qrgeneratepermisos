@@ -24,13 +24,12 @@ export async function POST(req: Request): Promise<Response> {
     height: Math.max(32, parseNumberField(formData.get("qrHeight"), 120)),
   };
 
-  const flatten = String(formData.get("flatten") || "true") !== "false";
   const templatePdfBuffer = Buffer.from(await templatePdf.arrayBuffer());
   const csvBuffer = Buffer.from(await csvFile.arrayBuffer());
 
   const job = await createPdfBatchJob();
 
-  void processPdfBatchJob(job.id, templatePdfBuffer, csvBuffer, placement, flatten)
+  void processPdfBatchJob(job.id, templatePdfBuffer, csvBuffer, placement)
     .catch((error: unknown) => {
       const errorMessage = error instanceof Error ? error.message : "Error desconocido";
       void updatePdfBatchJob(job.id, {

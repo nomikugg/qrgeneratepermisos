@@ -7,7 +7,6 @@ import { FormEvent, useEffect, useState } from "react";
 type JobStatus = "pending" | "running" | "completed" | "failed";
 
 type PlacementState = {
-  qrFieldName: string;
   qrX: string;
   qrY: string;
   qrWidth: string;
@@ -16,11 +15,10 @@ type PlacementState = {
 };
 
 const initialPlacement: PlacementState = {
-  qrFieldName: "qr",
-  qrX: "420",
-  qrY: "470",
-  qrWidth: "120",
-  qrHeight: "120",
+  qrX: "670",
+  qrY: "130",
+  qrWidth: "112",
+  qrHeight: "112",
   flatten: true,
 };
 
@@ -105,7 +103,6 @@ export default function PdfGeneratorPage() {
       const formData = new FormData();
       formData.append("templatePdf", templatePdf);
       formData.append("csvFile", csvFile);
-      formData.append("qrFieldName", placement.qrFieldName);
       formData.append("qrX", String(placement.qrX));
       formData.append("qrY", String(placement.qrY));
       formData.append("qrWidth", String(placement.qrWidth));
@@ -239,17 +236,6 @@ export default function PdfGeneratorPage() {
             <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
               <p className="mb-3 text-sm font-semibold text-slate-800">Ubicacion del QR</p>
 
-              <label className="mb-3 block">
-                <span className="mb-1 block text-xs font-semibold text-slate-600 uppercase">Campo AcroForm QR (opcional)</span>
-                <input
-                  type="text"
-                  value={placement.qrFieldName}
-                  onChange={(e) => onPlacementChange("qrFieldName", e.target.value)}
-                  placeholder="Ejemplo: qr"
-                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-800 outline-none transition focus:border-indigo-500 focus:bg-white focus:ring-4 focus:ring-indigo-100"
-                />
-              </label>
-
               <div className="grid grid-cols-2 gap-3">
                 <NumberField label="X" value={placement.qrX} onChange={(value) => onPlacementChange("qrX", value)} />
                 <NumberField label="Y" value={placement.qrY} onChange={(value) => onPlacementChange("qrY", value)} />
@@ -266,9 +252,7 @@ export default function PdfGeneratorPage() {
                 Bloquear campos del PDF al final (flatten)
               </label>
 
-              <p className="mt-2 text-xs text-slate-500">
-                Si existe ese campo y es tipo boton, el QR se incrusta ahi. Si no, se usan X/Y/Ancho/Alto.
-              </p>
+              <p className="mt-2 text-xs text-slate-500">El QR se dibuja usando X, Y, Ancho y Alto.</p>
             </div>
 
             <button
