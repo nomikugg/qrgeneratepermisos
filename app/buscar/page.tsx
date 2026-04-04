@@ -20,6 +20,33 @@ function getRecordInstanceKey(record: SearchRecord, index: number): string {
   return `${getRecordKey(record)}-${index}`;
 }
 
+const DISPLAY_FIELD_ORDER = ["placa", "modelo", "marca", "anio", "color", "licencia", "conductor"];
+
+function normalizeFieldName(value: string): string {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, "");
+}
+
+function sortFieldEntries(data: Record<string, string>): Array<[string, string]> {
+  const rankMap = new Map<string, number>(
+    DISPLAY_FIELD_ORDER.map((key, index) => [normalizeFieldName(key), index])
+  );
+
+  return Object.entries(data).sort(([fieldA], [fieldB]) => {
+    const rankA = rankMap.get(normalizeFieldName(fieldA)) ?? Number.MAX_SAFE_INTEGER;
+    const rankB = rankMap.get(normalizeFieldName(fieldB)) ?? Number.MAX_SAFE_INTEGER;
+
+    if (rankA !== rankB) {
+      return rankA - rankB;
+    }
+
+    return fieldA.localeCompare(fieldB, "es");
+  });
+}
+
 export default function BuscarPermisosPage() {
   const [placa, setPlaca] = useState("");
   const [hasSearched, setHasSearched] = useState(false);
@@ -318,9 +345,9 @@ export default function BuscarPermisosPage() {
           {results.map((record, index) => {
             const key = getRecordInstanceKey(record, index);
             const edited = editedRows[key] || record.data;
-            const entryList = Object.entries(edited);
+            const entryList = sortFieldEntries(edited);
             const historicEntryList = entryList.filter(([fieldName]) => {
-              const normalizedField = fieldName.toLowerCase().replace(/[_\s]/g, "");
+              const normalizedField = normalizeFieldName(fieldName);
               return normalizedField !== "placa";
             });
             const hasNewerSamePlate =
