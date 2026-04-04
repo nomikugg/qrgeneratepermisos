@@ -20,22 +20,13 @@ async function countCsvRows(csvBuffer: Buffer): Promise<number> {
   });
 }
 
-export async function processPdfBatchJob(
-  jobId: string,
+export async function generatePdfBatchZip(
   templatePdfBuffer: Buffer,
   csvBuffer: Buffer,
-  placement: QRPlacement
-): Promise<void> {
-  await updatePdfBatchJob(jobId, { status: "running", message: "Contando filas del CSV..." });
+  placement: QRPlacement,
+  onProgress?: (processedRows: number, totalRows: number) => Promise<void> | void
+): Promise<{ zipBytes: Uint8Array; totalRows: number; processedRowsForSearch: QRInputRow[] }> {
   const totalRows = await countCsvRows(csvBuffer);
-
-  await updatePdfBatchJob(jobId, {
-    totalRows,
-    processedRows: 0,
-    status: "running",
-    message: totalRows === 0 ? "CSV sin filas para procesar" : "Generando PDFs...",
-  });
-
   const archive = archiver("zip", { zlib: { level: 9 } });
   const chunks: Buffer[] = [];
   const fileNameCounter = new Map<string, number>();
@@ -82,12 +73,9 @@ export async function processPdfBatchJob(
           processedRowsForSearch.push(row);
 
           processedRows += 1;
-          await updatePdfBatchJob(jobId, {
-            processedRows,
-            totalRows,
-            status: "running",
-            message: `Procesados ${processedRows} de ${totalRows}`,
-          });
+          if (onProgress) {
+            await onProgress(processedRows, totalRows);
+          }
         })()
           .then(() => {
             activeTasks -= 1;
@@ -106,6 +94,41 @@ export async function processPdfBatchJob(
   });
 
   const zipBytes = await finalizeZipPromise;
+
+  return {
+    zipBytes,
+    totalRows,
+    processedRowsForSearch,
+  };
+}
+
+export async function processPdfBatchJob(
+  jobId: string,
+  templatePdfBuffer: Buffer,
+  csvBuffer: Buffer,
+  placement: QRPlacement
+): Promise<void> {
+  await updatePdfBatchJob(jobId, { status: "running", message: "Contando filas del CSV..." });
+  await updatePdfBatchJob(jobId, {
+    processedRows: 0,
+    totalRows: 0,
+    status: "running",
+    message: "Generando PDFs...",
+  });
+
+  const { zipBytes, totalRows, processedRowsForSearch } = await generatePdfBatchZip(
+    templatePdfBuffer,
+    csvBuffer,
+    placement,
+    async (processedRows, total) => {
+      await updatePdfBatchJob(jobId, {
+        processedRows,
+        totalRows: total,
+        status: "running",
+        message: `Procesados ${processedRows} de ${total}`,
+      });
+    }
+  );
 
   await saveJobZipFile(jobId, zipBytes);
   await appendPermitRows(processedRowsForSearch, jobId);

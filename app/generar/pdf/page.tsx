@@ -109,76 +109,39 @@ export default function PdfGeneratorPage() {
       formData.append("qrHeight", String(placement.qrHeight));
       formData.append("flatten", String(placement.flatten));
 
-      const startResponse = await fetch("/api/generate-pdf-batch/start", {
+      setJobStatus("running");
+      setMessage("Generando ZIP, espera unos segundos...");
+
+      const generateResponse = await fetch("/api/generate-pdf-batch", {
         method: "POST",
         body: formData,
       });
 
-      if (!startResponse.ok) {
-        throw new Error("No fue posible iniciar el lote PDF.");
-      }
+      if (!generateResponse.ok) {
+        let apiError = "No fue posible generar el lote PDF.";
 
-      const startPayload = (await startResponse.json()) as { jobId?: string };
-      const jobId = startPayload.jobId;
-
-      if (!jobId) {
-        throw new Error("No se recibio jobId para seguimiento de progreso.");
-      }
-
-      let isCompleted = false;
-
-      while (!isCompleted) {
-        // Polling ligero para mostrar progreso real sin sobrecargar servidor.
-        await new Promise((resolve) => setTimeout(resolve, 800));
-        const statusResponse = await fetch(`/api/generate-pdf-batch/status?jobId=${jobId}`, {
-          method: "GET",
-          cache: "no-store",
-        });
-
-        if (!statusResponse.ok) {
-          throw new Error("No fue posible consultar el estado del lote.");
-        }
-
-        const statusPayload = (await statusResponse.json()) as {
-          status: JobStatus;
-          message?: string;
-          processedRows?: number;
-          totalRows?: number;
-          canDownload?: boolean;
-          error?: string;
-        };
-
-        setJobStatus(statusPayload.status);
-        setProcessedRows(statusPayload.processedRows ?? 0);
-        setTotalRows(statusPayload.totalRows ?? 0);
-        setMessage(statusPayload.message || "Procesando...");
-
-        if (statusPayload.status === "failed") {
-          throw new Error(statusPayload.error || "Fallo la generacion del lote PDF.");
-        }
-
-        if (statusPayload.status === "completed" && statusPayload.canDownload) {
-          const downloadResponse = await fetch(`/api/generate-pdf-batch/download?jobId=${jobId}`, {
-            method: "GET",
-            cache: "no-store",
-          });
-
-          if (!downloadResponse.ok) {
-            throw new Error("El ZIP se completo pero no se pudo descargar.");
+        try {
+          const payload = (await generateResponse.json()) as { error?: string };
+          if (payload.error) {
+            apiError = payload.error;
           }
-
-          const zipBlob = await downloadResponse.blob();
-          const downloadUrl = URL.createObjectURL(zipBlob);
-          const link = document.createElement("a");
-          link.href = downloadUrl;
-          link.download = "permisos-pdf.zip";
-          link.click();
-          URL.revokeObjectURL(downloadUrl);
-
-          setMessage("ZIP generado correctamente.");
-          isCompleted = true;
+        } catch {
+          // no-op
         }
+
+        throw new Error(apiError);
       }
+
+      const zipBlob = await generateResponse.blob();
+      const downloadUrl = URL.createObjectURL(zipBlob);
+      const link = document.createElement("a");
+      link.href = downloadUrl;
+      link.download = "permisos-pdf.zip";
+      link.click();
+      URL.revokeObjectURL(downloadUrl);
+
+      setJobStatus("completed");
+      setMessage("ZIP generado correctamente.");
     } catch (error) {
       const errorMsg = error instanceof Error ? error.message : "Error generando PDFs.";
       setMessage(errorMsg);
@@ -280,7 +243,7 @@ export default function PdfGeneratorPage() {
                 <p className="mt-2 text-xs text-slate-600">
                   {jobStatus === "completed"
                     ? "Completado: los PDF se generaron por placa y se descargaron en ZIP."
-                    : "Procesamiento secuencial optimizado para bajar consumo de recursos."}
+                    : "El ZIP se genera en una sola solicitud para mayor compatibilidad en Vercel."}
                 </p>
               </div>
             )}
