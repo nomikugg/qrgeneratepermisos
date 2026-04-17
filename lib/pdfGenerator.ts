@@ -314,10 +314,9 @@ async function createPdfFromLayout(
   };
 }
 
-async function uploadPdfToBackend(templatePdfBuffer: Buffer): Promise<string> {
+export async function uploadPdfToBackend(templatePdfBuffer: Buffer): Promise<string> {
   const formData = new FormData();
-  const pdfBytes = Uint8Array.from(templatePdfBuffer);
-  formData.append("file", new Blob([pdfBytes], { type: "application/pdf" }), "template.pdf");
+  formData.append("file", new Blob([Buffer.from(templatePdfBuffer)], { type: "application/pdf" }), "template.pdf");
 
   const response = await fetch(buildPdfBackendUrl("/pdf/upload"), {
     method: "POST",

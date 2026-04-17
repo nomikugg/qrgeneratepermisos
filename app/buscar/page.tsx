@@ -36,6 +36,14 @@ function sortFieldEntries(data: Record<string, string>): Array<[string, string]>
   );
 
   return Object.entries(data).sort(([fieldA], [fieldB]) => {
+    if (fieldA.startsWith("_") && !fieldB.startsWith("_")) {
+      return 1;
+    }
+
+    if (!fieldA.startsWith("_") && fieldB.startsWith("_")) {
+      return -1;
+    }
+
     const rankA = rankMap.get(normalizeFieldName(fieldA)) ?? Number.MAX_SAFE_INTEGER;
     const rankB = rankMap.get(normalizeFieldName(fieldB)) ?? Number.MAX_SAFE_INTEGER;
 
@@ -346,9 +354,10 @@ export default function BuscarPermisosPage() {
             const key = getRecordInstanceKey(record, index);
             const edited = editedRows[key] || record.data;
             const entryList = sortFieldEntries(edited);
+            const visibleEntryList = entryList.filter(([fieldName]) => !fieldName.startsWith("_"));
             const historicEntryList = entryList.filter(([fieldName]) => {
               const normalizedField = normalizeFieldName(fieldName);
-              return normalizedField !== "placa";
+              return normalizedField !== "placa" && !fieldName.startsWith("_");
             });
             const hasNewerSamePlate =
               results.slice(0, index).some((item) => item.placaNormalized === record.placaNormalized);
@@ -409,7 +418,7 @@ export default function BuscarPermisosPage() {
                 ) : (
                   <>
                     <div className="grid gap-2 p-4 sm:grid-cols-2 lg:grid-cols-3">
-                      {entryList.map(([fieldName, fieldValue]) => (
+                      {visibleEntryList.map(([fieldName, fieldValue]) => (
                         <label key={fieldName} className="rounded-xl border border-slate-200 bg-slate-50 p-3">
                           <p className="text-[10px] font-semibold tracking-[0.14em] text-slate-500 uppercase">{fieldName}</p>
                           <input

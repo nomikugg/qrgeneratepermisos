@@ -1,7 +1,7 @@
 import archiver from "archiver";
 import csv from "csv-parser";
 import { Readable } from "stream";
-import { fillTemplatePdfWithRow, renderPdfWithLayout } from "@/lib/pdfGenerator";
+import { fillTemplatePdfWithRow, renderPdfWithLayout, uploadPdfToBackend } from "@/lib/pdfGenerator";
 import { appendPermitRows } from "@/lib/permitSearchStore";
 import { type PdfLayoutConfig, type QRPlacement } from "@/lib/pdfLayout";
 import type { QRInputRow } from "@/lib/qrGenerator";
@@ -65,6 +65,7 @@ export async function generatePdfBatchZip(
           const result = layoutConfig
             ? await renderPdfWithLayout(templatePdfBuffer, row, layoutConfig)
             : await fillTemplatePdfWithRow(templatePdfBuffer, row, placement);
+          const pdfFileId = await uploadPdfToBackend(Buffer.from(result.pdfBytes));
           const currentCount = fileNameCounter.get(result.fileName) ?? 0;
           fileNameCounter.set(result.fileName, currentCount + 1);
 
@@ -74,7 +75,10 @@ export async function generatePdfBatchZip(
               : result.fileName.replace(/\.pdf$/i, `-${currentCount + 1}.pdf`);
 
           archive.append(Buffer.from(result.pdfBytes), { name: finalName });
-          processedRowsForSearch.push(row);
+          processedRowsForSearch.push({
+            ...row,
+            _pdfFileId: pdfFileId,
+          });
 
           processedRows += 1;
           if (onProgress) {

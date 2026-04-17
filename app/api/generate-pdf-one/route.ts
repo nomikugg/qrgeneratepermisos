@@ -7,10 +7,60 @@ import { tryLoadActivePdfLayout } from "@/lib/pdfLayoutStore";
 import type { QRInputRow } from "@/lib/qrGenerator";
 
 const DEFAULT_SERVER_TEMPLATE_PATH = join(process.cwd(), "templates", "permiso-base.pdf");
+const PDF_BACKEND_BASE_URL = process.env.PDF_BACKEND_URL ?? process.env.NEXT_PUBLIC_PDF_BACKEND_URL ?? "http://127.0.0.1:8080";
+
+function buildPdfBackendUrl(pathname: string): string {
+  return new URL(pathname, PDF_BACKEND_BASE_URL).toString();
+}
+
+async function downloadPdfFromBackend(fileId: string): Promise<Buffer> {
+  const response = await fetch(buildPdfBackendUrl(`/pdf/download?fileId=${encodeURIComponent(fileId)}`), {
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    const payload = (await response.json().catch(() => ({}))) as { error?: string };
+    throw new Error(payload.error || "No se pudo descargar el PDF base desde el backend.");
+  }
+
+  return Buffer.from(await response.arrayBuffer());
+}
+
+async function uploadPdfToBackend(pdfBytes: Uint8Array): Promise<string> {
+  const formData = new FormData();
+  formData.append("file", new Blob([Buffer.from(pdfBytes)], { type: "application/pdf" }), "generated.pdf");
+
+  const response = await fetch(buildPdfBackendUrl("/pdf/upload"), {
+    method: "POST",
+    body: formData,
+  });
+
+  if (!response.ok) {
+    const payload = (await response.json().catch(() => ({}))) as { error?: string };
+    throw new Error(payload.error || "No se pudo guardar el PDF generado en el backend.");
+  }
+
+  const payload = (await response.json()) as { fileId?: string };
+  if (!payload.fileId) {
+    throw new Error("El backend no devolvio fileId al guardar el PDF generado.");
+  }
+
+  return payload.fileId;
+}
 
 function parseNumberField(value: FormDataEntryValue | null, fallback: number): number {
   const parsed = Number(value);
   return Number.isFinite(parsed) ? parsed : fallback;
+}
+
+function buildPermitRecordData(row: QRInputRow, pdfFileId: string): Record<string, string> {
+  const data = Object.fromEntries(Object.entries(row).map(([key, value]) => [key, String(value ?? "")])) as Record<string, string>;
+
+  if (pdfFileId) {
+    data._pdfFileId = pdfFileId;
+  }
+
+  return data;
 }
 
 export async function POST(req: Request): Promise<Response> {
@@ -33,6 +83,10 @@ export async function POST(req: Request): Promise<Response> {
   } catch {
     return Response.json({ error: "Los datos del registro son invalidos." }, { status: 400 });
   }
+
+  const existingPdfFileId = typeof (row as Record<string, unknown>)._pdfFileId === "string"
+    ? String((row as Record<string, unknown>)._pdfFileId).trim()
+    : "";
 
   const placement: QRPlacement = {
     x: parseNumberField(formData.get("qrX"), 670),
@@ -62,9 +116,13 @@ export async function POST(req: Request): Promise<Response> {
 
     if (layoutConfig) {
       if (useServerTemplate) {
-        const configuredPath = String(process.env.PDF_TEMPLATE_PATH || "").trim();
-        const templatePath = configuredPath || DEFAULT_SERVER_TEMPLATE_PATH;
-        templatePdfBuffer = await fs.readFile(templatePath);
+        if (existingPdfFileId) {
+          templatePdfBuffer = await downloadPdfFromBackend(existingPdfFileId);
+        } else {
+          const configuredPath = String(process.env.PDF_TEMPLATE_PATH || "").trim();
+          const templatePath = configuredPath || DEFAULT_SERVER_TEMPLATE_PATH;
+          templatePdfBuffer = await fs.readFile(templatePath);
+        }
       } else if (templatePdf instanceof File) {
         templatePdfBuffer = Buffer.from(await templatePdf.arrayBuffer());
       } else {
@@ -73,12 +131,14 @@ export async function POST(req: Request): Promise<Response> {
 
       const result = await renderPdfWithLayout(templatePdfBuffer.length > 0 ? templatePdfBuffer : null, row, layoutConfig);
 
+      const generatedPdfFileId = await uploadPdfToBackend(result.pdfBytes);
+
       if (jobId && Number.isFinite(parsedCreatedAt) && parsedCreatedAt > 0) {
         await updatePermitRecord({
           id: typeof parsedRecordId === "number" && Number.isFinite(parsedRecordId) ? parsedRecordId : undefined,
           jobId,
           createdAt: parsedCreatedAt,
-          data: Object.fromEntries(Object.entries(row).map(([key, value]) => [key, String(value ?? "")]))
+          data: buildPermitRecordData(row, generatedPdfFileId),
         });
       }
 
@@ -95,21 +155,27 @@ export async function POST(req: Request): Promise<Response> {
     }
 
     if (useServerTemplate) {
-      const configuredPath = String(process.env.PDF_TEMPLATE_PATH || "").trim();
-      const templatePath = configuredPath || DEFAULT_SERVER_TEMPLATE_PATH;
-      templatePdfBuffer = await fs.readFile(templatePath);
+      if (existingPdfFileId) {
+        templatePdfBuffer = await downloadPdfFromBackend(existingPdfFileId);
+      } else {
+        const configuredPath = String(process.env.PDF_TEMPLATE_PATH || "").trim();
+        const templatePath = configuredPath || DEFAULT_SERVER_TEMPLATE_PATH;
+        templatePdfBuffer = await fs.readFile(templatePath);
+      }
     } else {
       templatePdfBuffer = Buffer.from(await (templatePdf as File).arrayBuffer());
     }
 
     const result = await fillTemplatePdfWithRow(templatePdfBuffer, row, placement);
 
+    const generatedPdfFileId = await uploadPdfToBackend(result.pdfBytes);
+
     if (jobId && Number.isFinite(parsedCreatedAt) && parsedCreatedAt > 0) {
       await updatePermitRecord({
         id: typeof parsedRecordId === "number" && Number.isFinite(parsedRecordId) ? parsedRecordId : undefined,
         jobId,
         createdAt: parsedCreatedAt,
-        data: Object.fromEntries(Object.entries(row).map(([key, value]) => [key, String(value ?? "")])),
+        data: buildPermitRecordData(row, generatedPdfFileId),
       });
     }
 
