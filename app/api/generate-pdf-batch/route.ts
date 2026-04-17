@@ -50,7 +50,14 @@ export async function POST(req: Request): Promise<Response> {
       placement,
       layoutConfig
     );
-    await appendPermitRows(processedRowsForSearch, randomUUID());
+
+    // El ZIP ya esta generado; si falla persistir historial no debe romper la descarga.
+    try {
+      await appendPermitRows(processedRowsForSearch, randomUUID());
+    } catch (persistError) {
+      console.error("No se pudo persistir historial de permisos (se entrega ZIP igualmente):", persistError);
+    }
+
     const normalizedZipBytes = new Uint8Array(zipBytes.length);
     normalizedZipBytes.set(zipBytes);
     const zipBlob = new Blob([normalizedZipBytes.buffer], { type: "application/zip" });
