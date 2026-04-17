@@ -1,7 +1,8 @@
 import { randomUUID } from "crypto";
 import { generatePdfBatchZip } from "@/lib/pdfBatchProcessor";
 import { appendPermitRows } from "@/lib/permitSearchStore";
-import type { QRPlacement } from "@/lib/pdfGenerator";
+import { normalizePdfLayoutConfig, type QRPlacement } from "@/lib/pdfLayout";
+import { tryLoadActivePdfLayout } from "@/lib/pdfLayoutStore";
 
 function parseNumberField(value: FormDataEntryValue | null, fallback: number): number {
   const parsed = Number(value);
@@ -12,9 +13,10 @@ export async function POST(req: Request): Promise<Response> {
   const formData = await req.formData();
   const templatePdf = formData.get("templatePdf");
   const csvFile = formData.get("csvFile");
+  const layoutConfigRaw = formData.get("layoutConfig");
 
-  if (!(templatePdf instanceof File) || !(csvFile instanceof File)) {
-    return Response.json({ error: "Debes cargar template PDF y archivo CSV" }, { status: 400 });
+  if (!(csvFile instanceof File)) {
+    return Response.json({ error: "Debes cargar un archivo CSV" }, { status: 400 });
   }
 
   const placement: QRPlacement = {
@@ -26,10 +28,28 @@ export async function POST(req: Request): Promise<Response> {
   };
 
   try {
-    const templatePdfBuffer = Buffer.from(await templatePdf.arrayBuffer());
+    const templatePdfBuffer = templatePdf instanceof File ? Buffer.from(await templatePdf.arrayBuffer()) : Buffer.alloc(0);
     const csvBuffer = Buffer.from(await csvFile.arrayBuffer());
+    let layoutConfig = await tryLoadActivePdfLayout();
 
-    const { zipBytes, processedRowsForSearch } = await generatePdfBatchZip(templatePdfBuffer, csvBuffer, placement);
+    if (typeof layoutConfigRaw === "string" && layoutConfigRaw.trim()) {
+      try {
+        layoutConfig = normalizePdfLayoutConfig(JSON.parse(layoutConfigRaw));
+      } catch {
+        return Response.json({ error: "El layout del editor es invalido." }, { status: 400 });
+      }
+    }
+
+    if (!layoutConfig && !templatePdfBuffer.length) {
+      return Response.json({ error: "Debes cargar una plantilla PDF o guardar un layout activo." }, { status: 400 });
+    }
+
+    const { zipBytes, processedRowsForSearch } = await generatePdfBatchZip(
+      templatePdfBuffer,
+      csvBuffer,
+      placement,
+      layoutConfig
+    );
     await appendPermitRows(processedRowsForSearch, randomUUID());
     const normalizedZipBytes = new Uint8Array(zipBytes.length);
     normalizedZipBytes.set(zipBytes);

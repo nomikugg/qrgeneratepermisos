@@ -38,7 +38,7 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="mt-8 grid gap-4 md:grid-cols-4">
+        <div className="mt-8 grid gap-4 md:grid-cols-3">
           <Link
             href="/generar/individual"
             className="group rounded-2xl border-2 border-cyan-300 bg-linear-to-br from-cyan-100 via-sky-100 to-blue-200 p-5 shadow-xl shadow-cyan-700/20 transition hover:-translate-y-1 hover:border-cyan-500"
@@ -58,7 +58,7 @@ export default function Page() {
             className="group rounded-2xl border-2 border-fuchsia-300 bg-linear-to-br from-fuchsia-100 via-violet-100 to-indigo-100 p-5 shadow-xl shadow-fuchsia-700/20 transition hover:-translate-y-1 hover:border-fuchsia-500"
           >
             <p className="text-xs font-semibold tracking-[0.16em] text-fuchsia-900 uppercase">Lote completo</p>
-            <h2 className="mt-2 text-xl font-bold text-fuchsia-950">Generar por CSV</h2>
+            <h2 className="mt-2 text-xl font-bold text-fuchsia-950">Generar QR por CSV</h2>
             <p className="mt-2 text-sm text-slate-600">
               Sube tu archivo y recibe un ZIP con todos los codigos QR listos.
             </p>
@@ -72,9 +72,9 @@ export default function Page() {
             className="group rounded-2xl border-2 border-emerald-300 bg-linear-to-br from-emerald-100 via-lime-100 to-teal-100 p-5 shadow-xl shadow-emerald-700/20 transition hover:-translate-y-1 hover:border-emerald-500"
           >
             <p className="text-xs font-semibold tracking-[0.16em] text-emerald-900 uppercase">Template PDF</p>
-            <h2 className="mt-2 text-xl font-bold text-emerald-950">Generar desde PDF + CSV</h2>
+            <h2 className="mt-2 text-xl font-bold text-emerald-950">Editor y lote PDF + CSV</h2>
             <p className="mt-2 text-sm text-slate-600">
-              Sube plantilla, ajusta posicion del QR y genera todos los PDFs de una vez.
+              Carga plantilla, ancla posiciones, guarda layout y genera ZIP de PDFs desde CSV.
             </p>
             <span className="mt-5 inline-block text-sm font-semibold text-emerald-900 transition group-hover:translate-x-1">
               Abrir editor PDF

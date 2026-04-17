@@ -1,8 +1,9 @@
 import archiver from "archiver";
 import csv from "csv-parser";
 import { Readable } from "stream";
-import { fillTemplatePdfWithRow, type QRPlacement } from "@/lib/pdfGenerator";
+import { fillTemplatePdfWithRow, renderPdfWithLayout } from "@/lib/pdfGenerator";
 import { appendPermitRows } from "@/lib/permitSearchStore";
+import { type PdfLayoutConfig, type QRPlacement } from "@/lib/pdfLayout";
 import type { QRInputRow } from "@/lib/qrGenerator";
 import { updatePdfBatchJob, saveJobZipFile } from "@/lib/pdfBatchJobs";
 
@@ -24,6 +25,7 @@ export async function generatePdfBatchZip(
   templatePdfBuffer: Buffer,
   csvBuffer: Buffer,
   placement: QRPlacement,
+  layoutConfig?: PdfLayoutConfig | null,
   onProgress?: (processedRows: number, totalRows: number) => Promise<void> | void
 ): Promise<{ zipBytes: Uint8Array; totalRows: number; processedRowsForSearch: QRInputRow[] }> {
   const totalRows = await countCsvRows(csvBuffer);
@@ -60,7 +62,9 @@ export async function generatePdfBatchZip(
         activeTasks += 1;
 
         void (async () => {
-          const result = await fillTemplatePdfWithRow(templatePdfBuffer, row, placement);
+          const result = layoutConfig
+            ? await renderPdfWithLayout(templatePdfBuffer, row, layoutConfig)
+            : await fillTemplatePdfWithRow(templatePdfBuffer, row, placement);
           const currentCount = fileNameCounter.get(result.fileName) ?? 0;
           fileNameCounter.set(result.fileName, currentCount + 1);
 
@@ -106,7 +110,8 @@ export async function processPdfBatchJob(
   jobId: string,
   templatePdfBuffer: Buffer,
   csvBuffer: Buffer,
-  placement: QRPlacement
+  placement: QRPlacement,
+  layoutConfig?: PdfLayoutConfig | null
 ): Promise<void> {
   await updatePdfBatchJob(jobId, { status: "running", message: "Contando filas del CSV..." });
   await updatePdfBatchJob(jobId, {
@@ -120,6 +125,7 @@ export async function processPdfBatchJob(
     templatePdfBuffer,
     csvBuffer,
     placement,
+    layoutConfig,
     async (processedRows, total) => {
       await updatePdfBatchJob(jobId, {
         processedRows,

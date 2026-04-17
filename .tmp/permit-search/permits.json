@@ -1,6 +1,3021 @@
 {
   "records": [
     {
+      "placa": "529DPC",
+      "placaNormalized": "529DPC",
+      "createdAt": 1776393994119,
+      "jobId": "911c480a-8df7-4586-acbd-eb1f9b6f56b2",
+      "data": {
+        "placa": "529DPC",
+        "modelo": "PICK UP",
+        "marca": "ISUZUTOYOTAKIA",
+        "anio": "1992",
+        "color": "BLANCOOOOOKIA GRIS",
+        "licencia": "4083116",
+        "conductor": "SAMMY BOLAÑOS SUÁREZ"
+      }
+    },
+    {
+      "placa": "529DPC",
+      "placaNormalized": "529DPC",
+      "createdAt": 1776393835815,
+      "jobId": "58a78b1c-2852-4006-ab86-d5118f227d75",
+      "data": {
+        "placa": "529DPC",
+        "modelo": "PICK UP",
+        "marca": "ISUZUTOYOTAKIA",
+        "anio": "1992",
+        "color": "BLANCOOOOOKIA GRIS",
+        "licencia": "4083116",
+        "conductor": "SAMMY BOLAÑOS SUAREZ"
+      }
+    },
+    {
+      "placa": "1076ETD",
+      "placaNormalized": "1076ETD",
+      "createdAt": 1776393822042,
+      "jobId": "615545bb-86fd-426c-ad8c-03121999e042",
+      "data": {
+        "placa": "1076ETD",
+        "modelo": "TERRANO",
+        "marca": "NISSAN",
+        "anio": "1989",
+        "color": "GRIS",
+        "licencia": "4098526",
+        "conductor": "CLIVER REVOLLO BRAVO"
+      }
+    },
+    {
+      "placa": "2285GFD",
+      "placaNormalized": "2285GFD",
+      "createdAt": 1776393822042,
+      "jobId": "615545bb-86fd-426c-ad8c-03121999e042",
+      "data": {
+        "placa": "2285GFD",
+        "modelo": "TOWN ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1997",
+        "color": "PLATEADO",
+        "licencia": "7478298",
+        "conductor": "EDUARDO ALFONSIN COLQUE GOMEZ"
+      }
+    },
+    {
+      "placa": "2282FLT (1)",
+      "placaNormalized": "2282FLT1",
+      "createdAt": 1776393822042,
+      "jobId": "615545bb-86fd-426c-ad8c-03121999e042",
+      "data": {
+        "placa": "2282FLT (1)",
+        "modelo": "LITE ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "PLATEADO",
+        "licencia": "1117246",
+        "conductor": "EDGAR REYES SALVADOR"
+      }
+    },
+    {
+      "placa": "3594UPI",
+      "placaNormalized": "3594UPI",
+      "createdAt": 1776393822042,
+      "jobId": "615545bb-86fd-426c-ad8c-03121999e042",
+      "data": {
+        "placa": "3594UPI",
+        "modelo": "T2",
+        "marca": "CHTC AUTO",
+        "anio": "2013",
+        "color": "BLANCO",
+        "licencia": "5387096",
+        "conductor": "JOSE ALFREDO VELASQUEZ CONDORI"
+      }
+    },
+    {
+      "placa": "918KLX",
+      "placaNormalized": "918KLX",
+      "createdAt": 1776393822042,
+      "jobId": "615545bb-86fd-426c-ad8c-03121999e042",
+      "data": {
+        "placa": "918KLX",
+        "modelo": "AUTOMOVIL",
+        "marca": "TOYOTA",
+        "anio": "1987",
+        "color": "BLANCO",
+        "licencia": "5681369",
+        "conductor": "JOHNNY VIDAURRE DORIA MEDINA"
+      }
+    },
+    {
+      "placa": "3019SSX",
+      "placaNormalized": "3019SSX",
+      "createdAt": 1776393822042,
+      "jobId": "615545bb-86fd-426c-ad8c-03121999e042",
+      "data": {
+        "placa": "3019SSX",
+        "modelo": "CAMIONETA",
+        "marca": "XINKAI",
+        "anio": "2013",
+        "color": "ROJO",
+        "licencia": "7509402",
+        "conductor": "JUAN CLIVER DURAN VELA"
+      }
+    },
+    {
+      "placa": "3594UPI",
+      "placaNormalized": "3594UPI",
+      "createdAt": 1776393674234,
+      "jobId": "82c8ef23-e095-403b-aef5-d8d9f47f8af6",
+      "data": {
+        "placa": "3594UPI",
+        "modelo": "T2",
+        "marca": "CHTC AUTO",
+        "anio": "2013",
+        "color": "BLANCO",
+        "licencia": "5387096",
+        "conductor": "JOSE ALFREDO VELASQUEZ CONDORI"
+      }
+    },
+    {
+      "placa": "918KLX",
+      "placaNormalized": "918KLX",
+      "createdAt": 1776393674234,
+      "jobId": "82c8ef23-e095-403b-aef5-d8d9f47f8af6",
+      "data": {
+        "placa": "918KLX",
+        "modelo": "AUTOMOVIL",
+        "marca": "TOYOTA",
+        "anio": "1987",
+        "color": "BLANCO",
+        "licencia": "5681369",
+        "conductor": "JOHNNY VIDAURRE DORIA MEDINA"
+      }
+    },
+    {
+      "placa": "3019SSX",
+      "placaNormalized": "3019SSX",
+      "createdAt": 1776393674234,
+      "jobId": "82c8ef23-e095-403b-aef5-d8d9f47f8af6",
+      "data": {
+        "placa": "3019SSX",
+        "modelo": "CAMIONETA",
+        "marca": "XINKAI",
+        "anio": "2013",
+        "color": "ROJO",
+        "licencia": "7509402",
+        "conductor": "JUAN CLIVER DURAN VELA"
+      }
+    },
+    {
+      "placa": "2285GFD",
+      "placaNormalized": "2285GFD",
+      "createdAt": 1776393674233,
+      "jobId": "82c8ef23-e095-403b-aef5-d8d9f47f8af6",
+      "data": {
+        "placa": "2285GFD",
+        "modelo": "TOWN ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1997",
+        "color": "PLATEADO",
+        "licencia": "7478298",
+        "conductor": "EDUARDO ALFONSIN COLQUE GOMEZ"
+      }
+    },
+    {
+      "placa": "2282FLT (1)",
+      "placaNormalized": "2282FLT1",
+      "createdAt": 1776393674233,
+      "jobId": "82c8ef23-e095-403b-aef5-d8d9f47f8af6",
+      "data": {
+        "placa": "2282FLT (1)",
+        "modelo": "LITE ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "PLATEADO",
+        "licencia": "1117246",
+        "conductor": "EDGAR REYES SALVADOR"
+      }
+    },
+    {
+      "placa": "1076ETD",
+      "placaNormalized": "1076ETD",
+      "createdAt": 1776393674231,
+      "jobId": "82c8ef23-e095-403b-aef5-d8d9f47f8af6",
+      "data": {
+        "placa": "1076ETD",
+        "modelo": "TERRANO",
+        "marca": "NISSAN",
+        "anio": "1989",
+        "color": "GRIS",
+        "licencia": "4098526",
+        "conductor": "CLIVER REVOLLO BRAVO"
+      }
+    },
+    {
+      "placa": "1076ETD",
+      "placaNormalized": "1076ETD",
+      "createdAt": 1776393427397,
+      "jobId": "92bf6304-384b-41dc-851b-b227b2674821",
+      "data": {
+        "placa": "1076ETD",
+        "modelo": "TERRANO",
+        "marca": "NISSAN",
+        "anio": "1989",
+        "color": "GRIS",
+        "licencia": "4098526",
+        "conductor": "CLIVER REVOLLO BRAVO"
+      }
+    },
+    {
+      "placa": "2285GFD",
+      "placaNormalized": "2285GFD",
+      "createdAt": 1776393427397,
+      "jobId": "92bf6304-384b-41dc-851b-b227b2674821",
+      "data": {
+        "placa": "2285GFD",
+        "modelo": "TOWN ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1997",
+        "color": "PLATEADO",
+        "licencia": "7478298",
+        "conductor": "EDUARDO ALFONSIN COLQUE GOMEZ"
+      }
+    },
+    {
+      "placa": "2282FLT (1)",
+      "placaNormalized": "2282FLT1",
+      "createdAt": 1776393427397,
+      "jobId": "92bf6304-384b-41dc-851b-b227b2674821",
+      "data": {
+        "placa": "2282FLT (1)",
+        "modelo": "LITE ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "PLATEADO",
+        "licencia": "1117246",
+        "conductor": "EDGAR REYES SALVADOR"
+      }
+    },
+    {
+      "placa": "3594UPI",
+      "placaNormalized": "3594UPI",
+      "createdAt": 1776393427397,
+      "jobId": "92bf6304-384b-41dc-851b-b227b2674821",
+      "data": {
+        "placa": "3594UPI",
+        "modelo": "T2",
+        "marca": "CHTC AUTO",
+        "anio": "2013",
+        "color": "BLANCO",
+        "licencia": "5387096",
+        "conductor": "JOSE ALFREDO VELASQUEZ CONDORI"
+      }
+    },
+    {
+      "placa": "918KLX",
+      "placaNormalized": "918KLX",
+      "createdAt": 1776393427397,
+      "jobId": "92bf6304-384b-41dc-851b-b227b2674821",
+      "data": {
+        "placa": "918KLX",
+        "modelo": "AUTOMOVIL",
+        "marca": "TOYOTA",
+        "anio": "1987",
+        "color": "BLANCO",
+        "licencia": "5681369",
+        "conductor": "JOHNNY VIDAURRE DORIA MEDINA"
+      }
+    },
+    {
+      "placa": "3019SSX",
+      "placaNormalized": "3019SSX",
+      "createdAt": 1776393427397,
+      "jobId": "92bf6304-384b-41dc-851b-b227b2674821",
+      "data": {
+        "placa": "3019SSX",
+        "modelo": "CAMIONETA",
+        "marca": "XINKAI",
+        "anio": "2013",
+        "color": "ROJO",
+        "licencia": "7509402",
+        "conductor": "JUAN CLIVER DURAN VELA"
+      }
+    },
+    {
+      "placa": "2285GFD",
+      "placaNormalized": "2285GFD",
+      "createdAt": 1776393174444,
+      "jobId": "b3d3c848-e047-4057-96a1-80ab569040a8",
+      "data": {
+        "placa": "2285GFD",
+        "modelo": "TOWN ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1997",
+        "color": "PLATEADO",
+        "licencia": "7478298",
+        "conductor": "EDUARDO ALFONSIN COLQUE GOMEZ"
+      }
+    },
+    {
+      "placa": "2282FLT (1)",
+      "placaNormalized": "2282FLT1",
+      "createdAt": 1776393174444,
+      "jobId": "b3d3c848-e047-4057-96a1-80ab569040a8",
+      "data": {
+        "placa": "2282FLT (1)",
+        "modelo": "LITE ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "PLATEADO",
+        "licencia": "1117246",
+        "conductor": "EDGAR REYES SALVADOR"
+      }
+    },
+    {
+      "placa": "3594UPI",
+      "placaNormalized": "3594UPI",
+      "createdAt": 1776393174444,
+      "jobId": "b3d3c848-e047-4057-96a1-80ab569040a8",
+      "data": {
+        "placa": "3594UPI",
+        "modelo": "T2",
+        "marca": "CHTC AUTO",
+        "anio": "2013",
+        "color": "BLANCO",
+        "licencia": "5387096",
+        "conductor": "JOSE ALFREDO VELASQUEZ CONDORI"
+      }
+    },
+    {
+      "placa": "918KLX",
+      "placaNormalized": "918KLX",
+      "createdAt": 1776393174444,
+      "jobId": "b3d3c848-e047-4057-96a1-80ab569040a8",
+      "data": {
+        "placa": "918KLX",
+        "modelo": "AUTOMOVIL",
+        "marca": "TOYOTA",
+        "anio": "1987",
+        "color": "BLANCO",
+        "licencia": "5681369",
+        "conductor": "JOHNNY VIDAURRE DORIA MEDINA"
+      }
+    },
+    {
+      "placa": "3019SSX",
+      "placaNormalized": "3019SSX",
+      "createdAt": 1776393174444,
+      "jobId": "b3d3c848-e047-4057-96a1-80ab569040a8",
+      "data": {
+        "placa": "3019SSX",
+        "modelo": "CAMIONETA",
+        "marca": "XINKAI",
+        "anio": "2013",
+        "color": "ROJO",
+        "licencia": "7509402",
+        "conductor": "JUAN CLIVER DURAN VELA"
+      }
+    },
+    {
+      "placa": "1076ETD",
+      "placaNormalized": "1076ETD",
+      "createdAt": 1776393174443,
+      "jobId": "b3d3c848-e047-4057-96a1-80ab569040a8",
+      "data": {
+        "placa": "1076ETD",
+        "modelo": "TERRANO",
+        "marca": "NISSAN",
+        "anio": "1989",
+        "color": "GRIS",
+        "licencia": "4098526",
+        "conductor": "CLIVER REVOLLO BRAVO"
+      }
+    },
+    {
+      "placa": "2285GFD",
+      "placaNormalized": "2285GFD",
+      "createdAt": 1776392082558,
+      "jobId": "57f66c51-63a7-4b72-8c79-ff37efdd41ba",
+      "data": {
+        "placa": "2285GFD",
+        "modelo": "TOWN ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1997",
+        "color": "PLATEADO",
+        "licencia": "7478298",
+        "conductor": "EDUARDO ALFONSIN COLQUE GOMEZ"
+      }
+    },
+    {
+      "placa": "2282FLT (1)",
+      "placaNormalized": "2282FLT1",
+      "createdAt": 1776392082558,
+      "jobId": "57f66c51-63a7-4b72-8c79-ff37efdd41ba",
+      "data": {
+        "placa": "2282FLT (1)",
+        "modelo": "LITE ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "PLATEADO",
+        "licencia": "1117246",
+        "conductor": "EDGAR REYES SALVADOR"
+      }
+    },
+    {
+      "placa": "3594UPI",
+      "placaNormalized": "3594UPI",
+      "createdAt": 1776392082558,
+      "jobId": "57f66c51-63a7-4b72-8c79-ff37efdd41ba",
+      "data": {
+        "placa": "3594UPI",
+        "modelo": "T2",
+        "marca": "CHTC AUTO",
+        "anio": "2013",
+        "color": "BLANCO",
+        "licencia": "5387096",
+        "conductor": "JOSE ALFREDO VELASQUEZ CONDORI"
+      }
+    },
+    {
+      "placa": "918KLX",
+      "placaNormalized": "918KLX",
+      "createdAt": 1776392082558,
+      "jobId": "57f66c51-63a7-4b72-8c79-ff37efdd41ba",
+      "data": {
+        "placa": "918KLX",
+        "modelo": "AUTOMOVIL",
+        "marca": "TOYOTA",
+        "anio": "1987",
+        "color": "BLANCO",
+        "licencia": "5681369",
+        "conductor": "JOHNNY VIDAURRE DORIA MEDINA"
+      }
+    },
+    {
+      "placa": "3019SSX",
+      "placaNormalized": "3019SSX",
+      "createdAt": 1776392082558,
+      "jobId": "57f66c51-63a7-4b72-8c79-ff37efdd41ba",
+      "data": {
+        "placa": "3019SSX",
+        "modelo": "CAMIONETA",
+        "marca": "XINKAI",
+        "anio": "2013",
+        "color": "ROJO",
+        "licencia": "7509402",
+        "conductor": "JUAN CLIVER DURAN VELA"
+      }
+    },
+    {
+      "placa": "1076ETD",
+      "placaNormalized": "1076ETD",
+      "createdAt": 1776392082557,
+      "jobId": "57f66c51-63a7-4b72-8c79-ff37efdd41ba",
+      "data": {
+        "placa": "1076ETD",
+        "modelo": "TERRANO",
+        "marca": "NISSAN",
+        "anio": "1989",
+        "color": "GRIS",
+        "licencia": "4098526",
+        "conductor": "CLIVER REVOLLO BRAVO"
+      }
+    },
+    {
+      "placa": "1076ETD",
+      "placaNormalized": "1076ETD",
+      "createdAt": 1776391861678,
+      "jobId": "5bd9a0a9-1587-4422-8c6d-5b6d18b6a2c9",
+      "data": {
+        "placa": "1076ETD",
+        "modelo": "TERRANO",
+        "marca": "NISSAN",
+        "anio": "1989",
+        "color": "GRIS",
+        "licencia": "4098526",
+        "conductor": "CLIVER REVOLLO BRAVO"
+      }
+    },
+    {
+      "placa": "2285GFD",
+      "placaNormalized": "2285GFD",
+      "createdAt": 1776391861678,
+      "jobId": "5bd9a0a9-1587-4422-8c6d-5b6d18b6a2c9",
+      "data": {
+        "placa": "2285GFD",
+        "modelo": "TOWN ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1997",
+        "color": "PLATEADO",
+        "licencia": "7478298",
+        "conductor": "EDUARDO ALFONSIN COLQUE GOMEZ"
+      }
+    },
+    {
+      "placa": "2282FLT (1)",
+      "placaNormalized": "2282FLT1",
+      "createdAt": 1776391861678,
+      "jobId": "5bd9a0a9-1587-4422-8c6d-5b6d18b6a2c9",
+      "data": {
+        "placa": "2282FLT (1)",
+        "modelo": "LITE ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "PLATEADO",
+        "licencia": "1117246",
+        "conductor": "EDGAR REYES SALVADOR"
+      }
+    },
+    {
+      "placa": "3594UPI",
+      "placaNormalized": "3594UPI",
+      "createdAt": 1776391861678,
+      "jobId": "5bd9a0a9-1587-4422-8c6d-5b6d18b6a2c9",
+      "data": {
+        "placa": "3594UPI",
+        "modelo": "T2",
+        "marca": "CHTC AUTO",
+        "anio": "2013",
+        "color": "BLANCO",
+        "licencia": "5387096",
+        "conductor": "JOSE ALFREDO VELASQUEZ CONDORI"
+      }
+    },
+    {
+      "placa": "918KLX",
+      "placaNormalized": "918KLX",
+      "createdAt": 1776391861678,
+      "jobId": "5bd9a0a9-1587-4422-8c6d-5b6d18b6a2c9",
+      "data": {
+        "placa": "918KLX",
+        "modelo": "AUTOMOVIL",
+        "marca": "TOYOTA",
+        "anio": "1987",
+        "color": "BLANCO",
+        "licencia": "5681369",
+        "conductor": "JOHNNY VIDAURRE DORIA MEDINA"
+      }
+    },
+    {
+      "placa": "3019SSX",
+      "placaNormalized": "3019SSX",
+      "createdAt": 1776391861678,
+      "jobId": "5bd9a0a9-1587-4422-8c6d-5b6d18b6a2c9",
+      "data": {
+        "placa": "3019SSX",
+        "modelo": "CAMIONETA",
+        "marca": "XINKAI",
+        "anio": "2013",
+        "color": "ROJO",
+        "licencia": "7509402",
+        "conductor": "JUAN CLIVER DURAN VELA"
+      }
+    },
+    {
+      "placa": "2282FLT (1)",
+      "placaNormalized": "2282FLT1",
+      "createdAt": 1776391365133,
+      "jobId": "5bce46c5-5a84-4862-9b9b-3c74e8c46da9",
+      "data": {
+        "placa": "2282FLT (1)",
+        "modelo": "LITE ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "PLATEADO",
+        "licencia": "1117246",
+        "conductor": "EDGAR REYES SALVADOR"
+      }
+    },
+    {
+      "placa": "3594UPI",
+      "placaNormalized": "3594UPI",
+      "createdAt": 1776391365133,
+      "jobId": "5bce46c5-5a84-4862-9b9b-3c74e8c46da9",
+      "data": {
+        "placa": "3594UPI",
+        "modelo": "T2",
+        "marca": "CHTC AUTO",
+        "anio": "2013",
+        "color": "BLANCO",
+        "licencia": "5387096",
+        "conductor": "JOSE ALFREDO VELASQUEZ CONDORI"
+      }
+    },
+    {
+      "placa": "918KLX",
+      "placaNormalized": "918KLX",
+      "createdAt": 1776391365133,
+      "jobId": "5bce46c5-5a84-4862-9b9b-3c74e8c46da9",
+      "data": {
+        "placa": "918KLX",
+        "modelo": "AUTOMOVIL",
+        "marca": "TOYOTA",
+        "anio": "1987",
+        "color": "BLANCO",
+        "licencia": "5681369",
+        "conductor": "JOHNNY VIDAURRE DORIA MEDINA"
+      }
+    },
+    {
+      "placa": "3019SSX",
+      "placaNormalized": "3019SSX",
+      "createdAt": 1776391365133,
+      "jobId": "5bce46c5-5a84-4862-9b9b-3c74e8c46da9",
+      "data": {
+        "placa": "3019SSX",
+        "modelo": "CAMIONETA",
+        "marca": "XINKAI",
+        "anio": "2013",
+        "color": "ROJO",
+        "licencia": "7509402",
+        "conductor": "JUAN CLIVER DURAN VELA"
+      }
+    },
+    {
+      "placa": "1076ETD",
+      "placaNormalized": "1076ETD",
+      "createdAt": 1776391365132,
+      "jobId": "5bce46c5-5a84-4862-9b9b-3c74e8c46da9",
+      "data": {
+        "placa": "1076ETD",
+        "modelo": "TERRANO",
+        "marca": "NISSAN",
+        "anio": "1989",
+        "color": "GRIS",
+        "licencia": "4098526",
+        "conductor": "CLIVER REVOLLO BRAVO"
+      }
+    },
+    {
+      "placa": "2285GFD",
+      "placaNormalized": "2285GFD",
+      "createdAt": 1776391365132,
+      "jobId": "5bce46c5-5a84-4862-9b9b-3c74e8c46da9",
+      "data": {
+        "placa": "2285GFD",
+        "modelo": "TOWN ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1997",
+        "color": "PLATEADO",
+        "licencia": "7478298",
+        "conductor": "EDUARDO ALFONSIN COLQUE GOMEZ"
+      }
+    },
+    {
+      "placa": "2285GFD",
+      "placaNormalized": "2285GFD",
+      "createdAt": 1776390454064,
+      "jobId": "8eaefb21-a0ff-4320-9307-4763275d5309",
+      "data": {
+        "placa": "2285GFD",
+        "modelo": "TOWN ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1997",
+        "color": "PLATEADO",
+        "licencia": "7478298",
+        "conductor": "EDUARDO ALFONSIN COLQUE GOMEZ"
+      }
+    },
+    {
+      "placa": "2282FLT (1)",
+      "placaNormalized": "2282FLT1",
+      "createdAt": 1776390454064,
+      "jobId": "8eaefb21-a0ff-4320-9307-4763275d5309",
+      "data": {
+        "placa": "2282FLT (1)",
+        "modelo": "LITE ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "PLATEADO",
+        "licencia": "1117246",
+        "conductor": "EDGAR REYES SALVADOR"
+      }
+    },
+    {
+      "placa": "3594UPI",
+      "placaNormalized": "3594UPI",
+      "createdAt": 1776390454064,
+      "jobId": "8eaefb21-a0ff-4320-9307-4763275d5309",
+      "data": {
+        "placa": "3594UPI",
+        "modelo": "T2",
+        "marca": "CHTC AUTO",
+        "anio": "2013",
+        "color": "BLANCO",
+        "licencia": "5387096",
+        "conductor": "JOSE ALFREDO VELASQUEZ CONDORI"
+      }
+    },
+    {
+      "placa": "918KLX",
+      "placaNormalized": "918KLX",
+      "createdAt": 1776390454064,
+      "jobId": "8eaefb21-a0ff-4320-9307-4763275d5309",
+      "data": {
+        "placa": "918KLX",
+        "modelo": "AUTOMOVIL",
+        "marca": "TOYOTA",
+        "anio": "1987",
+        "color": "BLANCO",
+        "licencia": "5681369",
+        "conductor": "JOHNNY VIDAURRE DORIA MEDINA"
+      }
+    },
+    {
+      "placa": "3019SSX",
+      "placaNormalized": "3019SSX",
+      "createdAt": 1776390454064,
+      "jobId": "8eaefb21-a0ff-4320-9307-4763275d5309",
+      "data": {
+        "placa": "3019SSX",
+        "modelo": "CAMIONETA",
+        "marca": "XINKAI",
+        "anio": "2013",
+        "color": "ROJO",
+        "licencia": "7509402",
+        "conductor": "JUAN CLIVER DURAN VELA"
+      }
+    },
+    {
+      "placa": "1076ETD",
+      "placaNormalized": "1076ETD",
+      "createdAt": 1776390454063,
+      "jobId": "8eaefb21-a0ff-4320-9307-4763275d5309",
+      "data": {
+        "placa": "1076ETD",
+        "modelo": "TERRANO",
+        "marca": "NISSAN",
+        "anio": "1989",
+        "color": "GRIS",
+        "licencia": "4098526",
+        "conductor": "CLIVER REVOLLO BRAVO"
+      }
+    },
+    {
+      "placa": "1076ETD",
+      "placaNormalized": "1076ETD",
+      "createdAt": 1776390079265,
+      "jobId": "34ff9a7d-49a4-4f8c-9469-5ed1fb2382b3",
+      "data": {
+        "placa": "1076ETD",
+        "modelo": "TERRANO",
+        "marca": "NISSAN",
+        "anio": "1989",
+        "color": "GRIS",
+        "licencia": "4098526",
+        "conductor": "CLIVER REVOLLO BRAVO"
+      }
+    },
+    {
+      "placa": "2285GFD",
+      "placaNormalized": "2285GFD",
+      "createdAt": 1776390079265,
+      "jobId": "34ff9a7d-49a4-4f8c-9469-5ed1fb2382b3",
+      "data": {
+        "placa": "2285GFD",
+        "modelo": "TOWN ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1997",
+        "color": "PLATEADO",
+        "licencia": "7478298",
+        "conductor": "EDUARDO ALFONSIN COLQUE GOMEZ"
+      }
+    },
+    {
+      "placa": "2282FLT (1)",
+      "placaNormalized": "2282FLT1",
+      "createdAt": 1776390079265,
+      "jobId": "34ff9a7d-49a4-4f8c-9469-5ed1fb2382b3",
+      "data": {
+        "placa": "2282FLT (1)",
+        "modelo": "LITE ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "PLATEADO",
+        "licencia": "1117246",
+        "conductor": "EDGAR REYES SALVADOR"
+      }
+    },
+    {
+      "placa": "3594UPI",
+      "placaNormalized": "3594UPI",
+      "createdAt": 1776390079265,
+      "jobId": "34ff9a7d-49a4-4f8c-9469-5ed1fb2382b3",
+      "data": {
+        "placa": "3594UPI",
+        "modelo": "T2",
+        "marca": "CHTC AUTO",
+        "anio": "2013",
+        "color": "BLANCO",
+        "licencia": "5387096",
+        "conductor": "JOSE ALFREDO VELASQUEZ CONDORI"
+      }
+    },
+    {
+      "placa": "918KLX",
+      "placaNormalized": "918KLX",
+      "createdAt": 1776390079265,
+      "jobId": "34ff9a7d-49a4-4f8c-9469-5ed1fb2382b3",
+      "data": {
+        "placa": "918KLX",
+        "modelo": "AUTOMOVIL",
+        "marca": "TOYOTA",
+        "anio": "1987",
+        "color": "BLANCO",
+        "licencia": "5681369",
+        "conductor": "JOHNNY VIDAURRE DORIA MEDINA"
+      }
+    },
+    {
+      "placa": "3019SSX",
+      "placaNormalized": "3019SSX",
+      "createdAt": 1776390079265,
+      "jobId": "34ff9a7d-49a4-4f8c-9469-5ed1fb2382b3",
+      "data": {
+        "placa": "3019SSX",
+        "modelo": "CAMIONETA",
+        "marca": "XINKAI",
+        "anio": "2013",
+        "color": "ROJO",
+        "licencia": "7509402",
+        "conductor": "JUAN CLIVER DURAN VELA"
+      }
+    },
+    {
+      "placa": "2285GFD",
+      "placaNormalized": "2285GFD",
+      "createdAt": 1776389629557,
+      "jobId": "078f980b-e12d-4ce0-903f-087c268cf4df",
+      "data": {
+        "placa": "2285GFD",
+        "modelo": "TOWN ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1997",
+        "color": "PLATEADO",
+        "licencia": "7478298",
+        "conductor": "EDUARDO ALFONSIN COLQUE GOMEZ"
+      }
+    },
+    {
+      "placa": "2282FLT (1)",
+      "placaNormalized": "2282FLT1",
+      "createdAt": 1776389629557,
+      "jobId": "078f980b-e12d-4ce0-903f-087c268cf4df",
+      "data": {
+        "placa": "2282FLT (1)",
+        "modelo": "LITE ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "PLATEADO",
+        "licencia": "1117246",
+        "conductor": "EDGAR REYES SALVADOR"
+      }
+    },
+    {
+      "placa": "3594UPI",
+      "placaNormalized": "3594UPI",
+      "createdAt": 1776389629557,
+      "jobId": "078f980b-e12d-4ce0-903f-087c268cf4df",
+      "data": {
+        "placa": "3594UPI",
+        "modelo": "T2",
+        "marca": "CHTC AUTO",
+        "anio": "2013",
+        "color": "BLANCO",
+        "licencia": "5387096",
+        "conductor": "JOSE ALFREDO VELASQUEZ CONDORI"
+      }
+    },
+    {
+      "placa": "918KLX",
+      "placaNormalized": "918KLX",
+      "createdAt": 1776389629557,
+      "jobId": "078f980b-e12d-4ce0-903f-087c268cf4df",
+      "data": {
+        "placa": "918KLX",
+        "modelo": "AUTOMOVIL",
+        "marca": "TOYOTA",
+        "anio": "1987",
+        "color": "BLANCO",
+        "licencia": "5681369",
+        "conductor": "JOHNNY VIDAURRE DORIA MEDINA"
+      }
+    },
+    {
+      "placa": "3019SSX",
+      "placaNormalized": "3019SSX",
+      "createdAt": 1776389629557,
+      "jobId": "078f980b-e12d-4ce0-903f-087c268cf4df",
+      "data": {
+        "placa": "3019SSX",
+        "modelo": "CAMIONETA",
+        "marca": "XINKAI",
+        "anio": "2013",
+        "color": "ROJO",
+        "licencia": "7509402",
+        "conductor": "JUAN CLIVER DURAN VELA"
+      }
+    },
+    {
+      "placa": "1076ETD",
+      "placaNormalized": "1076ETD",
+      "createdAt": 1776389629556,
+      "jobId": "078f980b-e12d-4ce0-903f-087c268cf4df",
+      "data": {
+        "placa": "1076ETD",
+        "modelo": "TERRANO",
+        "marca": "NISSAN",
+        "anio": "1989",
+        "color": "GRIS",
+        "licencia": "4098526",
+        "conductor": "CLIVER REVOLLO BRAVO"
+      }
+    },
+    {
+      "placa": "1076ETD",
+      "placaNormalized": "1076ETD",
+      "createdAt": 1776389118238,
+      "jobId": "53ec67d1-8f4c-4de8-b8a9-6279a6197e5b",
+      "data": {
+        "placa": "1076ETD",
+        "modelo": "TERRANO",
+        "marca": "NISSAN",
+        "anio": "1989",
+        "color": "GRIS",
+        "licencia": "4098526",
+        "conductor": "CLIVER REVOLLO BRAVO"
+      }
+    },
+    {
+      "placa": "2285GFD",
+      "placaNormalized": "2285GFD",
+      "createdAt": 1776389118238,
+      "jobId": "53ec67d1-8f4c-4de8-b8a9-6279a6197e5b",
+      "data": {
+        "placa": "2285GFD",
+        "modelo": "TOWN ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1997",
+        "color": "PLATEADO",
+        "licencia": "7478298",
+        "conductor": "EDUARDO ALFONSIN COLQUE GOMEZ"
+      }
+    },
+    {
+      "placa": "2282FLT (1)",
+      "placaNormalized": "2282FLT1",
+      "createdAt": 1776389118238,
+      "jobId": "53ec67d1-8f4c-4de8-b8a9-6279a6197e5b",
+      "data": {
+        "placa": "2282FLT (1)",
+        "modelo": "LITE ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "PLATEADO",
+        "licencia": "1117246",
+        "conductor": "EDGAR REYES SALVADOR"
+      }
+    },
+    {
+      "placa": "3594UPI",
+      "placaNormalized": "3594UPI",
+      "createdAt": 1776389118238,
+      "jobId": "53ec67d1-8f4c-4de8-b8a9-6279a6197e5b",
+      "data": {
+        "placa": "3594UPI",
+        "modelo": "T2",
+        "marca": "CHTC AUTO",
+        "anio": "2013",
+        "color": "BLANCO",
+        "licencia": "5387096",
+        "conductor": "JOSE ALFREDO VELASQUEZ CONDORI"
+      }
+    },
+    {
+      "placa": "918KLX",
+      "placaNormalized": "918KLX",
+      "createdAt": 1776389118238,
+      "jobId": "53ec67d1-8f4c-4de8-b8a9-6279a6197e5b",
+      "data": {
+        "placa": "918KLX",
+        "modelo": "AUTOMOVIL",
+        "marca": "TOYOTA",
+        "anio": "1987",
+        "color": "BLANCO",
+        "licencia": "5681369",
+        "conductor": "JOHNNY VIDAURRE DORIA MEDINA"
+      }
+    },
+    {
+      "placa": "3019SSX",
+      "placaNormalized": "3019SSX",
+      "createdAt": 1776389118238,
+      "jobId": "53ec67d1-8f4c-4de8-b8a9-6279a6197e5b",
+      "data": {
+        "placa": "3019SSX",
+        "modelo": "CAMIONETA",
+        "marca": "XINKAI",
+        "anio": "2013",
+        "color": "ROJO",
+        "licencia": "7509402",
+        "conductor": "JUAN CLIVER DURAN VELA"
+      }
+    },
+    {
+      "placa": "2282FLT (1)",
+      "placaNormalized": "2282FLT1",
+      "createdAt": 1776388549140,
+      "jobId": "372f5dba-8949-41cb-b599-37f3e4dbe50d",
+      "data": {
+        "placa": "2282FLT (1)",
+        "modelo": "LITE ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "PLATEADO",
+        "licencia": "1117246",
+        "conductor": "EDGAR REYES SALVADOR"
+      }
+    },
+    {
+      "placa": "3594UPI",
+      "placaNormalized": "3594UPI",
+      "createdAt": 1776388549140,
+      "jobId": "372f5dba-8949-41cb-b599-37f3e4dbe50d",
+      "data": {
+        "placa": "3594UPI",
+        "modelo": "T2",
+        "marca": "CHTC AUTO",
+        "anio": "2013",
+        "color": "BLANCO",
+        "licencia": "5387096",
+        "conductor": "JOSE ALFREDO VELASQUEZ CONDORI"
+      }
+    },
+    {
+      "placa": "918KLX",
+      "placaNormalized": "918KLX",
+      "createdAt": 1776388549140,
+      "jobId": "372f5dba-8949-41cb-b599-37f3e4dbe50d",
+      "data": {
+        "placa": "918KLX",
+        "modelo": "AUTOMOVIL",
+        "marca": "TOYOTA",
+        "anio": "1987",
+        "color": "BLANCO",
+        "licencia": "5681369",
+        "conductor": "JOHNNY VIDAURRE DORIA MEDINA"
+      }
+    },
+    {
+      "placa": "3019SSX",
+      "placaNormalized": "3019SSX",
+      "createdAt": 1776388549140,
+      "jobId": "372f5dba-8949-41cb-b599-37f3e4dbe50d",
+      "data": {
+        "placa": "3019SSX",
+        "modelo": "CAMIONETA",
+        "marca": "XINKAI",
+        "anio": "2013",
+        "color": "ROJO",
+        "licencia": "7509402",
+        "conductor": "JUAN CLIVER DURAN VELA"
+      }
+    },
+    {
+      "placa": "1076ETD",
+      "placaNormalized": "1076ETD",
+      "createdAt": 1776388549139,
+      "jobId": "372f5dba-8949-41cb-b599-37f3e4dbe50d",
+      "data": {
+        "placa": "1076ETD",
+        "modelo": "TERRANO",
+        "marca": "NISSAN",
+        "anio": "1989",
+        "color": "GRIS",
+        "licencia": "4098526",
+        "conductor": "CLIVER REVOLLO BRAVO"
+      }
+    },
+    {
+      "placa": "2285GFD",
+      "placaNormalized": "2285GFD",
+      "createdAt": 1776388549139,
+      "jobId": "372f5dba-8949-41cb-b599-37f3e4dbe50d",
+      "data": {
+        "placa": "2285GFD",
+        "modelo": "TOWN ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1997",
+        "color": "PLATEADO",
+        "licencia": "7478298",
+        "conductor": "EDUARDO ALFONSIN COLQUE GOMEZ"
+      }
+    },
+    {
+      "placa": "3019SSX",
+      "placaNormalized": "3019SSX",
+      "createdAt": 1776388080639,
+      "jobId": "7030b802-a356-4299-b241-1b25e0db7b19",
+      "data": {
+        "placa": "3019SSX",
+        "modelo": "CAMIONETA",
+        "marca": "XINKAI",
+        "anio": "2013",
+        "color": "ROJO",
+        "licencia": "7509402",
+        "conductor": "JUAN CLIVER DURAN VELA"
+      }
+    },
+    {
+      "placa": "1076ETD",
+      "placaNormalized": "1076ETD",
+      "createdAt": 1776388080638,
+      "jobId": "7030b802-a356-4299-b241-1b25e0db7b19",
+      "data": {
+        "placa": "1076ETD",
+        "modelo": "TERRANO",
+        "marca": "NISSAN",
+        "anio": "1989",
+        "color": "GRIS",
+        "licencia": "4098526",
+        "conductor": "CLIVER REVOLLO BRAVO"
+      }
+    },
+    {
+      "placa": "2285GFD",
+      "placaNormalized": "2285GFD",
+      "createdAt": 1776388080638,
+      "jobId": "7030b802-a356-4299-b241-1b25e0db7b19",
+      "data": {
+        "placa": "2285GFD",
+        "modelo": "TOWN ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1997",
+        "color": "PLATEADO",
+        "licencia": "7478298",
+        "conductor": "EDUARDO ALFONSIN COLQUE GOMEZ"
+      }
+    },
+    {
+      "placa": "2282FLT (1)",
+      "placaNormalized": "2282FLT1",
+      "createdAt": 1776388080638,
+      "jobId": "7030b802-a356-4299-b241-1b25e0db7b19",
+      "data": {
+        "placa": "2282FLT (1)",
+        "modelo": "LITE ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "PLATEADO",
+        "licencia": "1117246",
+        "conductor": "EDGAR REYES SALVADOR"
+      }
+    },
+    {
+      "placa": "3594UPI",
+      "placaNormalized": "3594UPI",
+      "createdAt": 1776388080638,
+      "jobId": "7030b802-a356-4299-b241-1b25e0db7b19",
+      "data": {
+        "placa": "3594UPI",
+        "modelo": "T2",
+        "marca": "CHTC AUTO",
+        "anio": "2013",
+        "color": "BLANCO",
+        "licencia": "5387096",
+        "conductor": "JOSE ALFREDO VELASQUEZ CONDORI"
+      }
+    },
+    {
+      "placa": "918KLX",
+      "placaNormalized": "918KLX",
+      "createdAt": 1776388080638,
+      "jobId": "7030b802-a356-4299-b241-1b25e0db7b19",
+      "data": {
+        "placa": "918KLX",
+        "modelo": "AUTOMOVIL",
+        "marca": "TOYOTA",
+        "anio": "1987",
+        "color": "BLANCO",
+        "licencia": "5681369",
+        "conductor": "JOHNNY VIDAURRE DORIA MEDINA"
+      }
+    },
+    {
+      "placa": "1076ETD",
+      "placaNormalized": "1076ETD",
+      "createdAt": 1776387759413,
+      "jobId": "577b6e25-ac77-4afd-a874-74315bfb82e1",
+      "data": {
+        "placa": "1076ETD",
+        "modelo": "TERRANO",
+        "marca": "NISSAN",
+        "anio": "1989",
+        "color": "GRIS",
+        "licencia": "4098526",
+        "conductor": "CLIVER REVOLLO BRAVO"
+      }
+    },
+    {
+      "placa": "2285GFD",
+      "placaNormalized": "2285GFD",
+      "createdAt": 1776387759413,
+      "jobId": "577b6e25-ac77-4afd-a874-74315bfb82e1",
+      "data": {
+        "placa": "2285GFD",
+        "modelo": "TOWN ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1997",
+        "color": "PLATEADO",
+        "licencia": "7478298",
+        "conductor": "EDUARDO ALFONSIN COLQUE GOMEZ"
+      }
+    },
+    {
+      "placa": "2282FLT (1)",
+      "placaNormalized": "2282FLT1",
+      "createdAt": 1776387759413,
+      "jobId": "577b6e25-ac77-4afd-a874-74315bfb82e1",
+      "data": {
+        "placa": "2282FLT (1)",
+        "modelo": "LITE ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "PLATEADO",
+        "licencia": "1117246",
+        "conductor": "EDGAR REYES SALVADOR"
+      }
+    },
+    {
+      "placa": "3594UPI",
+      "placaNormalized": "3594UPI",
+      "createdAt": 1776387759413,
+      "jobId": "577b6e25-ac77-4afd-a874-74315bfb82e1",
+      "data": {
+        "placa": "3594UPI",
+        "modelo": "T2",
+        "marca": "CHTC AUTO",
+        "anio": "2013",
+        "color": "BLANCO",
+        "licencia": "5387096",
+        "conductor": "JOSE ALFREDO VELASQUEZ CONDORI"
+      }
+    },
+    {
+      "placa": "918KLX",
+      "placaNormalized": "918KLX",
+      "createdAt": 1776387759413,
+      "jobId": "577b6e25-ac77-4afd-a874-74315bfb82e1",
+      "data": {
+        "placa": "918KLX",
+        "modelo": "AUTOMOVIL",
+        "marca": "TOYOTA",
+        "anio": "1987",
+        "color": "BLANCO",
+        "licencia": "5681369",
+        "conductor": "JOHNNY VIDAURRE DORIA MEDINA"
+      }
+    },
+    {
+      "placa": "3019SSX",
+      "placaNormalized": "3019SSX",
+      "createdAt": 1776387759413,
+      "jobId": "577b6e25-ac77-4afd-a874-74315bfb82e1",
+      "data": {
+        "placa": "3019SSX",
+        "modelo": "CAMIONETA",
+        "marca": "XINKAI",
+        "anio": "2013",
+        "color": "ROJO",
+        "licencia": "7509402",
+        "conductor": "JUAN CLIVER DURAN VELA"
+      }
+    },
+    {
+      "placa": "529DPC",
+      "placaNormalized": "529DPC",
+      "createdAt": 1776387400456,
+      "jobId": "345079a4-001c-45b4-a94f-b271b335d856",
+      "data": {
+        "placa": "529DPC",
+        "modelo": "PICK UP",
+        "marca": "ISUZUTOYOTAKIA",
+        "anio": "1992",
+        "color": "BLANCOOOOOKIA GRIS",
+        "licencia": "4083116",
+        "conductor": "SAMMY BOLAÑOS SUAREZ"
+      }
+    },
+    {
+      "placa": "1076ETD",
+      "placaNormalized": "1076ETD",
+      "createdAt": 1776387330032,
+      "jobId": "f501fa68-2e6f-4ef2-bf84-a3772e5fbfa0",
+      "data": {
+        "placa": "1076ETD",
+        "modelo": "TERRANO",
+        "marca": "NISSAN",
+        "anio": "1989",
+        "color": "GRIS",
+        "licencia": "4098526",
+        "conductor": "CLIVER REVOLLO BRAVO"
+      }
+    },
+    {
+      "placa": "2285GFD",
+      "placaNormalized": "2285GFD",
+      "createdAt": 1776387330032,
+      "jobId": "f501fa68-2e6f-4ef2-bf84-a3772e5fbfa0",
+      "data": {
+        "placa": "2285GFD",
+        "modelo": "TOWN ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1997",
+        "color": "PLATEADO",
+        "licencia": "7478298",
+        "conductor": "EDUARDO ALFONSIN COLQUE GOMEZ"
+      }
+    },
+    {
+      "placa": "2282FLT (1)",
+      "placaNormalized": "2282FLT1",
+      "createdAt": 1776387330032,
+      "jobId": "f501fa68-2e6f-4ef2-bf84-a3772e5fbfa0",
+      "data": {
+        "placa": "2282FLT (1)",
+        "modelo": "LITE ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "PLATEADO",
+        "licencia": "1117246",
+        "conductor": "EDGAR REYES SALVADOR"
+      }
+    },
+    {
+      "placa": "3594UPI",
+      "placaNormalized": "3594UPI",
+      "createdAt": 1776387330032,
+      "jobId": "f501fa68-2e6f-4ef2-bf84-a3772e5fbfa0",
+      "data": {
+        "placa": "3594UPI",
+        "modelo": "T2",
+        "marca": "CHTC AUTO",
+        "anio": "2013",
+        "color": "BLANCO",
+        "licencia": "5387096",
+        "conductor": "JOSE ALFREDO VELASQUEZ CONDORI"
+      }
+    },
+    {
+      "placa": "918KLX",
+      "placaNormalized": "918KLX",
+      "createdAt": 1776387330032,
+      "jobId": "f501fa68-2e6f-4ef2-bf84-a3772e5fbfa0",
+      "data": {
+        "placa": "918KLX",
+        "modelo": "AUTOMOVIL",
+        "marca": "TOYOTA",
+        "anio": "1987",
+        "color": "BLANCO",
+        "licencia": "5681369",
+        "conductor": "JOHNNY VIDAURRE DORIA MEDINA"
+      }
+    },
+    {
+      "placa": "3019SSX",
+      "placaNormalized": "3019SSX",
+      "createdAt": 1776387330032,
+      "jobId": "f501fa68-2e6f-4ef2-bf84-a3772e5fbfa0",
+      "data": {
+        "placa": "3019SSX",
+        "modelo": "CAMIONETA",
+        "marca": "XINKAI",
+        "anio": "2013",
+        "color": "ROJO",
+        "licencia": "7509402",
+        "conductor": "JUAN CLIVER DURAN VELA"
+      }
+    },
+    {
+      "placa": "1076ETD",
+      "placaNormalized": "1076ETD",
+      "createdAt": 1776387060928,
+      "jobId": "95815971-f2e6-438f-bd39-27394c763b61",
+      "data": {
+        "placa": "1076ETD",
+        "modelo": "TERRANO",
+        "marca": "NISSAN",
+        "anio": "1989",
+        "color": "GRIS",
+        "licencia": "4098526",
+        "conductor": "CLIVER REVOLLO BRAVO"
+      }
+    },
+    {
+      "placa": "2285GFD",
+      "placaNormalized": "2285GFD",
+      "createdAt": 1776387060928,
+      "jobId": "95815971-f2e6-438f-bd39-27394c763b61",
+      "data": {
+        "placa": "2285GFD",
+        "modelo": "TOWN ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1997",
+        "color": "PLATEADO",
+        "licencia": "7478298",
+        "conductor": "EDUARDO ALFONSIN COLQUE GOMEZ"
+      }
+    },
+    {
+      "placa": "2282FLT (1)",
+      "placaNormalized": "2282FLT1",
+      "createdAt": 1776387060928,
+      "jobId": "95815971-f2e6-438f-bd39-27394c763b61",
+      "data": {
+        "placa": "2282FLT (1)",
+        "modelo": "LITE ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "PLATEADO",
+        "licencia": "1117246",
+        "conductor": "EDGAR REYES SALVADOR"
+      }
+    },
+    {
+      "placa": "3594UPI",
+      "placaNormalized": "3594UPI",
+      "createdAt": 1776387060928,
+      "jobId": "95815971-f2e6-438f-bd39-27394c763b61",
+      "data": {
+        "placa": "3594UPI",
+        "modelo": "T2",
+        "marca": "CHTC AUTO",
+        "anio": "2013",
+        "color": "BLANCO",
+        "licencia": "5387096",
+        "conductor": "JOSE ALFREDO VELASQUEZ CONDORI"
+      }
+    },
+    {
+      "placa": "918KLX",
+      "placaNormalized": "918KLX",
+      "createdAt": 1776387060928,
+      "jobId": "95815971-f2e6-438f-bd39-27394c763b61",
+      "data": {
+        "placa": "918KLX",
+        "modelo": "AUTOMOVIL",
+        "marca": "TOYOTA",
+        "anio": "1987",
+        "color": "BLANCO",
+        "licencia": "5681369",
+        "conductor": "JOHNNY VIDAURRE DORIA MEDINA"
+      }
+    },
+    {
+      "placa": "3019SSX",
+      "placaNormalized": "3019SSX",
+      "createdAt": 1776387060928,
+      "jobId": "95815971-f2e6-438f-bd39-27394c763b61",
+      "data": {
+        "placa": "3019SSX",
+        "modelo": "CAMIONETA",
+        "marca": "XINKAI",
+        "anio": "2013",
+        "color": "ROJO",
+        "licencia": "7509402",
+        "conductor": "JUAN CLIVER DURAN VELA"
+      }
+    },
+    {
+      "placa": "1076ETD",
+      "placaNormalized": "1076ETD",
+      "createdAt": 1776386771207,
+      "jobId": "3bcd350d-7b21-45ae-ab98-26b50c4dea72",
+      "data": {
+        "placa": "1076ETD",
+        "modelo": "TERRANO",
+        "marca": "NISSAN",
+        "anio": "1989",
+        "color": "GRIS",
+        "licencia": "4098526",
+        "conductor": "CLIVER REVOLLO BRAVO"
+      }
+    },
+    {
+      "placa": "2285GFD",
+      "placaNormalized": "2285GFD",
+      "createdAt": 1776386771207,
+      "jobId": "3bcd350d-7b21-45ae-ab98-26b50c4dea72",
+      "data": {
+        "placa": "2285GFD",
+        "modelo": "TOWN ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1997",
+        "color": "PLATEADO",
+        "licencia": "7478298",
+        "conductor": "EDUARDO ALFONSIN COLQUE GOMEZ"
+      }
+    },
+    {
+      "placa": "2282FLT (1)",
+      "placaNormalized": "2282FLT1",
+      "createdAt": 1776386771207,
+      "jobId": "3bcd350d-7b21-45ae-ab98-26b50c4dea72",
+      "data": {
+        "placa": "2282FLT (1)",
+        "modelo": "LITE ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "PLATEADO",
+        "licencia": "1117246",
+        "conductor": "EDGAR REYES SALVADOR"
+      }
+    },
+    {
+      "placa": "3594UPI",
+      "placaNormalized": "3594UPI",
+      "createdAt": 1776386771207,
+      "jobId": "3bcd350d-7b21-45ae-ab98-26b50c4dea72",
+      "data": {
+        "placa": "3594UPI",
+        "modelo": "T2",
+        "marca": "CHTC AUTO",
+        "anio": "2013",
+        "color": "BLANCO",
+        "licencia": "5387096",
+        "conductor": "JOSE ALFREDO VELASQUEZ CONDORI"
+      }
+    },
+    {
+      "placa": "918KLX",
+      "placaNormalized": "918KLX",
+      "createdAt": 1776386771207,
+      "jobId": "3bcd350d-7b21-45ae-ab98-26b50c4dea72",
+      "data": {
+        "placa": "918KLX",
+        "modelo": "AUTOMOVIL",
+        "marca": "TOYOTA",
+        "anio": "1987",
+        "color": "BLANCO",
+        "licencia": "5681369",
+        "conductor": "JOHNNY VIDAURRE DORIA MEDINA"
+      }
+    },
+    {
+      "placa": "3019SSX",
+      "placaNormalized": "3019SSX",
+      "createdAt": 1776386771207,
+      "jobId": "3bcd350d-7b21-45ae-ab98-26b50c4dea72",
+      "data": {
+        "placa": "3019SSX",
+        "modelo": "CAMIONETA",
+        "marca": "XINKAI",
+        "anio": "2013",
+        "color": "ROJO",
+        "licencia": "7509402",
+        "conductor": "JUAN CLIVER DURAN VELA"
+      }
+    },
+    {
+      "placa": "1076ETD",
+      "placaNormalized": "1076ETD",
+      "createdAt": 1776385939018,
+      "jobId": "58b2af59-a979-403e-acf1-0db69c604748",
+      "data": {
+        "placa": "1076ETD",
+        "modelo": "TERRANO",
+        "marca": "NISSAN",
+        "anio": "1989",
+        "color": "GRIS",
+        "licencia": "4098526",
+        "conductor": "CLIVER REVOLLO BRAVO"
+      }
+    },
+    {
+      "placa": "2285GFD",
+      "placaNormalized": "2285GFD",
+      "createdAt": 1776385939018,
+      "jobId": "58b2af59-a979-403e-acf1-0db69c604748",
+      "data": {
+        "placa": "2285GFD",
+        "modelo": "TOWN ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1997",
+        "color": "PLATEADO",
+        "licencia": "7478298",
+        "conductor": "EDUARDO ALFONSIN COLQUE GOMEZ"
+      }
+    },
+    {
+      "placa": "2282FLT (1)",
+      "placaNormalized": "2282FLT1",
+      "createdAt": 1776385939018,
+      "jobId": "58b2af59-a979-403e-acf1-0db69c604748",
+      "data": {
+        "placa": "2282FLT (1)",
+        "modelo": "LITE ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "PLATEADO",
+        "licencia": "1117246",
+        "conductor": "EDGAR REYES SALVADOR"
+      }
+    },
+    {
+      "placa": "3594UPI",
+      "placaNormalized": "3594UPI",
+      "createdAt": 1776385939018,
+      "jobId": "58b2af59-a979-403e-acf1-0db69c604748",
+      "data": {
+        "placa": "3594UPI",
+        "modelo": "T2",
+        "marca": "CHTC AUTO",
+        "anio": "2013",
+        "color": "BLANCO",
+        "licencia": "5387096",
+        "conductor": "JOSE ALFREDO VELASQUEZ CONDORI"
+      }
+    },
+    {
+      "placa": "918KLX",
+      "placaNormalized": "918KLX",
+      "createdAt": 1776385939018,
+      "jobId": "58b2af59-a979-403e-acf1-0db69c604748",
+      "data": {
+        "placa": "918KLX",
+        "modelo": "AUTOMOVIL",
+        "marca": "TOYOTA",
+        "anio": "1987",
+        "color": "BLANCO",
+        "licencia": "5681369",
+        "conductor": "JOHNNY VIDAURRE DORIA MEDINA"
+      }
+    },
+    {
+      "placa": "3019SSX",
+      "placaNormalized": "3019SSX",
+      "createdAt": 1776385939018,
+      "jobId": "58b2af59-a979-403e-acf1-0db69c604748",
+      "data": {
+        "placa": "3019SSX",
+        "modelo": "CAMIONETA",
+        "marca": "XINKAI",
+        "anio": "2013",
+        "color": "ROJO",
+        "licencia": "7509402",
+        "conductor": "JUAN CLIVER DURAN VELA"
+      }
+    },
+    {
+      "placa": "1076ETD",
+      "placaNormalized": "1076ETD",
+      "createdAt": 1776385086647,
+      "jobId": "4016716f-cf6a-492a-bacd-7ab2ee4d0cac",
+      "data": {
+        "placa": "1076ETD",
+        "modelo": "TERRANO",
+        "marca": "NISSAN",
+        "anio": "1989",
+        "color": "GRIS",
+        "licencia": "4098526",
+        "conductor": "CLIVER REVOLLO BRAVO"
+      }
+    },
+    {
+      "placa": "2285GFD",
+      "placaNormalized": "2285GFD",
+      "createdAt": 1776385086647,
+      "jobId": "4016716f-cf6a-492a-bacd-7ab2ee4d0cac",
+      "data": {
+        "placa": "2285GFD",
+        "modelo": "TOWN ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1997",
+        "color": "PLATEADO",
+        "licencia": "7478298",
+        "conductor": "EDUARDO ALFONSIN COLQUE GOMEZ"
+      }
+    },
+    {
+      "placa": "2282FLT (1)",
+      "placaNormalized": "2282FLT1",
+      "createdAt": 1776385086647,
+      "jobId": "4016716f-cf6a-492a-bacd-7ab2ee4d0cac",
+      "data": {
+        "placa": "2282FLT (1)",
+        "modelo": "LITE ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "PLATEADO",
+        "licencia": "1117246",
+        "conductor": "EDGAR REYES SALVADOR"
+      }
+    },
+    {
+      "placa": "3594UPI",
+      "placaNormalized": "3594UPI",
+      "createdAt": 1776385086647,
+      "jobId": "4016716f-cf6a-492a-bacd-7ab2ee4d0cac",
+      "data": {
+        "placa": "3594UPI",
+        "modelo": "T2",
+        "marca": "CHTC AUTO",
+        "anio": "2013",
+        "color": "BLANCO",
+        "licencia": "5387096",
+        "conductor": "JOSE ALFREDO VELASQUEZ CONDORI"
+      }
+    },
+    {
+      "placa": "918KLX",
+      "placaNormalized": "918KLX",
+      "createdAt": 1776385086647,
+      "jobId": "4016716f-cf6a-492a-bacd-7ab2ee4d0cac",
+      "data": {
+        "placa": "918KLX",
+        "modelo": "AUTOMOVIL",
+        "marca": "TOYOTA",
+        "anio": "1987",
+        "color": "BLANCO",
+        "licencia": "5681369",
+        "conductor": "JOHNNY VIDAURRE DORIA MEDINA"
+      }
+    },
+    {
+      "placa": "3019SSX",
+      "placaNormalized": "3019SSX",
+      "createdAt": 1776385086647,
+      "jobId": "4016716f-cf6a-492a-bacd-7ab2ee4d0cac",
+      "data": {
+        "placa": "3019SSX",
+        "modelo": "CAMIONETA",
+        "marca": "XINKAI",
+        "anio": "2013",
+        "color": "ROJO",
+        "licencia": "7509402",
+        "conductor": "JUAN CLIVER DURAN VELA"
+      }
+    },
+    {
+      "placa": "1076ETD",
+      "placaNormalized": "1076ETD",
+      "createdAt": 1776384254236,
+      "jobId": "a3c182a2-3f08-46b6-916a-62705c696ed9",
+      "data": {
+        "placa": "1076ETD",
+        "modelo": "TERRANO",
+        "marca": "NISSAN",
+        "anio": "1989",
+        "color": "GRIS",
+        "licencia": "4098526",
+        "conductor": "CLIVER REVOLLO BRAVO"
+      }
+    },
+    {
+      "placa": "2285GFD",
+      "placaNormalized": "2285GFD",
+      "createdAt": 1776384254236,
+      "jobId": "a3c182a2-3f08-46b6-916a-62705c696ed9",
+      "data": {
+        "placa": "2285GFD",
+        "modelo": "TOWN ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1997",
+        "color": "PLATEADO",
+        "licencia": "7478298",
+        "conductor": "EDUARDO ALFONSIN COLQUE GOMEZ"
+      }
+    },
+    {
+      "placa": "2282FLT (1)",
+      "placaNormalized": "2282FLT1",
+      "createdAt": 1776384254236,
+      "jobId": "a3c182a2-3f08-46b6-916a-62705c696ed9",
+      "data": {
+        "placa": "2282FLT (1)",
+        "modelo": "LITE ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "PLATEADO",
+        "licencia": "1117246",
+        "conductor": "EDGAR REYES SALVADOR"
+      }
+    },
+    {
+      "placa": "3594UPI",
+      "placaNormalized": "3594UPI",
+      "createdAt": 1776384254236,
+      "jobId": "a3c182a2-3f08-46b6-916a-62705c696ed9",
+      "data": {
+        "placa": "3594UPI",
+        "modelo": "T2",
+        "marca": "CHTC AUTO",
+        "anio": "2013",
+        "color": "BLANCO",
+        "licencia": "5387096",
+        "conductor": "JOSE ALFREDO VELASQUEZ CONDORI"
+      }
+    },
+    {
+      "placa": "918KLX",
+      "placaNormalized": "918KLX",
+      "createdAt": 1776384254236,
+      "jobId": "a3c182a2-3f08-46b6-916a-62705c696ed9",
+      "data": {
+        "placa": "918KLX",
+        "modelo": "AUTOMOVIL",
+        "marca": "TOYOTA",
+        "anio": "1987",
+        "color": "BLANCO",
+        "licencia": "5681369",
+        "conductor": "JOHNNY VIDAURRE DORIA MEDINA"
+      }
+    },
+    {
+      "placa": "3019SSX",
+      "placaNormalized": "3019SSX",
+      "createdAt": 1776384254236,
+      "jobId": "a3c182a2-3f08-46b6-916a-62705c696ed9",
+      "data": {
+        "placa": "3019SSX",
+        "modelo": "CAMIONETA",
+        "marca": "XINKAI",
+        "anio": "2013",
+        "color": "ROJO",
+        "licencia": "7509402",
+        "conductor": "JUAN CLIVER DURAN VELA"
+      }
+    },
+    {
+      "placa": "529DPC",
+      "placaNormalized": "529DPC",
+      "createdAt": 1776383776083,
+      "jobId": "8f8414ab-7bc2-4a49-9c3a-5711e0075ba8",
+      "data": {
+        "placa": "529DPC",
+        "modelo": "PICK UP",
+        "marca": "ISUZUTOYOTAKIA",
+        "anio": "1992",
+        "color": "BLANCOOOOOKIA GRIS",
+        "licencia": "4083116",
+        "conductor": "SAMMY BOLAÑOS SUAREZ"
+      }
+    },
+    {
+      "placa": "1076ETD",
+      "placaNormalized": "1076ETD",
+      "createdAt": 1776383718614,
+      "jobId": "124b285b-f49b-4176-a8d4-79670f0e3a8d",
+      "data": {
+        "placa": "1076ETD",
+        "modelo": "TERRANO",
+        "marca": "NISSAN",
+        "anio": "1989",
+        "color": "GRIS",
+        "licencia": "4098526",
+        "conductor": "CLIVER REVOLLO BRAVO"
+      }
+    },
+    {
+      "placa": "2285GFD",
+      "placaNormalized": "2285GFD",
+      "createdAt": 1776383718614,
+      "jobId": "124b285b-f49b-4176-a8d4-79670f0e3a8d",
+      "data": {
+        "placa": "2285GFD",
+        "modelo": "TOWN ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1997",
+        "color": "PLATEADO",
+        "licencia": "7478298",
+        "conductor": "EDUARDO ALFONSIN COLQUE GOMEZ"
+      }
+    },
+    {
+      "placa": "2282FLT (1)",
+      "placaNormalized": "2282FLT1",
+      "createdAt": 1776383718614,
+      "jobId": "124b285b-f49b-4176-a8d4-79670f0e3a8d",
+      "data": {
+        "placa": "2282FLT (1)",
+        "modelo": "LITE ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "PLATEADO",
+        "licencia": "1117246",
+        "conductor": "EDGAR REYES SALVADOR"
+      }
+    },
+    {
+      "placa": "3594UPI",
+      "placaNormalized": "3594UPI",
+      "createdAt": 1776383718614,
+      "jobId": "124b285b-f49b-4176-a8d4-79670f0e3a8d",
+      "data": {
+        "placa": "3594UPI",
+        "modelo": "T2",
+        "marca": "CHTC AUTO",
+        "anio": "2013",
+        "color": "BLANCO",
+        "licencia": "5387096",
+        "conductor": "JOSE ALFREDO VELASQUEZ CONDORI"
+      }
+    },
+    {
+      "placa": "918KLX",
+      "placaNormalized": "918KLX",
+      "createdAt": 1776383718614,
+      "jobId": "124b285b-f49b-4176-a8d4-79670f0e3a8d",
+      "data": {
+        "placa": "918KLX",
+        "modelo": "AUTOMOVIL",
+        "marca": "TOYOTA",
+        "anio": "1987",
+        "color": "BLANCO",
+        "licencia": "5681369",
+        "conductor": "JOHNNY VIDAURRE DORIA MEDINA"
+      }
+    },
+    {
+      "placa": "3019SSX",
+      "placaNormalized": "3019SSX",
+      "createdAt": 1776383718614,
+      "jobId": "124b285b-f49b-4176-a8d4-79670f0e3a8d",
+      "data": {
+        "placa": "3019SSX",
+        "modelo": "CAMIONETA",
+        "marca": "XINKAI",
+        "anio": "2013",
+        "color": "ROJO",
+        "licencia": "7509402",
+        "conductor": "JUAN CLIVER DURAN VELA"
+      }
+    },
+    {
+      "placa": "1076ETD",
+      "placaNormalized": "1076ETD",
+      "createdAt": 1776383330978,
+      "jobId": "94915b6a-349e-441f-a858-f4e262dcdaf6",
+      "data": {
+        "placa": "1076ETD",
+        "modelo": "TERRANO",
+        "marca": "NISSAN",
+        "anio": "1989",
+        "color": "GRIS",
+        "licencia": "4098526",
+        "conductor": "CLIVER REVOLLO BRAVO"
+      }
+    },
+    {
+      "placa": "2285GFD",
+      "placaNormalized": "2285GFD",
+      "createdAt": 1776383330978,
+      "jobId": "94915b6a-349e-441f-a858-f4e262dcdaf6",
+      "data": {
+        "placa": "2285GFD",
+        "modelo": "TOWN ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1997",
+        "color": "PLATEADO",
+        "licencia": "7478298",
+        "conductor": "EDUARDO ALFONSIN COLQUE GOMEZ"
+      }
+    },
+    {
+      "placa": "2282FLT (1)",
+      "placaNormalized": "2282FLT1",
+      "createdAt": 1776383330978,
+      "jobId": "94915b6a-349e-441f-a858-f4e262dcdaf6",
+      "data": {
+        "placa": "2282FLT (1)",
+        "modelo": "LITE ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "PLATEADO",
+        "licencia": "1117246",
+        "conductor": "EDGAR REYES SALVADOR"
+      }
+    },
+    {
+      "placa": "3594UPI",
+      "placaNormalized": "3594UPI",
+      "createdAt": 1776383330978,
+      "jobId": "94915b6a-349e-441f-a858-f4e262dcdaf6",
+      "data": {
+        "placa": "3594UPI",
+        "modelo": "T2",
+        "marca": "CHTC AUTO",
+        "anio": "2013",
+        "color": "BLANCO",
+        "licencia": "5387096",
+        "conductor": "JOSE ALFREDO VELASQUEZ CONDORI"
+      }
+    },
+    {
+      "placa": "918KLX",
+      "placaNormalized": "918KLX",
+      "createdAt": 1776383330978,
+      "jobId": "94915b6a-349e-441f-a858-f4e262dcdaf6",
+      "data": {
+        "placa": "918KLX",
+        "modelo": "AUTOMOVIL",
+        "marca": "TOYOTA",
+        "anio": "1987",
+        "color": "BLANCO",
+        "licencia": "5681369",
+        "conductor": "JOHNNY VIDAURRE DORIA MEDINA"
+      }
+    },
+    {
+      "placa": "3019SSX",
+      "placaNormalized": "3019SSX",
+      "createdAt": 1776383330978,
+      "jobId": "94915b6a-349e-441f-a858-f4e262dcdaf6",
+      "data": {
+        "placa": "3019SSX",
+        "modelo": "CAMIONETA",
+        "marca": "XINKAI",
+        "anio": "2013",
+        "color": "ROJO",
+        "licencia": "7509402",
+        "conductor": "JUAN CLIVER DURAN VELA"
+      }
+    },
+    {
+      "placa": "1076ETD",
+      "placaNormalized": "1076ETD",
+      "createdAt": 1776383055743,
+      "jobId": "5e7f317e-021b-4d0f-9c5e-dbf169cf3c39",
+      "data": {
+        "placa": "1076ETD",
+        "modelo": "TERRANO",
+        "marca": "NISSAN",
+        "anio": "1989",
+        "color": "GRIS",
+        "licencia": "4098526",
+        "conductor": "CLIVER REVOLLO BRAVO"
+      }
+    },
+    {
+      "placa": "2285GFD",
+      "placaNormalized": "2285GFD",
+      "createdAt": 1776383055743,
+      "jobId": "5e7f317e-021b-4d0f-9c5e-dbf169cf3c39",
+      "data": {
+        "placa": "2285GFD",
+        "modelo": "TOWN ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1997",
+        "color": "PLATEADO",
+        "licencia": "7478298",
+        "conductor": "EDUARDO ALFONSIN COLQUE GOMEZ"
+      }
+    },
+    {
+      "placa": "2282FLT (1)",
+      "placaNormalized": "2282FLT1",
+      "createdAt": 1776383055743,
+      "jobId": "5e7f317e-021b-4d0f-9c5e-dbf169cf3c39",
+      "data": {
+        "placa": "2282FLT (1)",
+        "modelo": "LITE ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "PLATEADO",
+        "licencia": "1117246",
+        "conductor": "EDGAR REYES SALVADOR"
+      }
+    },
+    {
+      "placa": "3594UPI",
+      "placaNormalized": "3594UPI",
+      "createdAt": 1776383055743,
+      "jobId": "5e7f317e-021b-4d0f-9c5e-dbf169cf3c39",
+      "data": {
+        "placa": "3594UPI",
+        "modelo": "T2",
+        "marca": "CHTC AUTO",
+        "anio": "2013",
+        "color": "BLANCO",
+        "licencia": "5387096",
+        "conductor": "JOSE ALFREDO VELASQUEZ CONDORI"
+      }
+    },
+    {
+      "placa": "918KLX",
+      "placaNormalized": "918KLX",
+      "createdAt": 1776383055743,
+      "jobId": "5e7f317e-021b-4d0f-9c5e-dbf169cf3c39",
+      "data": {
+        "placa": "918KLX",
+        "modelo": "AUTOMOVIL",
+        "marca": "TOYOTA",
+        "anio": "1987",
+        "color": "BLANCO",
+        "licencia": "5681369",
+        "conductor": "JOHNNY VIDAURRE DORIA MEDINA"
+      }
+    },
+    {
+      "placa": "3019SSX",
+      "placaNormalized": "3019SSX",
+      "createdAt": 1776383055743,
+      "jobId": "5e7f317e-021b-4d0f-9c5e-dbf169cf3c39",
+      "data": {
+        "placa": "3019SSX",
+        "modelo": "CAMIONETA",
+        "marca": "XINKAI",
+        "anio": "2013",
+        "color": "ROJO",
+        "licencia": "7509402",
+        "conductor": "JUAN CLIVER DURAN VELA"
+      }
+    },
+    {
+      "placa": "2285GFD",
+      "placaNormalized": "2285GFD",
+      "createdAt": 1776382676127,
+      "jobId": "b92afbd5-f268-4b77-bd15-17605b1b0112",
+      "data": {
+        "placa": "2285GFD",
+        "modelo": "TOWN ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1997",
+        "color": "PLATEADO",
+        "licencia": "7478298",
+        "conductor": "EDUARDO ALFONSIN COLQUE GOMEZ"
+      }
+    },
+    {
+      "placa": "2282FLT (1)",
+      "placaNormalized": "2282FLT1",
+      "createdAt": 1776382676127,
+      "jobId": "b92afbd5-f268-4b77-bd15-17605b1b0112",
+      "data": {
+        "placa": "2282FLT (1)",
+        "modelo": "LITE ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "PLATEADO",
+        "licencia": "1117246",
+        "conductor": "EDGAR REYES SALVADOR"
+      }
+    },
+    {
+      "placa": "3594UPI",
+      "placaNormalized": "3594UPI",
+      "createdAt": 1776382676127,
+      "jobId": "b92afbd5-f268-4b77-bd15-17605b1b0112",
+      "data": {
+        "placa": "3594UPI",
+        "modelo": "T2",
+        "marca": "CHTC AUTO",
+        "anio": "2013",
+        "color": "BLANCO",
+        "licencia": "5387096",
+        "conductor": "JOSE ALFREDO VELASQUEZ CONDORI"
+      }
+    },
+    {
+      "placa": "918KLX",
+      "placaNormalized": "918KLX",
+      "createdAt": 1776382676127,
+      "jobId": "b92afbd5-f268-4b77-bd15-17605b1b0112",
+      "data": {
+        "placa": "918KLX",
+        "modelo": "AUTOMOVIL",
+        "marca": "TOYOTA",
+        "anio": "1987",
+        "color": "BLANCO",
+        "licencia": "5681369",
+        "conductor": "JOHNNY VIDAURRE DORIA MEDINA"
+      }
+    },
+    {
+      "placa": "3019SSX",
+      "placaNormalized": "3019SSX",
+      "createdAt": 1776382676127,
+      "jobId": "b92afbd5-f268-4b77-bd15-17605b1b0112",
+      "data": {
+        "placa": "3019SSX",
+        "modelo": "CAMIONETA",
+        "marca": "XINKAI",
+        "anio": "2013",
+        "color": "ROJO",
+        "licencia": "7509402",
+        "conductor": "JUAN CLIVER DURAN VELA"
+      }
+    },
+    {
+      "placa": "1076ETD",
+      "placaNormalized": "1076ETD",
+      "createdAt": 1776382676126,
+      "jobId": "b92afbd5-f268-4b77-bd15-17605b1b0112",
+      "data": {
+        "placa": "1076ETD",
+        "modelo": "TERRANO",
+        "marca": "NISSAN",
+        "anio": "1989",
+        "color": "GRIS",
+        "licencia": "4098526",
+        "conductor": "CLIVER REVOLLO BRAVO"
+      }
+    },
+    {
+      "placa": "2285GFD",
+      "placaNormalized": "2285GFD",
+      "createdAt": 1776382077824,
+      "jobId": "e2464b06-2c8f-4f8f-aed5-3756d69035d7",
+      "data": {
+        "placa": "2285GFD",
+        "modelo": "TOWN ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1997",
+        "color": "PLATEADO",
+        "licencia": "7478298",
+        "conductor": "EDUARDO ALFONSIN COLQUE GOMEZ"
+      }
+    },
+    {
+      "placa": "2282FLT (1)",
+      "placaNormalized": "2282FLT1",
+      "createdAt": 1776382077824,
+      "jobId": "e2464b06-2c8f-4f8f-aed5-3756d69035d7",
+      "data": {
+        "placa": "2282FLT (1)",
+        "modelo": "LITE ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "PLATEADO",
+        "licencia": "1117246",
+        "conductor": "EDGAR REYES SALVADOR"
+      }
+    },
+    {
+      "placa": "3594UPI",
+      "placaNormalized": "3594UPI",
+      "createdAt": 1776382077824,
+      "jobId": "e2464b06-2c8f-4f8f-aed5-3756d69035d7",
+      "data": {
+        "placa": "3594UPI",
+        "modelo": "T2",
+        "marca": "CHTC AUTO",
+        "anio": "2013",
+        "color": "BLANCO",
+        "licencia": "5387096",
+        "conductor": "JOSE ALFREDO VELASQUEZ CONDORI"
+      }
+    },
+    {
+      "placa": "918KLX",
+      "placaNormalized": "918KLX",
+      "createdAt": 1776382077824,
+      "jobId": "e2464b06-2c8f-4f8f-aed5-3756d69035d7",
+      "data": {
+        "placa": "918KLX",
+        "modelo": "AUTOMOVIL",
+        "marca": "TOYOTA",
+        "anio": "1987",
+        "color": "BLANCO",
+        "licencia": "5681369",
+        "conductor": "JOHNNY VIDAURRE DORIA MEDINA"
+      }
+    },
+    {
+      "placa": "3019SSX",
+      "placaNormalized": "3019SSX",
+      "createdAt": 1776382077824,
+      "jobId": "e2464b06-2c8f-4f8f-aed5-3756d69035d7",
+      "data": {
+        "placa": "3019SSX",
+        "modelo": "CAMIONETA",
+        "marca": "XINKAI",
+        "anio": "2013",
+        "color": "ROJO",
+        "licencia": "7509402",
+        "conductor": "JUAN CLIVER DURAN VELA"
+      }
+    },
+    {
+      "placa": "1076ETD",
+      "placaNormalized": "1076ETD",
+      "createdAt": 1776382077823,
+      "jobId": "e2464b06-2c8f-4f8f-aed5-3756d69035d7",
+      "data": {
+        "placa": "1076ETD",
+        "modelo": "TERRANO",
+        "marca": "NISSAN",
+        "anio": "1989",
+        "color": "GRIS",
+        "licencia": "4098526",
+        "conductor": "CLIVER REVOLLO BRAVO"
+      }
+    },
+    {
+      "placa": "3594UPI",
+      "placaNormalized": "3594UPI",
+      "createdAt": 1776381244439,
+      "jobId": "d13d39b0-d168-40b8-97de-ac55abc82de2",
+      "data": {
+        "placa": "3594UPI",
+        "modelo": "T2",
+        "marca": "CHTC AUTO",
+        "anio": "2013",
+        "color": "BLANCO",
+        "licencia": "5387096",
+        "conductor": "JOSE ALFREDO VELASQUEZ CONDORI"
+      }
+    },
+    {
+      "placa": "918KLX",
+      "placaNormalized": "918KLX",
+      "createdAt": 1776381244439,
+      "jobId": "d13d39b0-d168-40b8-97de-ac55abc82de2",
+      "data": {
+        "placa": "918KLX",
+        "modelo": "AUTOMOVIL",
+        "marca": "TOYOTA",
+        "anio": "1987",
+        "color": "BLANCO",
+        "licencia": "5681369",
+        "conductor": "JOHNNY VIDAURRE DORIA MEDINA"
+      }
+    },
+    {
+      "placa": "3019SSX",
+      "placaNormalized": "3019SSX",
+      "createdAt": 1776381244439,
+      "jobId": "d13d39b0-d168-40b8-97de-ac55abc82de2",
+      "data": {
+        "placa": "3019SSX",
+        "modelo": "CAMIONETA",
+        "marca": "XINKAI",
+        "anio": "2013",
+        "color": "ROJO",
+        "licencia": "7509402",
+        "conductor": "JUAN CLIVER DURAN VELA"
+      }
+    },
+    {
+      "placa": "1076ETD",
+      "placaNormalized": "1076ETD",
+      "createdAt": 1776381244438,
+      "jobId": "d13d39b0-d168-40b8-97de-ac55abc82de2",
+      "data": {
+        "placa": "1076ETD",
+        "modelo": "TERRANO",
+        "marca": "NISSAN",
+        "anio": "1989",
+        "color": "GRIS",
+        "licencia": "4098526",
+        "conductor": "CLIVER REVOLLO BRAVO"
+      }
+    },
+    {
+      "placa": "2285GFD",
+      "placaNormalized": "2285GFD",
+      "createdAt": 1776381244438,
+      "jobId": "d13d39b0-d168-40b8-97de-ac55abc82de2",
+      "data": {
+        "placa": "2285GFD",
+        "modelo": "TOWN ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1997",
+        "color": "PLATEADO",
+        "licencia": "7478298",
+        "conductor": "EDUARDO ALFONSIN COLQUE GOMEZ"
+      }
+    },
+    {
+      "placa": "2282FLT (1)",
+      "placaNormalized": "2282FLT1",
+      "createdAt": 1776381244438,
+      "jobId": "d13d39b0-d168-40b8-97de-ac55abc82de2",
+      "data": {
+        "placa": "2282FLT (1)",
+        "modelo": "LITE ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "PLATEADO",
+        "licencia": "1117246",
+        "conductor": "EDGAR REYES SALVADOR"
+      }
+    },
+    {
+      "placa": "529DPC",
+      "placaNormalized": "529DPC",
+      "createdAt": 1776380971634,
+      "jobId": "e0862c34-7762-4b7c-85a8-56f1b15e7f8e",
+      "data": {
+        "placa": "529DPC",
+        "modelo": "PICK UP",
+        "marca": "ISUZUTOYOTAKIA",
+        "anio": "1992",
+        "color": "BLANCOOOOOKIA GRIS",
+        "licencia": "4083116",
+        "conductor": "SAMMY BOLAÑOS SUAREZ"
+      }
+    },
+    {
+      "placa": "529DPC",
+      "placaNormalized": "529DPC",
+      "createdAt": 1776380265275,
+      "jobId": "dc52ba5c-1f63-474a-9ac5-2d9a4d1162f5",
+      "data": {
+        "placa": "529DPC",
+        "modelo": "PICK UP",
+        "marca": "ISUZU",
+        "anio": "1992",
+        "color": "CELESTE",
+        "licencia": "4083116",
+        "conductor": "SAMMY BOLAÑOS SUAREZ"
+      }
+    },
+    {
+      "placa": "529DPC",
+      "placaNormalized": "529DPC",
+      "createdAt": 1776379836677,
+      "jobId": "c06552e8-4822-4278-a244-c1bc6485357c",
+      "data": {
+        "placa": "529DPC",
+        "modelo": "PICK UP",
+        "marca": "ISUZU",
+        "anio": "1992",
+        "color": "CELESTE",
+        "licencia": "4083116",
+        "conductor": "SAMMY BOLAÑOS SUAREZ"
+      }
+    },
+    {
+      "placa": "529DPC",
+      "placaNormalized": "529DPC",
+      "createdAt": 1776379510030,
+      "jobId": "c64619c6-5368-4473-ab5a-00fc23f4e8e0",
+      "data": {
+        "placa": "529DPC",
+        "modelo": "PICK UP",
+        "marca": "ISUZU",
+        "anio": "1992",
+        "color": "CELESTE",
+        "licencia": "4083116",
+        "conductor": "SAMMY BOLAÑOS SUAREZ"
+      }
+    },
+    {
+      "placa": "529DPC",
+      "placaNormalized": "529DPC",
+      "createdAt": 1776379174865,
+      "jobId": "4f8f7e55-5384-4a2a-b8c3-a6abf06d7800",
+      "data": {
+        "placa": "529DPC",
+        "modelo": "PICK UP",
+        "marca": "ISUZU",
+        "anio": "1992",
+        "color": "CELESTE",
+        "licencia": "4083116",
+        "conductor": "SAMMY BOLAÑOS SUAREZ"
+      }
+    },
+    {
+      "placa": "529DPC",
+      "placaNormalized": "529DPC",
+      "createdAt": 1776378723503,
+      "jobId": "cc369cc4-40aa-4f81-8c7c-f71b08c45a3e",
+      "data": {
+        "placa": "529DPC",
+        "modelo": "PICK UP",
+        "marca": "ISUZU",
+        "anio": "1992",
+        "color": "CELESTE",
+        "licencia": "4083116",
+        "conductor": "SAMMY BOLAÑOS SUAREZ"
+      }
+    },
+    {
+      "placa": "6011TEN",
+      "placaNormalized": "6011TEN",
+      "createdAt": 1776378073556,
+      "jobId": "ed141de4-3ea0-495c-afa6-3def777d8b17",
+      "data": {
+        "placa": "6011TEN",
+        "modelo": "RUSH",
+        "marca": "TOYOTA",
+        "anio": "2023",
+        "color": "BLANCO",
+        "licencia": "55643733",
+        "conductor": "VALERIA VILLEGAS ZAMORANO"
+      }
+    },
+    {
+      "placa": "2516ZZN",
+      "placaNormalized": "2516ZZN",
+      "createdAt": 1776378073556,
+      "jobId": "ed141de4-3ea0-495c-afa6-3def777d8b17",
+      "data": {
+        "placa": "2516ZZN",
+        "modelo": "X-TRAIL",
+        "marca": "NISSAN",
+        "anio": "2011",
+        "color": "BEIGE",
+        "licencia": "3626568",
+        "conductor": "LIMBER BERNARDO MIRANDA MENDOZA"
+      }
+    },
+    {
+      "placa": "4010ULC",
+      "placaNormalized": "4010ULC",
+      "createdAt": 1776378073556,
+      "jobId": "ed141de4-3ea0-495c-afa6-3def777d8b17",
+      "data": {
+        "placa": "4010ULC",
+        "modelo": "PALIO WEEKEND",
+        "marca": "FIAT",
+        "anio": "2016",
+        "color": "PLATA",
+        "licencia": "1149632",
+        "conductor": "VEIMAR GRIMALDOS VARGAS"
+      }
+    },
+    {
+      "placa": "4099LSL",
+      "placaNormalized": "4099LSL",
+      "createdAt": 1776378073556,
+      "jobId": "ed141de4-3ea0-495c-afa6-3def777d8b17",
+      "data": {
+        "placa": "4099LSL",
+        "modelo": "HILUX",
+        "marca": "TOYOTA",
+        "anio": "2014",
+        "color": "SUPER BLANCO",
+        "licencia": "10340365",
+        "conductor": "JOSE LUIS MAMANI VELASQUEZ"
+      }
+    },
+    {
+      "placa": "4840FRR",
+      "placaNormalized": "4840FRR",
+      "createdAt": 1776378073556,
+      "jobId": "ed141de4-3ea0-495c-afa6-3def777d8b17",
+      "data": {
+        "placa": "4840FRR",
+        "modelo": "ASX",
+        "marca": "MITSUBISHI",
+        "anio": "2019",
+        "color": "GRIS TITANIO",
+        "licencia": "1118726",
+        "conductor": "PEDRO SALAZAR COLLAZOS"
+      }
+    },
+    {
+      "placa": "5689CLA",
+      "placaNormalized": "5689CLA",
+      "createdAt": 1776378073556,
+      "jobId": "ed141de4-3ea0-495c-afa6-3def777d8b17",
+      "data": {
+        "placa": "5689CLA",
+        "modelo": "S-PRESSO",
+        "marca": "SUZUKI",
+        "anio": "2022",
+        "color": "BLANCO",
+        "licencia": "3652507",
+        "conductor": "JUAN PABLO CERVANTES ZAMBRANA"
+      }
+    },
+    {
+      "placa": "6011TEN",
+      "placaNormalized": "6011TEN",
+      "createdAt": 1776377731455,
+      "jobId": "d4e0361f-67e8-479c-be01-c477dc3ec910",
+      "data": {
+        "placa": "6011TEN",
+        "modelo": "RUSH",
+        "marca": "TOYOTA",
+        "anio": "2023",
+        "color": "BLANCO",
+        "licencia": "55643733",
+        "conductor": "VALERIA VILLEGAS ZAMORANO"
+      }
+    },
+    {
+      "placa": "2516ZZN",
+      "placaNormalized": "2516ZZN",
+      "createdAt": 1776377731455,
+      "jobId": "d4e0361f-67e8-479c-be01-c477dc3ec910",
+      "data": {
+        "placa": "2516ZZN",
+        "modelo": "X-TRAIL",
+        "marca": "NISSAN",
+        "anio": "2011",
+        "color": "BEIGE",
+        "licencia": "3626568",
+        "conductor": "LIMBER BERNARDO MIRANDA MENDOZA"
+      }
+    },
+    {
+      "placa": "4010ULC",
+      "placaNormalized": "4010ULC",
+      "createdAt": 1776377731455,
+      "jobId": "d4e0361f-67e8-479c-be01-c477dc3ec910",
+      "data": {
+        "placa": "4010ULC",
+        "modelo": "PALIO WEEKEND",
+        "marca": "FIAT",
+        "anio": "2016",
+        "color": "PLATA",
+        "licencia": "1149632",
+        "conductor": "VEIMAR GRIMALDOS VARGAS"
+      }
+    },
+    {
+      "placa": "4099LSL",
+      "placaNormalized": "4099LSL",
+      "createdAt": 1776377731455,
+      "jobId": "d4e0361f-67e8-479c-be01-c477dc3ec910",
+      "data": {
+        "placa": "4099LSL",
+        "modelo": "HILUX",
+        "marca": "TOYOTA",
+        "anio": "2014",
+        "color": "SUPER BLANCO",
+        "licencia": "10340365",
+        "conductor": "JOSE LUIS MAMANI VELASQUEZ"
+      }
+    },
+    {
+      "placa": "4840FRR",
+      "placaNormalized": "4840FRR",
+      "createdAt": 1776377731455,
+      "jobId": "d4e0361f-67e8-479c-be01-c477dc3ec910",
+      "data": {
+        "placa": "4840FRR",
+        "modelo": "ASX",
+        "marca": "MITSUBISHI",
+        "anio": "2019",
+        "color": "GRIS TITANIO",
+        "licencia": "1118726",
+        "conductor": "PEDRO SALAZAR COLLAZOS"
+      }
+    },
+    {
+      "placa": "5689CLA",
+      "placaNormalized": "5689CLA",
+      "createdAt": 1776377731455,
+      "jobId": "d4e0361f-67e8-479c-be01-c477dc3ec910",
+      "data": {
+        "placa": "5689CLA",
+        "modelo": "S-PRESSO",
+        "marca": "SUZUKI",
+        "anio": "2022",
+        "color": "BLANCO",
+        "licencia": "3652507",
+        "conductor": "JUAN PABLO CERVANTES ZAMBRANA"
+      }
+    },
+    {
+      "placa": "3462PLN",
+      "placaNormalized": "3462PLN",
+      "createdAt": 1776377212769,
+      "jobId": "db320d97-a60b-4725-9a94-b0dc90139af7",
+      "data": {
+        "placa": "3462PLN",
+        "modelo": "ROGUE",
+        "marca": "NISSAN",
+        "anio": "2013",
+        "color": "AZUL",
+        "licencia": "4080470",
+        "conductor": "MIRNA SORAYA VACA FUENTES"
+      }
+    },
+    {
+      "placa": "3996YYU",
+      "placaNormalized": "3996YYU",
+      "createdAt": 1776377212769,
+      "jobId": "db320d97-a60b-4725-9a94-b0dc90139af7",
+      "data": {
+        "placa": "3996YYU",
+        "modelo": "HILUX",
+        "marca": "TOYOTA",
+        "anio": "2014",
+        "color": "BLANCO",
+        "licencia": "5685045",
+        "conductor": "JAIME TARDIO CONDORI"
+      }
+    },
+    {
+      "placa": "294XXP (1)",
+      "placaNormalized": "294XXP1",
+      "createdAt": 1776377212769,
+      "jobId": "db320d97-a60b-4725-9a94-b0dc90139af7",
+      "data": {
+        "placa": "294XXP (1)",
+        "modelo": "COROLLA",
+        "marca": "TOYOTA",
+        "anio": "1986",
+        "color": "AZUL",
+        "licencia": "7513092",
+        "conductor": "FABIAN SERGIO ANTEZANA CAMACHO"
+      }
+    },
+    {
+      "placa": "2224CDI",
+      "placaNormalized": "2224CDI",
+      "createdAt": 1776377212769,
+      "jobId": "db320d97-a60b-4725-9a94-b0dc90139af7",
+      "data": {
+        "placa": "2224CDI",
+        "modelo": "LITE ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1997",
+        "color": "DORADO",
+        "licencia": "7159587",
+        "conductor": "SADRAC MAMANI RIVERA"
+      }
+    },
+    {
+      "placa": "3082PAG",
+      "placaNormalized": "3082PAG",
+      "createdAt": 1776377212769,
+      "jobId": "db320d97-a60b-4725-9a94-b0dc90139af7",
+      "data": {
+        "placa": "3082PAG",
+        "modelo": "HILUX",
+        "marca": "TOYOTA",
+        "anio": "2013",
+        "color": "NEGRO",
+        "licencia": "12455909",
+        "conductor": "JOSE MANUEL CASTILLO PEREZ"
+      }
+    },
+    {
+      "placa": "2084ZZH",
+      "placaNormalized": "2084ZZH",
+      "createdAt": 1776377212769,
+      "jobId": "db320d97-a60b-4725-9a94-b0dc90139af7",
+      "data": {
+        "placa": "2084ZZH",
+        "modelo": "NADIA",
+        "marca": "TOYOTA",
+        "anio": "1998",
+        "color": "PERLA",
+        "licencia": "5488851",
+        "conductor": "MALLES RODAS BERAMENDI"
+      }
+    },
+    {
+      "placa": "4276UPT",
+      "placaNormalized": "4276UPT",
+      "createdAt": 1776377212769,
+      "jobId": "db320d97-a60b-4725-9a94-b0dc90139af7",
+      "data": {
+        "placa": "4276UPT",
+        "modelo": "TACOMA",
+        "marca": "TOYOTA",
+        "anio": "2013",
+        "color": "CAFE",
+        "licencia": "1099009",
+        "conductor": "NELSON EDGAR DAVILA ROMERO"
+      }
+    },
+    {
+      "placa": "3045ARY",
+      "placaNormalized": "3045ARY",
+      "createdAt": 1776376733125,
+      "jobId": "ed817091-510f-464c-a636-04bb78073064",
+      "data": {
+        "placa": "3045ARY",
+        "modelo": "GDQ1021A1",
+        "marca": "JINCHENG",
+        "anio": "2023",
+        "color": "VERDE",
+        "licencia": "3654973",
+        "conductor": "CARLOS APAZA BEJARANO"
+      }
+    },
+    {
+      "placa": "1652KFH",
+      "placaNormalized": "1652KFH",
+      "createdAt": 1776376733125,
+      "jobId": "ed817091-510f-464c-a636-04bb78073064",
+      "data": {
+        "placa": "1652KFH",
+        "modelo": "GRAND VITARA",
+        "marca": "SUZUKI",
+        "anio": "2007",
+        "color": "BEIGE",
+        "licencia": "5648893",
+        "conductor": "VICTOR ZARATE ESTEVEZ"
+      }
+    },
+    {
+      "placa": "529DPC",
+      "placaNormalized": "529DPC",
+      "createdAt": 1776376687239,
+      "jobId": "b38c9616-1794-4649-ae77-97764f4af19b",
+      "data": {
+        "placa": "529DPC",
+        "modelo": "PICK UP",
+        "marca": "ISUZU",
+        "anio": "1992",
+        "color": "CELESTE",
+        "licencia": "4083116",
+        "conductor": "SAMMY BOLAÑOS SUAREZ"
+      }
+    },
+    {
+      "placa": "1727XXF",
+      "placaNormalized": "1727XXF",
+      "createdAt": 1776375545347,
+      "jobId": "1d3dbb23-2105-423c-9cf1-6b3ac5ab6ac4",
+      "data": {
+        "placa": "1727XXF",
+        "modelo": "HILUX SURF",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "CELESTE COMBINADA",
+        "licencia": "5656380",
+        "conductor": "MARIO JAVIER MORALES TORRES"
+      }
+    },
+    {
+      "placa": "529PDC",
+      "placaNormalized": "529PDC",
+      "createdAt": 1776375545347,
+      "jobId": "1d3dbb23-2105-423c-9cf1-6b3ac5ab6ac4",
+      "data": {
+        "placa": "529PDC",
+        "modelo": "PICK UP",
+        "marca": "ISUZU",
+        "anio": "1992",
+        "color": "CELESTE",
+        "licencia": "4083116",
+        "conductor": "SAMMY BOLAÑOS SUAREZ"
+      }
+    },
+    {
+      "placa": "1727XXF",
+      "placaNormalized": "1727XXF",
+      "createdAt": 1776374515382,
+      "jobId": "efb6daaf-3dca-4a73-b6eb-18f1a2333d77",
+      "data": {
+        "placa": "1727XXF",
+        "modelo": "HILUX SURF",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "CELESTE COMBINADA",
+        "licencia": "5656380",
+        "conductor": "MARIO JAVIER MORALES TORRES"
+      }
+    },
+    {
+      "placa": "529PDC",
+      "placaNormalized": "529PDC",
+      "createdAt": 1776374515382,
+      "jobId": "efb6daaf-3dca-4a73-b6eb-18f1a2333d77",
+      "data": {
+        "placa": "529PDC",
+        "modelo": "PICK UP",
+        "marca": "ISUZU",
+        "anio": "1992",
+        "color": "CELESTE",
+        "licencia": "4083116",
+        "conductor": "SAMMY BOLAÑOS SUAREZ"
+      }
+    },
+    {
+      "placa": "1727XXF",
+      "placaNormalized": "1727XXF",
+      "createdAt": 1776373876690,
+      "jobId": "cc87c71f-15c3-462a-bf08-87d4af4fb4b8",
+      "data": {
+        "placa": "1727XXF",
+        "modelo": "HILUX SURF",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "CELESTE COMBINADA",
+        "licencia": "5656380",
+        "conductor": "MARIO JAVIER MORALES TORRES"
+      }
+    },
+    {
+      "placa": "529PDC",
+      "placaNormalized": "529PDC",
+      "createdAt": 1776373876690,
+      "jobId": "cc87c71f-15c3-462a-bf08-87d4af4fb4b8",
+      "data": {
+        "placa": "529PDC",
+        "modelo": "PICK UP",
+        "marca": "ISUZU",
+        "anio": "1992",
+        "color": "CELESTE",
+        "licencia": "4083116",
+        "conductor": "SAMMY BOLAÑOS SUAREZ"
+      }
+    },
+    {
+      "placa": "1727XXF",
+      "placaNormalized": "1727XXF",
+      "createdAt": 1776373205816,
+      "jobId": "9c8e08eb-d528-4d87-a4ce-3da4430dcbf5",
+      "data": {
+        "placa": "1727XXF",
+        "modelo": "HILUX SURF",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "CELESTE COMBINADA",
+        "licencia": "5656380",
+        "conductor": "MARIO JAVIER MORALES TORRES"
+      }
+    },
+    {
+      "placa": "1076ETD",
+      "placaNormalized": "1076ETD",
+      "createdAt": 1776373030840,
+      "jobId": "5fe59cc6-eaf2-4bd9-acef-c274821b7016",
+      "data": {
+        "placa": "1076ETD",
+        "modelo": "TERRANO",
+        "marca": "NISSAN",
+        "anio": "1989",
+        "color": "GRIS",
+        "licencia": "4098526",
+        "conductor": "CLIVER REVOLLO BRAVO"
+      }
+    },
+    {
+      "placa": "2285GFD",
+      "placaNormalized": "2285GFD",
+      "createdAt": 1776373030840,
+      "jobId": "5fe59cc6-eaf2-4bd9-acef-c274821b7016",
+      "data": {
+        "placa": "2285GFD",
+        "modelo": "TOWN ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1997",
+        "color": "PLATEADO",
+        "licencia": "7478298",
+        "conductor": "EDUARDO ALFONSIN COLQUE GOMEZ"
+      }
+    },
+    {
+      "placa": "2282FLT (1)",
+      "placaNormalized": "2282FLT1",
+      "createdAt": 1776373030840,
+      "jobId": "5fe59cc6-eaf2-4bd9-acef-c274821b7016",
+      "data": {
+        "placa": "2282FLT (1)",
+        "modelo": "LITE ACE NOAH",
+        "marca": "TOYOTA",
+        "anio": "1996",
+        "color": "PLATEADO",
+        "licencia": "1117246",
+        "conductor": "EDGAR REYES SALVADOR"
+      }
+    },
+    {
+      "placa": "3594UPI",
+      "placaNormalized": "3594UPI",
+      "createdAt": 1776373030840,
+      "jobId": "5fe59cc6-eaf2-4bd9-acef-c274821b7016",
+      "data": {
+        "placa": "3594UPI",
+        "modelo": "T2",
+        "marca": "CHTC AUTO",
+        "anio": "2013",
+        "color": "BLANCO",
+        "licencia": "5387096",
+        "conductor": "JOSE ALFREDO VELASQUEZ CONDORI"
+      }
+    },
+    {
+      "placa": "918KLX",
+      "placaNormalized": "918KLX",
+      "createdAt": 1776373030840,
+      "jobId": "5fe59cc6-eaf2-4bd9-acef-c274821b7016",
+      "data": {
+        "placa": "918KLX",
+        "modelo": "AUTOMOVIL",
+        "marca": "TOYOTA",
+        "anio": "1987",
+        "color": "BLANCO",
+        "licencia": "5681369",
+        "conductor": "JOHNNY VIDAURRE DORIA MEDINA"
+      }
+    },
+    {
+      "placa": "3019SSX",
+      "placaNormalized": "3019SSX",
+      "createdAt": 1776373030840,
+      "jobId": "5fe59cc6-eaf2-4bd9-acef-c274821b7016",
+      "data": {
+        "placa": "3019SSX",
+        "modelo": "CAMIONETA",
+        "marca": "XINKAI",
+        "anio": "2013",
+        "color": "ROJO",
+        "licencia": "7509402",
+        "conductor": "JUAN CLIVER DURAN VELA"
+      }
+    },
+    {
       "placa": "4742KAI",
       "placaNormalized": "4742KAI",
       "createdAt": 1775326798648,

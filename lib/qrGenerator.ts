@@ -14,7 +14,11 @@ export type QRInputRow = Record<string, unknown> & {
 };
 
 export function clean(value: unknown) {
-  return String(value || "").trim().toUpperCase();
+  return String(value ?? "")
+    .normalize("NFC")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLocaleUpperCase("es-BO");
 }
 
 export function generateQRData(row: QRInputRow) {

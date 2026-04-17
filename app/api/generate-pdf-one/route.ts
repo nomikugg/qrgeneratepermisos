@@ -1,7 +1,9 @@
 import { promises as fs } from "fs";
 import { join } from "path";
-import { fillTemplatePdfWithRow, type QRPlacement } from "@/lib/pdfGenerator";
+import { fillTemplatePdfWithRow, renderPdfWithLayout } from "@/lib/pdfGenerator";
 import { updatePermitRecord } from "@/lib/permitSearchStore";
+import { normalizePdfLayoutConfig, type QRPlacement } from "@/lib/pdfLayout";
+import { tryLoadActivePdfLayout } from "@/lib/pdfLayoutStore";
 import type { QRInputRow } from "@/lib/qrGenerator";
 
 const DEFAULT_SERVER_TEMPLATE_PATH = join(process.cwd(), "templates", "permiso-base.pdf");
@@ -19,10 +21,7 @@ export async function POST(req: Request): Promise<Response> {
   const recordIdRaw = formData.get("recordId");
   const jobId = String(formData.get("jobId") || "").trim();
   const createdAtRaw = formData.get("createdAt");
-
-  if (!useServerTemplate && !(templatePdf instanceof File)) {
-    return Response.json({ error: "Debes cargar una plantilla PDF." }, { status: 400 });
-  }
+  const layoutConfigRaw = formData.get("layoutConfig");
 
   if (typeof rowJson !== "string" || !rowJson.trim()) {
     return Response.json({ error: "No se recibieron datos del registro a regenerar." }, { status: 400 });
@@ -41,12 +40,59 @@ export async function POST(req: Request): Promise<Response> {
     width: Math.max(32, parseNumberField(formData.get("qrWidth"), 112)),
     height: Math.max(32, parseNumberField(formData.get("qrHeight"), 112)),
   };
+  let layoutConfig = await tryLoadActivePdfLayout();
+
+  if (typeof layoutConfigRaw === "string" && layoutConfigRaw.trim()) {
+    try {
+      layoutConfig = normalizePdfLayoutConfig(JSON.parse(layoutConfigRaw));
+    } catch {
+      return Response.json({ error: "El layout del editor es invalido." }, { status: 400 });
+    }
+  }
 
   const parsedRecordId = typeof recordIdRaw === "string" && recordIdRaw.trim() ? Number(recordIdRaw) : undefined;
   const parsedCreatedAt = typeof createdAtRaw === "string" && createdAtRaw.trim() ? Number(createdAtRaw) : 0;
 
+  if (!useServerTemplate && !(templatePdf instanceof File) && !layoutConfig) {
+    return Response.json({ error: "Debes cargar una plantilla PDF o guardar un layout activo." }, { status: 400 });
+  }
+
   try {
     let templatePdfBuffer: Buffer;
+
+    if (layoutConfig) {
+      if (useServerTemplate) {
+        const configuredPath = String(process.env.PDF_TEMPLATE_PATH || "").trim();
+        const templatePath = configuredPath || DEFAULT_SERVER_TEMPLATE_PATH;
+        templatePdfBuffer = await fs.readFile(templatePath);
+      } else if (templatePdf instanceof File) {
+        templatePdfBuffer = Buffer.from(await templatePdf.arrayBuffer());
+      } else {
+        templatePdfBuffer = Buffer.alloc(0);
+      }
+
+      const result = await renderPdfWithLayout(templatePdfBuffer.length > 0 ? templatePdfBuffer : null, row, layoutConfig);
+
+      if (jobId && Number.isFinite(parsedCreatedAt) && parsedCreatedAt > 0) {
+        await updatePermitRecord({
+          id: typeof parsedRecordId === "number" && Number.isFinite(parsedRecordId) ? parsedRecordId : undefined,
+          jobId,
+          createdAt: parsedCreatedAt,
+          data: Object.fromEntries(Object.entries(row).map(([key, value]) => [key, String(value ?? "")]))
+        });
+      }
+
+      const normalizedPdfBytes = new Uint8Array(result.pdfBytes.length);
+      normalizedPdfBytes.set(result.pdfBytes);
+      const pdfBlob = new Blob([normalizedPdfBytes.buffer], { type: "application/pdf" });
+
+      return new Response(pdfBlob, {
+        headers: {
+          "Content-Type": "application/pdf",
+          "Content-Disposition": `attachment; filename="${result.fileName}"`,
+        },
+      });
+    }
 
     if (useServerTemplate) {
       const configuredPath = String(process.env.PDF_TEMPLATE_PATH || "").trim();
