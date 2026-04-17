@@ -15,7 +15,17 @@ type PermitStoreFile = {
   records: PermitSearchRecord[];
 };
 
-const STORE_DIR = join(process.cwd(), ".tmp", "permit-search");
+function resolvePermitStoreDir(): string {
+  // Vercel runtime: /var/task is read-only; use /tmp for ephemeral writes.
+  if (process.env.VERCEL) {
+    const tempBase = process.env.TMPDIR || process.env.TEMP || "/tmp";
+    return join(tempBase, "permit-search");
+  }
+
+  return join(process.cwd(), ".tmp", "permit-search");
+}
+
+const STORE_DIR = resolvePermitStoreDir();
 const STORE_FILE = join(STORE_DIR, "permits.json");
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;

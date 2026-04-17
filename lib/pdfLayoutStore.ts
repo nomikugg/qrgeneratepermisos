@@ -2,7 +2,17 @@ import { promises as fs } from "fs";
 import { join } from "path";
 import { createDefaultPdfLayout, normalizePdfLayoutConfig, type PdfLayoutConfig } from "@/lib/pdfLayout";
 
-const LAYOUT_DIR = join(process.cwd(), ".tmp", "pdf-layout");
+function resolveLayoutDir(): string {
+  // Vercel runtime: /var/task is read-only; use /tmp for ephemeral writes.
+  if (process.env.VERCEL) {
+    const tempBase = process.env.TMPDIR || process.env.TEMP || "/tmp";
+    return join(tempBase, "pdf-layout");
+  }
+
+  return join(process.cwd(), ".tmp", "pdf-layout");
+}
+
+const LAYOUT_DIR = resolveLayoutDir();
 const LAYOUT_FILE = join(LAYOUT_DIR, "active.json");
 
 async function ensureLayoutDir(): Promise<void> {
