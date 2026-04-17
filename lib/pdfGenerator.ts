@@ -29,6 +29,36 @@ type BackendReplaceOperation = {
 
 const PDF_BACKEND_BASE_URL = process.env.PDF_BACKEND_URL ?? process.env.NEXT_PUBLIC_PDF_BACKEND_URL ?? "http://127.0.0.1:8080";
 
+const templateUploadCache = new Map<string, string>();
+
+function buildTemplateCacheKey(templatePdfBuffer: Buffer): string {
+  const head = templatePdfBuffer.subarray(0, Math.min(templatePdfBuffer.length, 64)).toString("base64");
+  const tail = templatePdfBuffer.subarray(Math.max(0, templatePdfBuffer.length - 64)).toString("base64");
+  return `${templatePdfBuffer.length}:${head}:${tail}`;
+}
+
+async function uploadTemplateOnce(templatePdfBuffer: Buffer): Promise<string> {
+  const cacheKey = buildTemplateCacheKey(templatePdfBuffer);
+  const cached = templateUploadCache.get(cacheKey);
+
+  if (cached) {
+    return cached;
+  }
+
+  const fileId = await uploadPdfToBackend(templatePdfBuffer);
+  templateUploadCache.set(cacheKey, fileId);
+
+  // Evita crecimiento sin limite del cache en runtimes largos.
+  if (templateUploadCache.size > 16) {
+    const firstKey = templateUploadCache.keys().next().value;
+    if (firstKey) {
+      templateUploadCache.delete(firstKey);
+    }
+  }
+
+  return fileId;
+}
+
 function buildPdfBackendUrl(pathname: string): string {
   return new URL(pathname, PDF_BACKEND_BASE_URL).toString();
 }
@@ -522,7 +552,8 @@ async function createPdfByBackendReplacement(
   const data = generateQRData(row);
   const operations = buildTextReplaceOperations(layout, row);
 
-  let fileId = await uploadPdfToBackend(templatePdfBuffer);
+  const baseFileId = await uploadTemplateOnce(templatePdfBuffer);
+  let fileId = baseFileId;
   if (operations.length > 0) {
     fileId = await applyOperationsOnBackend(fileId, operations);
   }
