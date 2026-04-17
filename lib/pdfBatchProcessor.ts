@@ -65,7 +65,14 @@ export async function generatePdfBatchZip(
           const result = layoutConfig
             ? await renderPdfWithLayout(templatePdfBuffer, row, layoutConfig)
             : await fillTemplatePdfWithRow(templatePdfBuffer, row, placement);
-          const pdfFileId = await uploadPdfToBackend(Buffer.from(result.pdfBytes));
+          let pdfFileId: string | undefined;
+
+          try {
+            pdfFileId = await uploadPdfToBackend(Buffer.from(result.pdfBytes));
+          } catch (uploadError) {
+            console.error("No se pudo subir el PDF generado al backend; se continua con el ZIP:", uploadError);
+          }
+
           const currentCount = fileNameCounter.get(result.fileName) ?? 0;
           fileNameCounter.set(result.fileName, currentCount + 1);
 
@@ -77,7 +84,7 @@ export async function generatePdfBatchZip(
           archive.append(Buffer.from(result.pdfBytes), { name: finalName });
           processedRowsForSearch.push({
             ...row,
-            _pdfFileId: pdfFileId,
+            ...(pdfFileId ? { _pdfFileId: pdfFileId } : {}),
           });
 
           processedRows += 1;

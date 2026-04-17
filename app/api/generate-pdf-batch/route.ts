@@ -4,37 +4,52 @@ import { appendPermitRows } from "@/lib/permitSearchStore";
 import { normalizePdfLayoutConfig, type QRPlacement } from "@/lib/pdfLayout";
 import { tryLoadActivePdfLayout } from "@/lib/pdfLayoutStore";
 
-function parseNumberField(value: FormDataEntryValue | null, fallback: number): number {
+type GeneratePdfBatchRequestBody = {
+  csvText?: string;
+  templatePdfBase64?: string;
+  layoutConfig?: unknown;
+  qrX?: number | string;
+  qrY?: number | string;
+  qrWidth?: number | string;
+  qrHeight?: number | string;
+};
+
+function parseNumberField(value: unknown, fallback: number): number {
   const parsed = Number(value);
   return Number.isFinite(parsed) ? parsed : fallback;
 }
 
-export async function POST(req: Request): Promise<Response> {
-  const formData = await req.formData();
-  const templatePdf = formData.get("templatePdf");
-  const csvFile = formData.get("csvFile");
-  const layoutConfigRaw = formData.get("layoutConfig");
+function decodeBase64Pdf(value: string | undefined): Buffer {
+  if (!value || !value.trim()) {
+    return Buffer.alloc(0);
+  }
 
-  if (!(csvFile instanceof File)) {
+  return Buffer.from(value, "base64");
+}
+
+export async function POST(req: Request): Promise<Response> {
+  const body = (await req.json().catch(() => null)) as GeneratePdfBatchRequestBody | null;
+
+  if (!body || typeof body.csvText !== "string") {
     return Response.json({ error: "Debes cargar un archivo CSV" }, { status: 400 });
   }
 
   const placement: QRPlacement = {
-    qrFieldName: String(formData.get("qrFieldName") || "").trim() || undefined,
-    x: parseNumberField(formData.get("qrX"), 670),
-    y: parseNumberField(formData.get("qrY"), 130),
-    width: Math.max(32, parseNumberField(formData.get("qrWidth"), 112)),
-    height: Math.max(32, parseNumberField(formData.get("qrHeight"), 112)),
+    qrFieldName: undefined,
+    x: parseNumberField(body.qrX, 670),
+    y: parseNumberField(body.qrY, 130),
+    width: Math.max(32, parseNumberField(body.qrWidth, 112)),
+    height: Math.max(32, parseNumberField(body.qrHeight, 112)),
   };
 
   try {
-    const templatePdfBuffer = templatePdf instanceof File ? Buffer.from(await templatePdf.arrayBuffer()) : Buffer.alloc(0);
-    const csvBuffer = Buffer.from(await csvFile.arrayBuffer());
+    const templatePdfBuffer = decodeBase64Pdf(body.templatePdfBase64);
+    const csvBuffer = Buffer.from(body.csvText, "utf-8");
     let layoutConfig = await tryLoadActivePdfLayout();
 
-    if (typeof layoutConfigRaw === "string" && layoutConfigRaw.trim()) {
+    if (body.layoutConfig) {
       try {
-        layoutConfig = normalizePdfLayoutConfig(JSON.parse(layoutConfigRaw));
+        layoutConfig = normalizePdfLayoutConfig(body.layoutConfig);
       } catch {
         return Response.json({ error: "El layout del editor es invalido." }, { status: 400 });
       }

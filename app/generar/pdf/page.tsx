@@ -164,6 +164,18 @@ function formatNumber(value: number): string {
   return Number.isFinite(value) ? String(Math.round(value)) : "0";
 }
 
+function arrayBufferToBase64(buffer: ArrayBuffer): string {
+  const bytes = new Uint8Array(buffer);
+  let binary = "";
+  const chunkSize = 0x8000;
+
+  for (let index = 0; index < bytes.length; index += chunkSize) {
+    binary += String.fromCharCode(...bytes.subarray(index, index + chunkSize));
+  }
+
+  return btoa(binary);
+}
+
 export default function PdfGeneratorPage() {
   const [templatePdf, setTemplatePdf] = useState<File | null>(null);
   const [csvFile, setCsvFile] = useState<File | null>(null);
@@ -392,20 +404,21 @@ export default function PdfGeneratorPage() {
     setMessage("Generando lote PDF desde CSV...");
 
     try {
-      const formData = new FormData();
-      formData.append("csvFile", csvFile);
-      if (templatePdf) {
-        formData.append("templatePdf", templatePdf);
-      }
-      formData.append("layoutConfig", JSON.stringify(layout));
-      formData.append("qrX", String(layout.qr.x));
-      formData.append("qrY", String(layout.qr.y));
-      formData.append("qrWidth", String(layout.qr.width));
-      formData.append("qrHeight", String(layout.qr.height));
+      const csvText = await csvFile.text();
+      const templatePdfBase64 = templatePdf ? arrayBufferToBase64(await templatePdf.arrayBuffer()) : undefined;
 
       const response = await fetch("/api/generate-pdf-batch", {
         method: "POST",
-        body: formData,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          csvText,
+          templatePdfBase64,
+          layoutConfig: layout,
+          qrX: layout.qr.x,
+          qrY: layout.qr.y,
+          qrWidth: layout.qr.width,
+          qrHeight: layout.qr.height,
+        }),
       });
 
       if (!response.ok) {
