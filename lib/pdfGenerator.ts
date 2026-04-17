@@ -63,6 +63,12 @@ function buildPdfBackendUrl(pathname: string): string {
   return new URL(pathname, PDF_BACKEND_BASE_URL).toString();
 }
 
+function computeQrRasterWidth(targetWidth: number): number {
+  // 2x del tamaño destino mantiene nitidez y evita PNGs excesivamente grandes.
+  const desired = Math.round(Math.max(96, targetWidth * 2));
+  return Math.min(desired, 256);
+}
+
 function parseHexColor(value: string) {
   const normalized = String(value || "").trim().replace(/^#/, "");
   const match = /^([0-9a-fA-F]{6})$/.exec(normalized);
@@ -325,7 +331,7 @@ async function createPdfFromLayout(
 
   const qrPngBuffer = await QRCode.toBuffer(data.finalString, {
     margin: 4,
-    width: Math.max(300, Math.round(layout.qr.width)),
+    width: computeQrRasterWidth(layout.qr.width),
   });
 
   const qrImage = await pdfDoc.embedPng(qrPngBuffer);
@@ -530,7 +536,7 @@ async function addQrToPdf(pdfBytes: Uint8Array, layout: PdfLayoutConfig, row: QR
 
   const qrPngBuffer = await QRCode.toBuffer(data.finalString, {
     margin: 4,
-    width: Math.max(300, Math.round(layout.qr.width)),
+    width: computeQrRasterWidth(layout.qr.width),
   });
 
   const qrImage = await pdfDoc.embedPng(qrPngBuffer);
@@ -650,7 +656,7 @@ export async function fillTemplatePdfWithRow(
 
   const qrPngBuffer = await QRCode.toBuffer(data.finalString, {
     margin: 4,
-    width: Math.max(300, Math.round(placement.width)),
+    width: computeQrRasterWidth(placement.width),
   });
 
   const qrImage = await pdfDoc.embedPng(qrPngBuffer);
